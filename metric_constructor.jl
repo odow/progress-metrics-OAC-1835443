@@ -43,6 +43,10 @@ Return a DataFrame containing a list of all GitHub issues and pull requests.
  * is_pr
 """
 function build_issue_dataset(repo, my_auth)
+    esc_repo = esc_repo_name(repo)
+    if isfile(data_dir(esc_repo * ".csv"))
+        return
+    end
     @info "Summarizing issues of $(repo)"
     issues, _ = GitHub.issues(
         repo;
@@ -59,7 +63,6 @@ function build_issue_dataset(repo, my_auth)
         closed_at = map(i -> _replace_nothing(i.closed_at), issues),
         is_pr = map(i -> i.pull_request !== nothing, issues),
     )
-    esc_repo = esc_repo_name(repo)
     CSV.write(data_dir(esc_repo * ".csv"), df)
     return
 end
@@ -220,9 +223,15 @@ function list_of_dependencies(
         deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
         pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
         deps = Pkg.TOML.parsefile(deps_file)
+        latest_key = if any(k -> endswith(k, "-0"), collect(keys(deps)))
+            "-0"
+        else  # General changed how they represent these during 2019 :(
+            split_key = sort([String(split(key, "-")[end]) for key in keys(deps)])
+            length(split_key) > 0 ? "-" * split_key[end] : "-"
+        end
         for (key, val) in deps
             # Only add as a dependent if the most-recent version uses it!
-            if (key == "0" || endswith(key, "-0")) && uuid in values(val)
+            if (key == "0" || endswith(key, latest_key)) && uuid in values(val)
                 pkg = Pkg.TOML.parsefile(pkg_file)
                 uuid_to_repo[pkg["uuid"]] = String(pkg["repo"])
             end
@@ -265,6 +274,7 @@ function checkout_registry(
 )
     current_directory = pwd()
     io = IOBuffer()
+    @info "Checking out $(year)"
     try
         cd(registry)
         run(pipeline(`git checkout master`))
@@ -287,71 +297,77 @@ function checkout_registry(
     end
 end
 
-function compare_years(set_a, set_b)
-    println("Packages added:")
-    for b in set_b
-        if !(b in set_a)
-            println("  ", b)
-        end
-    end
-    println("Packages removed:")
-    for a in set_a
-        if !(a in set_b)
-            println("  ", a)
-        end
-    end
-end
+# function compare_years(set_a, set_b)
+#     println("Packages added:")
+#     for b in set_b
+#         if !(b in set_a)
+#             println("  ", b)
+#         end
+#     end
+#     println("Packages removed:")
+#     for a in set_a
+#         if !(a in set_b)
+#             println("  ", a)
+#         end
+#     end
+# end
 
-function dependency_graph(registry, repo, year)
-    uuid_to_name_d = uuid_to_name(registry)
-    uuid = get_uuid(registry, repo)
-    dependents = Set{String}()
-    push!(dependents, uuid)
-    latest = String[uuid]
-    while length(latest) > 0
-        recently_added = copy(latest)
-        # @show recently_added
-        empty!(latest)
-        uuids = _direct_dependents(registry, recently_added, uuid_to_name_d)
-        for u in uuids
-            if !(u in dependents)
-                push!(dependents, u)
-                push!(latest, u)
-            end
-        end
-    end
-    return [uuid_to_name_d[d] for d in dependents]
-end
+# function dependency_graph(registry, repo, year)
+#     uuid_to_name_d = uuid_to_name(registry)
+#     uuid = get_uuid(registry, repo)
+#     dependents = Set{String}()
+#     push!(dependents, uuid)
+#     latest = String[uuid]
+#     while length(latest) > 0
+#         recently_added = copy(latest)
+#         # @show recently_added
+#         empty!(latest)
+#         uuids = _direct_dependents(registry, recently_added, uuid_to_name_d)
+#         for u in uuids
+#             if !(u in dependents)
+#                 push!(dependents, u)
+#                 push!(latest, u)
+#             end
+#         end
+#     end
+#     return [uuid_to_name_d[d] for d in dependents]
+# end
 
-function _direct_dependents(registry, recently_added, uuid_to_name)
-    dependents = String[]
-    for (root, dirs, files) in walkdir(registry)
-        latest = true
-        if "Deps.toml" in files
-            latest = true
-        elseif "dependencies.toml" in files
-            latest = false
-        else
-            continue
-        end
-        deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
-        pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
-        deps = Pkg.TOML.parsefile(deps_file)
-        for (key, val) in deps
-            # Only add as a dependent if the most-recent version uses it!
-            if !(key == "0" || endswith(key, "-0"))
-                continue
-            end
-            i = findfirst(u -> u in values(val), recently_added)
-            if i !== nothing
-                pkg = Pkg.TOML.parsefile(pkg_file)
-                push!(dependents, String(pkg["uuid"]))
-                println(uuid_to_name[recently_added[i]], " => ", url_to_name(pkg["repo"]))
-            end
-        end
-    end
-    return dependents
-end
+# function _direct_dependents(registry, recently_added, uuid_to_name)
+#     dependents = String[]
+#     for (root, dirs, files) in walkdir(registry)
+#         latest = true
+#         if "Deps.toml" in files
+#             latest = true
+#         elseif "dependencies.toml" in files
+#             latest = false
+#         else
+#             continue
+#         end
+#         deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
+#         pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
+#         deps = Pkg.TOML.parsefile(deps_file)
+#         latest_key = if latest
+#             "-0"
+#         else
+#             # General changed how they represent these :(
+#             sort([String(split(key, "-")[2]) for key in keys(deps)])[end]
+#         end
+#         for (key, val) in deps
+#             # Only add as a dependent if the most-recent version uses it!
+#             if !(key == "0" || endswith(key, latest_key))
+#                 continue
+#             end
+#             i = findfirst(u -> u in values(val), recently_added)
+#             if i !== nothing
+#                 pkg = Pkg.TOML.parsefile(pkg_file)
+#                 push!(dependents, String(pkg["uuid"]))
+#                 println(uuid_to_name[recently_added[i]], " => ", url_to_name(pkg["repo"]))
+#             end
+#         end
+#     end
+#     return dependents
+# end
 
 """
     dependency_stars(
@@ -370,13 +386,16 @@ function dependency_stars(
     dependencies = checkout_registry(registry, year) do
         list_of_dependencies(registry, repo)
     end
+    @info "Found $(length(dependencies)) for $(repo) in $(year)"
     push!(dependencies, repo)
-    stars = if isfile(data_dir("stars.json"))
-        tmp = JSON.parsefile(data_dir("stars.json"); use_mmap = false)
-        Dict(key => tmp[key] for key in dependencies if haskey(tmp, key))
+    all_stars = if isfile(data_dir("stars.json"))
+        JSON.parsefile(data_dir("stars.json"); use_mmap = false)
     else
         Dict{String, Any}()
     end
+    stars = Dict(
+        key => all_stars[key] for key in dependencies if haskey(all_stars, key)
+    )
     for (key, val) in stars
         stars[key] = Dates.Date.(val)
     end
@@ -393,6 +412,7 @@ function dependency_stars(
         end
         try
             stars[d] = get_stargazers(d, auth)
+            all_stars[d] = stars[d]
         catch ex
             if ex isa InterruptException
                 rethrow(ex)
@@ -400,10 +420,11 @@ function dependency_stars(
                 rethrow(ex)
             end
             @warn "Skipping $(d): $ex"
+            stars[d] = String[]
         end
     end
     open(data_dir("stars.json"), "w") do io
-        write(io, JSON.json(stars))
+        write(io, JSON.json(all_stars))
     end
     return stars
 end
@@ -432,28 +453,16 @@ function build_table(repo, years; use_stars::Bool = true)
             "Number of GitHub stars" =>
                 y -> sum(stars[y][repo] .<= Dates.Date(y, 12, 31)),
             "Number of registered dependent packages" =>
-                (y) -> begin
-                    if length(stars[y]) == 1
-                        return 0
-                    elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
-                        return 0
-                    end
-                    return sum(
-                        sum(s .<= Dates.Date(y, 12, 31)) > 0
-                        for (d, s) in stars[y] if d != repo && length(s) > 0
-                    )
-                end,
+                (y) -> length(stars[y]) - 1,
             "Cumulative GitHub stars of dependent packages" =>
                 (y) -> begin
-                    if length(stars[y]) == 1
-                        return 0
-                    elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
-                        return 0
+                    n = 0
+                    for (d, s) in stars[y]
+                        if d != repo && length(s) > 0
+                            n += sum(s .<= Dates.Date(y, 12, 31))
+                        end
                     end
-                    return sum(
-                        sum(s .<= Dates.Date(y, 12, 31))
-                        for (d, s) in stars[y] if d != repo && length(s) > 0
-                    )
+                    return n
                 end,
         ])
     end
@@ -792,18 +801,16 @@ end
 #                                                                              #
 # ============================================================================ #
 
-ENV["GITHUB_AUTH"] = "6d75ef627342d7ca72a33e9bb95c0cd3e5b981b5"
-
 if !haskey(ENV, "GITHUB_AUTH")
     error(
         "You must supply a GitHub authentication token by setting GITHUB_AUTH."
     )
 end
 
-# summarize_discourse()
+summarize_discourse()
 
 for (repo, use_stars) in [
-    # ("julialang/Julia", false),
+    ("julialang/Julia", false),
     ("jump-dev/JuMP.jl", true),
     ("jump-dev/MathOptInterface.jl", true),
     ("jrevels/Cassette.jl", true),
