@@ -223,15 +223,20 @@ function list_of_dependencies(
         deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
         pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
         deps = Pkg.TOML.parsefile(deps_file)
-        latest_key = if any(k -> endswith(k, "-0"), collect(keys(deps)))
-            "-0"
+        latest_key = if any(k -> endswith(k, "-1"), collect(keys(deps)))
+            "1"
+        elseif any(k -> endswith(k, "-0"), collect(keys(deps)))
+            "0"
         else  # General changed how they represent these during 2019 :(
             split_key = sort([String(split(key, "-")[end]) for key in keys(deps)])
-            length(split_key) > 0 ? "-" * split_key[end] : "-"
+            length(split_key) > 0 ? split_key[end] : ""
         end
         for (key, val) in deps
             # Only add as a dependent if the most-recent version uses it!
-            if (key == "0" || endswith(key, latest_key)) && uuid in values(val)
+            if !(key == latest_key || endswith(key, "-" * latest_key))
+                continue
+            # elseif uuid in values(val)  # direct dependencies only
+            elseif any(k -> k in values(val), keys(uuid_to_repo))  # include transitive
                 pkg = Pkg.TOML.parsefile(pkg_file)
                 uuid_to_repo[pkg["uuid"]] = String(pkg["repo"])
             end
@@ -381,10 +386,15 @@ function dependency_stars(
     registry::String,
     repo::String,
     year::Int,
-    auth::GitHub.OAuth2,
+    auth::GitHub.OAuth2;
+    include_dependents::Bool = false,
 )
-    dependencies = checkout_registry(registry, year) do
-        list_of_dependencies(registry, repo)
+    dependencies = if include_dependents
+        checkout_registry(registry, year) do
+            list_of_dependencies(registry, repo)
+        end
+    else
+        String[]
     end
     @info "Found $(length(dependencies)) for $(repo) in $(year)"
     push!(dependencies, repo)
@@ -438,20 +448,19 @@ function build_table(repo, years; use_stars::Bool = true)
 
     registry = joinpath(Pkg.devdir(), "..", "registries", "General")
 
-    stars = if use_stars
-        Dict(
-            year => dependency_stars(registry, repo, year, my_auth)
-            for year in years
+    stars = Dict(
+        year => dependency_stars(
+            registry, repo, year, my_auth; include_dependents = use_stars
         )
-    else
-        Dict{Int, Any}()
-    end
+        for year in years
+    )
     # Compute metrics.
-    metrics = []
+    metrics = Any[
+        "Number of GitHub stars" =>
+            y -> sum(stars[y][repo] .<= Dates.Date(y, 12, 31)),
+    ]
     if use_stars
         append!(metrics, [
-            "Number of GitHub stars" =>
-                y -> sum(stars[y][repo] .<= Dates.Date(y, 12, 31)),
             "Number of registered dependent packages" =>
                 (y) -> length(stars[y]) - 1,
             "Cumulative GitHub stars of dependent packages" =>
