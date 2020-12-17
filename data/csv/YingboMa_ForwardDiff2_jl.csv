@@ -1,0 +1,48 @@
+number,title,login,created_at,closed_at,is_pr
+47,ERROR: type DataType has no field body,cdsousa,2020-04-28T18:35:16.0,,false
+46,"promotion of types, unable to change any argument",francescoalemanno,2020-04-28T11:38:13.0,,false
+45,SimpleD test failure,MasonProtter,2020-04-12T21:53:21.0,2020-04-25T07:56:55.0,false
+44,Hessian Test Failures,MasonProtter,2020-04-12T21:45:03.0,,false
+43,Failure with simple mul operation over an SVector,cdsousa,2020-03-24T16:58:04.0,2020-04-25T07:55:46.0,false
+42,Install TagBot as a GitHub Action,JuliaTagBot,2020-02-08T15:17:33.0,2020-02-08T15:48:48.0,true
+41,Define operations with Duals,dpsanders,2020-02-06T06:33:14.0,2020-02-07T04:44:04.0,false
+40,Incorrect gradient + dual leakage,MikeInnes,2020-01-24T10:28:08.0,,false
+39,Fail if a GlobalRef is being assigned to a Dual number.,YingboMa,2020-01-23T04:58:43.0,,true
+38,allow ChainRulesCore 0.6,oxinabox,2020-01-22T12:39:14.0,2020-02-05T01:40:09.0,true
+37,Perturbation Confusion issue,MikeInnes,2020-01-22T10:47:32.0,,false
+36,Close over function call to invoke pass when trying an older context,YingboMa,2020-01-22T04:39:11.0,2020-01-22T04:49:15.0,true
+35,Differentiating concretely typed function signatures,MasonProtter,2020-01-21T19:02:12.0,,false
+34,Add SpecializeVarargs,YingboMa,2020-01-21T18:35:18.0,2020-01-21T19:44:33.0,true
+33,Chunk mode and DualCache,YingboMa,2020-01-20T22:34:23.0,,false
+32,Add promotion rules for dual numbers,YingboMa,2020-01-20T19:35:20.0,2020-01-20T22:11:36.0,true
+31,Dual leakage,MikeInnes,2020-01-20T17:02:12.0,,false
+30,Promotion Issue,MikeInnes,2020-01-20T16:57:20.0,2020-01-20T22:11:36.0,false
+29,Fix a few bugs to make `D(f)(x)` behave like a matrix when multiplying,YingboMa,2020-01-19T23:19:15.0,2020-01-20T19:34:16.0,true
+28,Take gradient vector product seriously,YingboMa,2020-01-19T05:31:42.0,2020-01-20T19:34:16.0,false
+27,Jacobian-vector multiply,YingboMa,2020-01-18T23:42:12.0,2020-01-19T00:58:11.0,true
+26,D(D(f))(v) should work.,MasonProtter,2020-01-18T22:33:40.0,2020-01-20T19:54:23.0,false
+25,How do I work with a function with multiple inputs?,oxinabox,2020-01-18T21:44:03.0,2020-01-19T00:58:11.0,false
+24,Hybrid overloading + SCT; not pure SCT?,oxinabox,2020-01-18T20:35:28.0,,false
+23,Why does DI(DI(prod))(v::Vector) produce a static array?,MasonProtter,2020-01-18T19:58:22.0,,false
+22,Update README.md,MasonProtter,2020-01-18T19:55:06.0,2020-01-18T22:48:30.0,true
+21,Make `Base.show` materialize the output of `D(f)(v)`,MasonProtter,2020-01-18T19:50:04.0,2020-01-18T22:02:28.0,false
+20,The great API shift,YingboMa,2020-01-16T03:53:12.0,2020-01-17T21:16:41.0,true
+19,Make `DualArray` more reasonable,YingboMa,2020-01-14T02:01:08.0,2020-01-16T00:34:02.0,true
+18,Early stopping,oxinabox,2020-01-12T21:16:49.0,2020-01-17T21:31:55.0,false
+17,Hessian errors on Julia 1.4,YingboMa,2020-01-12T01:03:46.0,,false
+16,Fuse frule,YingboMa,2020-01-11T22:39:47.0,2020-01-13T23:26:59.0,true
+15,Hessian,YingboMa,2020-01-11T01:15:13.0,2020-01-11T02:16:06.0,true
+14,Inference failure on nested differentiation,YingboMa,2020-01-11T00:41:30.0,,false
+13,User API & DualArray,YingboMa,2020-01-02T23:45:05.0,2020-01-09T19:21:00.0,true
+12,Test new Dual number,YingboMa,2019-12-25T16:12:41.0,2019-12-29T19:34:30.0,true
+11,Brave New Duals,YingboMa,2019-12-24T06:52:40.0,2019-12-25T05:22:41.0,true
+10,Rebase to new ChainRules,shashi,2019-10-07T21:22:22.0,2019-12-24T03:27:28.0,true
+9,Derivatives for mutating linear algebra,ChrisRackauckas,2019-10-02T08:24:43.0,,false
+8,Test pre-building a dual and using it for caching,ChrisRackauckas,2019-10-02T08:23:43.0,,false
+7,jvp function,ChrisRackauckas,2019-10-02T08:21:43.0,2020-01-17T21:32:18.0,false
+6,Add a color vector and sparsity pattern choice to the Jacobian function,ChrisRackauckas,2019-10-02T08:20:39.0,2020-01-19T18:07:58.0,false
+5,StaticDualArray,ChrisRackauckas,2019-10-02T06:31:18.0,2020-01-17T21:35:33.0,false
+4,Unexplained allocations,shashi,2019-08-18T02:38:02.0,,false
+3,WIP: Tagging,shashi,2019-08-13T01:38:40.0,2019-10-07T21:22:50.0,true
+2,ChainRules-based forward diff,shashi,2019-08-09T21:10:40.0,2019-08-13T01:30:16.0,true
+1,Needs a better name,ChrisRackauckas,2019-08-05T19:41:31.0,,false
