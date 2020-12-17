@@ -149,6 +149,22 @@ function get_uuid(registry::String, repo::String)
     return ""
 end
 
+function uuid_to_name(registry::String)
+    d = Dict{String, String}()
+    for (root, dirs, files) in walkdir(registry)
+        filename = if "Package.toml" in files
+            joinpath(root, "Package.toml")
+        elseif "package.toml" in files
+            joinpath(root, "package.toml")
+        else
+            continue
+        end
+        pkg = Pkg.TOML.parsefile(filename)
+        d[pkg["uuid"]] = url_to_name(pkg["repo"])
+    end
+    return d
+end
+
 """
     url_to_name(url::String)
 
@@ -188,6 +204,9 @@ function list_of_dependencies(
     recursive = true,
 )
     uuid = get_uuid(registry, repo)
+    if isempty(uuid)
+        return String[]
+    end
     uuid_to_repo[uuid] = repo
     for (root, dirs, files) in walkdir(registry)
         latest = true
@@ -200,10 +219,13 @@ function list_of_dependencies(
         end
         deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
         pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
-        deps = read(deps_file, String)
-        if any(v -> !isempty(v) && occursin(v, deps), keys(uuid_to_repo))
-            pkg = Pkg.TOML.parsefile(pkg_file)
-            uuid_to_repo[pkg["uuid"]] = String(pkg["repo"])
+        deps = Pkg.TOML.parsefile(deps_file)
+        for (key, val) in deps
+            # Only add as a dependent if the most-recent version uses it!
+            if (key == "0" || endswith(key, "-0")) && uuid in values(val)
+                pkg = Pkg.TOML.parsefile(pkg_file)
+                uuid_to_repo[pkg["uuid"]] = String(pkg["repo"])
+            end
         end
     end
     if recursive
@@ -229,7 +251,7 @@ end
 Uses Git to checkout the registry to December 31, `year`. Restores the registry
 to `master` on exit.
 
-## Examples
+ ## Examples
 
 ```julia
 checkout_registry("/Users/Oscar/.julia/registries/General", 2018) do
@@ -278,6 +300,57 @@ function compare_years(set_a, set_b)
             println("  ", a)
         end
     end
+end
+
+function dependency_graph(registry, repo, year)
+    uuid_to_name_d = uuid_to_name(registry)
+    uuid = get_uuid(registry, repo)
+    dependents = Set{String}()
+    push!(dependents, uuid)
+    latest = String[uuid]
+    while length(latest) > 0
+        recently_added = copy(latest)
+        # @show recently_added
+        empty!(latest)
+        uuids = _direct_dependents(registry, recently_added, uuid_to_name_d)
+        for u in uuids
+            if !(u in dependents)
+                push!(dependents, u)
+                push!(latest, u)
+            end
+        end
+    end
+    return [uuid_to_name_d[d] for d in dependents]
+end
+
+function _direct_dependents(registry, recently_added, uuid_to_name)
+    dependents = String[]
+    for (root, dirs, files) in walkdir(registry)
+        latest = true
+        if "Deps.toml" in files
+            latest = true
+        elseif "dependencies.toml" in files
+            latest = false
+        else
+            continue
+        end
+        deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
+        pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
+        deps = Pkg.TOML.parsefile(deps_file)
+        for (key, val) in deps
+            # Only add as a dependent if the most-recent version uses it!
+            if !(key == "0" || endswith(key, "-0"))
+                continue
+            end
+            i = findfirst(u -> u in values(val), recently_added)
+            if i !== nothing
+                pkg = Pkg.TOML.parsefile(pkg_file)
+                push!(dependents, String(pkg["uuid"]))
+                println(uuid_to_name[recently_added[i]], " => ", url_to_name(pkg["repo"]))
+            end
+        end
+    end
+    return dependents
 end
 
 """
@@ -335,7 +408,7 @@ function dependency_stars(
     return stars
 end
 
-function build_table(repo, years)
+function build_table(repo, years; use_stars::Bool = true)
     my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
     build_issue_dataset(repo, my_auth)
 
@@ -343,38 +416,48 @@ function build_table(repo, years)
     data = CSV.read(data_dir(esc_repo * ".csv"))
 
     registry = joinpath(Pkg.devdir(), "..", "registries", "General")
-    stars = Dict(
-        year => dependency_stars(registry, repo, year, my_auth)
-        for year in years
-    )
+
+    stars = if use_stars
+        Dict(
+            year => dependency_stars(registry, repo, year, my_auth)
+            for year in years
+        )
+    else
+        Dict{Int, Any}()
+    end
     # Compute metrics.
-    metrics = [
-        "Number of GitHub stars" =>
-            y -> sum(stars[y][repo] .<= Dates.Date(y, 12, 31)),
-        "Number of registered dependent packages" =>
-            (y) -> begin
-                if length(stars[y]) == 1
-                    return 0
-                elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
-                    return 0
-                end
-                return sum(
-                    sum(s .<= Dates.Date(y, 12, 31)) > 0
-                    for (d, s) in stars[y] if d != repo && length(s) > 0
-                )
-            end,
-        "Cumulative GitHub stars of dependent packages" =>
-            (y) -> begin
-                if length(stars[y]) == 1
-                    return 0
-                elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
-                    return 0
-                end
-                return sum(
-                    sum(s .<= Dates.Date(y, 12, 31))
-                    for (d, s) in stars[y] if d != repo && length(s) > 0
-                )
-            end,
+    metrics = []
+    if use_stars
+        append!(metrics, [
+            "Number of GitHub stars" =>
+                y -> sum(stars[y][repo] .<= Dates.Date(y, 12, 31)),
+            "Number of registered dependent packages" =>
+                (y) -> begin
+                    if length(stars[y]) == 1
+                        return 0
+                    elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
+                        return 0
+                    end
+                    return sum(
+                        sum(s .<= Dates.Date(y, 12, 31)) > 0
+                        for (d, s) in stars[y] if d != repo && length(s) > 0
+                    )
+                end,
+            "Cumulative GitHub stars of dependent packages" =>
+                (y) -> begin
+                    if length(stars[y]) == 1
+                        return 0
+                    elseif sum(length(s) > 0 for (d, s) in stars[y] if d != repo) == 0
+                        return 0
+                    end
+                    return sum(
+                        sum(s .<= Dates.Date(y, 12, 31))
+                        for (d, s) in stars[y] if d != repo && length(s) > 0
+                    )
+                end,
+        ])
+    end
+    append!(metrics, [
         "Number of GitHub issues" =>
             y -> number_open(data, false, y),
         "Number of GitHub pull requests" =>
@@ -383,7 +466,7 @@ function build_table(repo, years)
             y -> number_users(data, false, y),
         "Number of users who have opened a GitHub pull requests" =>
             y -> number_users(data, true, y),
-    ]
+    ])
     # Write metrics to CSV.
     open(data_dir(esc_repo * "_report.csv"), "w") do io
         print(io, repo)
@@ -408,7 +491,9 @@ function build_table(repo, years)
             println(io)
         end
     end
-    summarize_repository(repo, stars[years[end]])
+    if use_stars
+        summarize_repository(repo, stars[years[end]])
+    end
     return
 end
 
@@ -707,21 +792,24 @@ end
 #                                                                              #
 # ============================================================================ #
 
+ENV["GITHUB_AUTH"] = "6d75ef627342d7ca72a33e9bb95c0cd3e5b981b5"
+
 if !haskey(ENV, "GITHUB_AUTH")
     error(
         "You must supply a GitHub authentication token by setting GITHUB_AUTH."
     )
 end
 
-summarize_discourse()
+# summarize_discourse()
 
-for repo in [
-    "jump-dev/JuMP.jl",
-    "jump-dev/MathOptInterface.jl",
-    "jrevels/Cassette.jl",
-    "JuliaDiff/ChainRules.jl",
-    "YingboMa/ForwardDiff2.jl"
+for (repo, use_stars) in [
+    # ("julialang/Julia", false),
+    ("jump-dev/JuMP.jl", true),
+    ("jump-dev/MathOptInterface.jl", true),
+    ("jrevels/Cassette.jl", true),
+    ("JuliaDiff/ChainRules.jl", true),
+    ("YingboMa/ForwardDiff2.jl", true),
 ]
-    build_table(repo, [2017, 2018, 2019, 2020])
+    build_table(repo, [2017, 2018, 2019, 2020]; use_stars = use_stars)
 end
 
