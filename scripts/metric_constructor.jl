@@ -42,9 +42,10 @@ Return a DataFrame containing a list of all GitHub issues and pull requests.
  * closed_at
  * is_pr
 """
-function build_issue_dataset(repo, my_auth)
+function build_issue_dataset(repo, my_auth, force = true)
+    @show repo
     esc_repo = esc_repo_name(repo)
-    if isfile(data_dir(esc_repo * ".csv"))
+    if !force && isfile(data_dir(esc_repo * ".csv"))
         return
     end
     @info "Summarizing issues of $(repo)"
@@ -444,7 +445,7 @@ function build_table(repo, years; use_stars::Bool = true)
     build_issue_dataset(repo, my_auth)
 
     esc_repo = esc_repo_name(repo)
-    data = CSV.read(data_dir(esc_repo * ".csv"))
+    data = CSV.read(data_dir(esc_repo * ".csv"), DataFrames.DataFrame)
 
     registry = joinpath(Pkg.devdir(), "..", "registries", "General")
 
@@ -527,13 +528,14 @@ function plot_number_issues(df::DataFrames.DataFrame)
         xlabel = "Date",
         ylabel = "Count",
         legend = :topleft,
+        margin = 10Plots.mm,
     )
     issues = filter(r -> !r[:is_pr], df)
     Plots.plot!(
         reverse(issues[!, :created_at]),
         1:size(issues, 1);
         label = "Issues",
-        width = 3,
+        width = 1,
         color = "#ba4840"
     )
     prs = filter(r -> r[:is_pr], df)
@@ -541,7 +543,42 @@ function plot_number_issues(df::DataFrames.DataFrame)
         reverse(prs[!, :created_at]),
         1:size(prs, 1);
         label = "Pull Requests",
-        width = 3,
+        width = 1,
+        linestyle = :dash,
+        color = "slategray"
+    )
+end
+
+function plot_open_issues(df::DataFrames.DataFrame)
+    function _count_open(df)
+        times = sort(union(df[!, :created_at], skipmissing(df[!, :closed_at])))
+        y = map(
+            t -> sum(df[!, :created_at] .<= t) -
+                 sum(skipmissing(df[!, :closed_at]) .<= t),
+            times
+        )
+        return DataFrames.DataFrame(date = times, open = y)
+    end
+    issues = _count_open(df[df[!, :is_pr] .== false, :])
+    prs = _count_open(df[df[!, :is_pr] .== true, :])
+    Plots.plot(
+        title = "Count of open\nGithub Issues and Pull Requests",
+        xlabel = "Date",
+        ylabel = "Count",
+        legend = :topleft,
+    )
+    Plots.plot!(
+        issues[!, :date],
+        issues[!, :open];
+        label = "Issues",
+        width = 1,
+        color = "#ba4840"
+    )
+    Plots.plot!(
+        prs[!, :date],
+        prs[!, :open];
+        label = "Pull Requests",
+        width = 1,
         linestyle = :dash,
         color = "slategray"
     )
@@ -559,9 +596,12 @@ function plot_count_users(df::DataFrames.DataFrame)
         xlabel = "Date",
         ylabel = "Unique User IDs",
         legend = :topleft,
+        margin = 10Plots.mm,#5Plots.mm,
     )
     issues = filter(r -> !r[:is_pr], df)
-    users_with_issues = DataFrames.by(issues, :created_at) do d
+    users_with_issues = DataFrames.combine(
+        DataFrames.groupby(issues, :created_at),
+    ) do d
         tmp = filter(r -> r[:created_at] <= d[1, :created_at], issues)
         return length(unique(tmp[!, :login]))
     end
@@ -569,11 +609,13 @@ function plot_count_users(df::DataFrames.DataFrame)
         users_with_issues[!, :created_at],
         users_with_issues[!, :x1];
         label = "Issues",
-        width = 3,
+        width = 1,
         color = "#ba4840"
     )
     prs = filter(r -> r[:is_pr], df)
-    users_with_prs = DataFrames.by(prs, :created_at) do d
+    users_with_prs = DataFrames.combine(
+        DataFrames.groupby(prs, :created_at),
+     ) do d
         tmp = filter(r -> r[:created_at] <= d[1, :created_at], prs)
         return length(unique(tmp[!, :login]))
     end
@@ -581,7 +623,7 @@ function plot_count_users(df::DataFrames.DataFrame)
         users_with_prs[!, :created_at],
         users_with_prs[!, :x1];
         label = "Pull Requests",
-        width = 3,
+        width = 1,
         linestyle = :dash,
         color = "slategray"
     )
@@ -589,11 +631,12 @@ end
 
 function summarize_repository(repo, stars)
     esc_repo = esc_repo_name(repo)
-    df = CSV.read(data_dir(esc_repo * ".csv"))
+    df = CSV.read(data_dir(esc_repo * ".csv"), DataFrames.DataFrame)
     Plots.plot(
         plot_number_issues(df),
         plot_count_users(df),
-        size = (1_000, 400)
+        plot_open_issues(df),
+        size = (1_000, 800)
     )
     Plots.savefig(data_dir(esc_repo * ".pdf"))
 
@@ -603,6 +646,20 @@ function summarize_repository(repo, stars)
     )
     sort!(df, :stars, rev=true)
     CSV.write(data_dir(esc_repo * "_dependencies.csv"), df)
+end
+
+function plot_issue_dashboard(repo)
+    esc_repo = esc_repo_name(repo)
+    df = CSV.read(data_dir(esc_repo * ".csv"), DataFrames.DataFrame)
+    Plots.plot(
+        plot_open_issues(df),
+        plot_number_issues(df),
+        plot_count_users(df),
+        layout = (1, 3),
+        size = (1_500, 400),
+        margin = 10Plots.mm,
+    )
+    Plots.savefig(data_dir(esc_repo * ".pdf"))
 end
 
 # ============================================================================ #
@@ -706,9 +763,8 @@ function plot_discourse_plots()
     reply_count_df = DataFrames.DataFrame(
         reply_count = collect(values(reply_count))
     )
-    reply_count_df = DataFrames.by(
-        reply_count_df,
-        :reply_count
+    reply_count_df = DataFrames.combine(
+        DataFrames.groupby(reply_count_df, :reply_count),
     ) do d
         return size(d, 1)
     end
@@ -726,11 +782,13 @@ function plot_discourse_plots()
     df[!, :unique_posters] = [length(unique(df[1:n, :orig_user])) for n = 1:size(df, 1)]
 
     post_count = DataFrames.sort(
-        DataFrames.by(
-            DataFrames.by(df, :orig_user) do d
-                return DataFrames.DataFrame(post = size(d, 1))
-            end,
-            :post
+        DataFrames.combine(
+            DataFrames.groupby(
+                DataFrames.combine(DataFrames.groupby(df, :orig_user)) do d
+                    return DataFrames.DataFrame(post = size(d, 1))
+                end,
+                :post,
+            ),
         ) do d
             return size(d, 1)
         end,
@@ -816,16 +874,36 @@ if !haskey(ENV, "GITHUB_AUTH")
     )
 end
 
-summarize_discourse()
+# summarize_discourse()
 
-for (repo, use_stars) in [
-    ("julialang/Julia", false),
-    ("jump-dev/JuMP.jl", true),
-    ("jump-dev/MathOptInterface.jl", true),
-    ("jrevels/Cassette.jl", true),
-    ("JuliaDiff/ChainRules.jl", true),
-    ("YingboMa/ForwardDiff2.jl", true),
-]
-    build_table(repo, [2017, 2018, 2019, 2020]; use_stars = use_stars)
-end
+# for (repo, use_stars) in [
+#     # ("julialang/Julia", false),
+#     ("jump-dev/JuMP.jl", false),
+#     ("jump-dev/MathOptInterface.jl", false),
+#     # ("jrevels/Cassette.jl", true),
+#     # ("JuliaDiff/ChainRules.jl", true),
+#     # ("YingboMa/ForwardDiff2.jl", true),
+# ]
+#     build_table(repo, [2017, 2018, 2019, 2020, 2021]; use_stars = use_stars)
+# end
 
+my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
+build_issue_dataset("jump-dev/JuMP.jl", my_auth)
+plot_issue_dashboard("jump-dev/JuMP.jl")
+build_issue_dataset("jump-dev/MathOptInterface.jl", my_auth)
+plot_issue_dashboard("jump-dev/MathOptInterface.jl")
+
+jump = CSV.read(data_dir("jump-dev_JuMP_jl.csv"), DataFrames.DataFrame)
+moi = CSV.read(data_dir("jump-dev_MathOptInterface_jl.csv"), DataFrames.DataFrame)
+df = vcat(jump, moi)
+sort!(df, :created_at, rev=true)
+
+Plots.plot(
+    plot_open_issues(df),
+    plot_number_issues(df),
+    plot_count_users(df),
+    layout = (1, 3),
+    size = (1_500, 400),
+    margin = 10Plots.mm,
+)
+Plots.savefig(data_dir("combined.pdf"))

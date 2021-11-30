@@ -1,11 +1,371 @@
 number,title,login,created_at,closed_at,is_pr
-2418,Use setindex! internally,blegat,2020-12-16T09:21:03.0,,true
+2789,Update release_notes.md,odow,2021-11-02T01:21:14.0,2021-11-02T22:45:16.0,true
+2788,Slow evaluation of nonlinear callbacks,odow,2021-11-02T01:14:51.0,,false
+2787,[docs] Clarify MOI symbol imports,odow,2021-10-31T22:08:18.0,2021-11-02T22:13:18.0,true
+2786,[docs] Propose new tutorial on multiple solutions.,jd-foster,2021-10-29T05:25:57.0,2021-11-01T03:24:05.0,true
+2785,[docs] edit models.jl,odow,2021-10-29T02:18:21.0,2021-10-31T04:39:07.0,true
+2784,[docs] Add note on solver-specific attributes,odow,2021-10-29T01:30:32.0,2021-11-01T20:11:26.0,true
+2783,Should SparseAxisArray <: AbstractArray?,odow,2021-10-28T22:12:22.0,2021-11-01T20:19:16.0,false
+2782,Export Result and Termination status codes,odow,2021-10-27T21:14:53.0,2021-10-31T21:40:49.0,true
+2781,[docs] fix admonition in callbacks.md,odow,2021-10-27T04:05:52.0,2021-10-27T04:31:28.0,true
+2780,Update to MOI 0.10.4,odow,2021-10-26T23:43:41.0,2021-10-27T02:23:27.0,true
+2779,[docs] update footer link to source files,odow,2021-10-26T20:51:27.0,2021-10-26T23:44:53.0,true
+2778,[docs] add sets and indexing tutorial,odow,2021-10-26T00:40:10.0,2021-10-26T19:17:09.0,true
+2777,[docs] revise diet tutorial II,odow,2021-10-25T19:47:05.0,2021-10-25T20:11:35.0,true
+2776,[docs] revise cannery tutorial,odow,2021-10-25T07:36:46.0,2021-10-25T21:06:58.0,true
+2775,[docs] revise diet tutorial,odow,2021-10-25T04:46:48.0,2021-10-25T19:45:03.0,true
+2774,[Containers] throw nice error for size(::SparseAxisArray),odow,2021-10-25T02:52:58.0,2021-10-28T22:10:28.0,true
+2773,[docs] edit the getting started tutorials,odow,2021-10-22T04:57:26.0,2021-10-23T04:35:22.0,true
+2772,[docs] tweak intro docs and expand installation,odow,2021-10-22T00:36:37.0,2021-10-22T01:34:11.0,true
+2771,[docs] Use local image for space shuttle example,odow,2021-10-22T00:35:52.0,2021-10-22T03:48:13.0,true
+2770,Add get/set_variable/constraint_attribute,joaquimg,2021-10-21T18:58:09.0,2021-11-01T20:14:15.0,false
+2769,"Make delete, is_valid and set_objective_coefficient consistent with other methods",joaquimg,2021-10-21T18:51:44.0,2021-11-01T20:20:58.0,false
+2768,[Containers] make Array copy the data,odow,2021-10-20T21:14:14.0,2021-10-21T22:15:59.0,true
+2767,Follow bang convention,extradosages,2021-10-20T18:42:06.0,2021-10-20T21:00:44.0,false
+2766,Copy in Array constructor from DenseAxisArray,blegat,2021-10-20T17:59:59.0,2021-10-21T22:15:59.0,false
+2765,Improve docstring links for xxx_status,odow,2021-10-20T01:50:56.0,2021-10-20T03:14:45.0,true
+2764,Add release notes for 0.22,odow,2021-10-20T01:40:09.0,2021-10-20T21:01:08.0,true
+2763,[docs] Various minor changes to the docs,odow,2021-10-19T23:27:23.0,2021-10-20T00:40:48.0,true
+2762,[Containers] maintenance of SparseAxisArray.jl,odow,2021-10-19T04:13:54.0,2021-10-20T21:31:15.0,true
+2761,[docs] reorganization of tutorials,odow,2021-10-18T23:29:01.0,2021-10-19T00:53:47.0,true
+2760,Build docs as a PDF,odow,2021-10-18T07:30:45.0,2021-10-28T19:16:24.0,true
+2759,[docs] revise and improve power_systems tutorial,odow,2021-10-18T01:30:21.0,2021-10-18T06:15:37.0,true
+2758,Work-around bug in MutableArithmetics,odow,2021-10-17T23:33:31.0,2021-10-18T00:14:04.0,true
+2757,[docs] Various improvements to getting started tutorials,odow,2021-10-17T22:45:33.0,2021-10-18T01:26:41.0,true
+2756,[breaking] Make moi_backend a concrete type and remove MANUAL mode,odow,2021-10-15T00:34:03.0,2021-10-20T00:42:30.0,true
+2755,[docs] improve extensions.md,odow,2021-10-13T21:00:09.0,2021-10-14T18:32:19.0,true
+2754,Relax type restriction in _parse_ref_sets,odow,2021-10-13T19:17:17.0,2021-10-13T21:01:31.0,true
+2753,Fix incorrect auto register of splats,odow,2021-10-13T03:01:23.0,2021-10-13T20:26:20.0,true
+2752,Fix TODO items in print.jl,odow,2021-10-12T23:33:58.0,2021-10-13T20:28:41.0,true
+2751,[Containers] document nested and vectorized_product,odow,2021-10-12T21:58:45.0,2021-10-12T22:16:29.0,true
+2750,Improve performance of GenericAffExpr,odow,2021-10-12T03:45:05.0,,true
+2749,Style improvements to aff_expr.jl,odow,2021-10-12T03:01:35.0,2021-10-12T03:34:08.0,true
+2748,WIP: use add_constraints in macros,odow,2021-10-12T02:14:59.0,2021-10-25T02:55:32.0,true
+2747,[docs] better clarify variable bound on LHS error,odow,2021-10-11T23:53:47.0,2021-10-12T00:40:45.0,true
+2746,[Containers] cleanup and document the macro API,odow,2021-10-11T23:11:23.0,2021-10-12T23:37:01.0,true
+2745,[docs] variety of minor changes,odow,2021-10-11T08:04:14.0,2021-10-11T09:01:36.0,true
+2744,[breaking] remove unused Containers.generate_container,odow,2021-10-11T04:46:43.0,2021-10-11T21:44:10.0,true
+2743,[docs] move contributing guide to docs and expand,odow,2021-10-11T02:08:23.0,2021-10-11T21:43:52.0,true
+2742,[docs] Clarify usage of set_optimizer and add docs for relax_integrality,odow,2021-10-08T03:44:21.0,2021-10-10T21:55:07.0,true
+2741,Add fallbacks for == 0 of expressions,odow,2021-10-08T01:34:34.0,2021-10-10T23:45:41.0,true
+2740,Add a test for reordering kwargs in macros,odow,2021-10-08T00:54:21.0,2021-10-08T01:23:53.0,true
+2739,Set names for anonymous constraints,odow,2021-10-08T00:36:09.0,2021-10-10T21:54:44.0,true
+2738,[docs] Improve documentation for name and set_name,odow,2021-10-07T22:22:03.0,2021-10-08T01:48:55.0,true
+2737,Fixing a missed case in the OR logic in tips_and_tricks.jl,jlwether,2021-10-07T06:42:13.0,2021-10-07T21:29:15.0,true
+2736,[breaking] refactor the parse_constraint methods,odow,2021-10-07T01:57:38.0,2021-10-12T22:17:18.0,true
+2735,Tracking the time-to-first-solve issue,odow,2021-10-05T03:35:21.0,,false
+2734,Don't return MA.Zero from expressions,odow,2021-10-04T23:23:52.0,2021-10-10T22:14:35.0,true
+2733,Add set inequality syntax for any set,odow,2021-10-04T22:45:37.0,2021-10-07T20:51:21.0,true
+2732,[breaking] Deprecate SDconstraint and add new syntax for PSDCone constraints,odow,2021-10-04T03:10:43.0,2021-10-04T22:16:57.0,true
+2731,[breaking] Make moi_xxx functions private,odow,2021-10-04T02:18:37.0,2021-10-04T05:25:45.0,true
+2730,Warn if DenseAxisArray is passed Number as axis,odow,2021-10-04T01:57:59.0,2021-10-10T23:30:50.0,true
+2729,Add error message for variable comparison with number,odow,2021-10-03T22:05:56.0,2021-10-04T22:13:34.0,true
+2728,Improve error message for invalidly named containers,odow,2021-10-01T04:38:19.0,2021-10-01T23:47:17.0,true
+2727,Size of `gh-pages` branch,odow,2021-10-01T02:24:25.0,2021-10-08T01:10:18.0,false
+2726,[docs] add examples to extension documentation,odow,2021-10-01T01:50:56.0,2021-10-01T02:15:05.0,true
+2725,Add better error messages for vectors passed as variable bounds,odow,2021-10-01T01:50:29.0,2021-10-01T03:56:19.0,true
+2724,Doc cleanup workflow,guilhermebodin,2021-09-30T17:08:43.0,2021-10-01T00:51:21.0,true
+2723,Add proper benchmarking scripts,odow,2021-09-30T04:36:50.0,2021-10-03T20:50:59.0,true
+2722,Refactor test/macros.jl into functional form,odow,2021-09-30T02:51:26.0,2021-09-30T03:20:41.0,true
+2721,gh-pages branch can get big with `push_preview=true`,guilhermebodin,2021-09-30T02:46:01.0,2021-10-01T00:51:21.0,false
+2720,[docs] Clarify user-defined containers,odow,2021-09-30T00:54:32.0,2021-09-30T21:49:32.0,true
+2719,[breaking] Add anonymous NLparameters and registered named parameters,odow,2021-09-29T22:48:22.0,2021-10-01T03:32:05.0,true
+2718,Clean up NLparameter macro and improve tests,odow,2021-09-29T22:19:37.0,2021-09-29T22:44:04.0,true
+2717,Fix bug when querying attributes from an optimizer,odow,2021-09-29T02:37:14.0,2021-11-01T20:11:59.0,true
+2716,[docs] Document zero and one gotchas for expressions,odow,2021-09-29T01:17:20.0,2021-09-29T03:30:21.0,true
+2715,Usage Question,chelseas,2021-09-28T23:51:05.0,2021-09-29T03:11:41.0,false
+2714,Clarify documentation of build_variable,odow,2021-09-28T21:52:47.0,2021-09-29T03:10:52.0,true
+2713,[Containers] convert axes to AbstractVector in DenseAxisArray,odow,2021-09-27T23:00:35.0,2021-09-28T21:19:27.0,true
+2712,Improve error for non-constant Interval constraints,odow,2021-09-27T01:55:11.0,2021-09-27T20:16:13.0,true
+2711,WIP: remove zero() and one() for variables and expressions,odow,2021-09-27T01:27:08.0,2021-09-28T20:34:10.0,true
+2710,Add primal_feasibility_report(::Function,odow,2021-09-27T00:50:13.0,2021-09-27T20:22:06.0,true
+2709,[breaking] Reset model to OPTIMIZE_NOT_CALLED if model is modified after optimize,odow,2021-09-26T23:47:20.0,2021-09-30T21:09:00.0,true
+2708,Throw better error for singular macros,odow,2021-09-23T04:49:51.0,2021-09-26T22:36:00.0,true
+2707,[Containers] Implement Base.hash,odow,2021-09-23T03:15:21.0,2021-09-23T22:33:28.0,true
+2706,Warn when copying unknown extension data,odow,2021-09-23T03:07:39.0,2021-09-23T22:34:07.0,true
+2705,Only shift constant if supported,odow,2021-09-23T02:52:26.0,2021-09-23T22:33:14.0,true
+2704,Do not set Name attributes if unsupported,odow,2021-09-23T02:41:19.0,2021-09-29T00:40:09.0,true
+2703,Fix deprecation of VectorQuadraticFunction,odow,2021-09-23T02:18:27.0,2021-09-23T02:41:29.0,true
+2702,Remove variable_type and constraint_type,odow,2021-09-23T00:00:28.0,2021-09-23T02:11:29.0,true
+2701,[breaking] make ::Function first argument of value,odow,2021-09-22T23:52:48.0,2021-09-25T00:52:02.0,true
+2700,[docs] Fix invalid local links,odow,2021-09-22T22:46:42.0,2021-09-22T23:31:44.0,true
+2699,[breaking] rename .m field of some structs to .model,odow,2021-09-22T22:20:48.0,2021-09-22T23:31:58.0,true
+2698,Fix barrier/simplex iteration swap in summary,blegat,2021-09-22T20:20:39.0,2021-09-22T21:06:47.0,true
+2697,erronerous output in solution_summary (Barrier/Simplex iterations),xhub,2021-09-22T09:20:41.0,2021-09-22T21:06:46.0,false
+2696,Error thrown when pushing a DenseAxisArray into a set,raphaelsaavedra,2021-09-20T10:30:45.0,2021-09-23T22:33:28.0,false
+2695,[breaking] update to MOI v0.10,odow,2021-09-20T03:22:17.0,2021-09-22T21:47:06.0,true
+2694,[breaking] remove deprecated LP sensitivity,odow,2021-09-20T02:46:55.0,2021-09-21T00:09:52.0,true
+2693,[docs] update build to Julia 1.6,odow,2021-09-20T00:17:09.0,2021-09-20T02:32:17.0,true
+2692,"Bug using ""/"" before the variable in @variable macro",Thiago-NovaesB,2021-09-17T18:33:57.0,2021-10-12T00:40:45.0,false
+2691,Move release notes to documentation,odow,2021-09-17T04:49:27.0,2021-09-19T04:14:14.0,true
+2690,Make NonlinearExpression <: AbstractJuMPScalar,odow,2021-09-17T04:33:23.0,2021-09-18T01:40:42.0,true
+2689,[Containers] add Array constructor for DenseAxisArray,odow,2021-09-17T04:28:44.0,2021-09-18T01:40:26.0,true
+2688,[docs] Clarify callback gotchas,odow,2021-09-17T04:18:06.0,2021-09-18T00:28:02.0,true
+2687,[docs] Clarify read_from_file does not register names,odow,2021-09-17T04:10:26.0,2021-09-18T00:29:08.0,true
+2686,Fix performance of show on SparseAxisArray,odow,2021-09-16T23:56:23.0,2021-09-18T00:28:31.0,true
+2685,Improve error message of unsupported constraints,odow,2021-09-16T23:35:21.0,2021-09-22T21:56:54.0,true
+2684,Add MadNLP.jl to suppported solvers,sshin23,2021-09-14T00:11:15.0,2021-09-16T23:35:40.0,true
+2683,Large SparseAxisArrays get stuck on `show`,raphaelsaavedra,2021-09-13T16:45:13.0,2021-09-18T00:28:31.0,false
+2682,Style guide: `using Foo: Foo` is an acceptable substitute for `import Foo`,DilumAluthge,2021-09-11T22:48:00.0,2021-09-17T02:22:01.0,true
+2681,Prep for 0.21.10,odow,2021-09-04T03:17:49.0,2021-09-05T03:01:45.0,true
+2680,Improve error message of unsupported constraints,odow,2021-09-02T22:02:09.0,2021-09-22T21:56:53.0,false
+2679,set_dual_start_value() error,brad-sturt,2021-08-30T18:11:28.0,2021-09-17T04:19:57.0,false
+2678,Implement owner_model for expressions,odow,2021-08-29T01:47:34.0,2021-10-05T00:02:14.0,false
+2677,Stop returning MA.Zero() from expressions,NLaws,2021-08-27T11:46:07.0,2021-10-10T22:14:35.0,false
+2676,Revert Tokenize version fix,odow,2021-08-26T04:35:39.0,2021-08-26T05:57:42.0,true
+2675,Documentation improvements,odow,2021-08-25T23:31:32.0,2021-10-11T21:43:52.0,false
+2674,Attempt to fix formatting CI,odow,2021-08-25T00:04:41.0,2021-08-25T01:55:07.0,true
+2673,Format failing on master,odow,2021-08-24T23:17:20.0,2021-08-26T05:57:42.0,false
+2672,Improved Raw Expression NLP API,pulsipher,2021-08-24T16:26:07.0,2021-08-24T22:53:08.0,true
+2671,Extend Raw NLP Expr Input to Allow AffExprs and QuadExprs,pulsipher,2021-08-23T16:18:30.0,2021-08-24T22:53:07.0,false
+2670,Defining a problem when an analytical expression exists for the Jacobian,Peter-Jolly,2021-08-23T10:35:11.0,2021-08-24T00:10:01.0,false
+2669,Update readme - follow rename on Discourse post,joaquimg,2021-08-21T21:11:58.0,2021-08-21T23:29:53.0,true
+2668,README improvements,joaquimg,2021-08-20T21:10:31.0,2021-08-21T00:25:27.0,true
+2667,[docs] Some solvers do not support start values,odow,2021-08-17T06:47:40.0,2021-08-19T04:25:47.0,true
+2666,Fix bug in relax_integrality,odow,2021-08-15T03:42:28.0,2021-08-20T00:05:23.0,true
+2665,nothing comparison improvement in DenseAxisArray.jl,AtsushiSakai,2021-08-13T07:52:58.0,2021-08-13T11:46:27.0,true
+2664,Add a fallback for getting constraint basis status in `lp_sensitivity_report`,AtsushiSakai,2021-08-12T07:54:08.0,2021-08-12T20:16:13.0,true
+2663,Write a tutorial solving parametric problems,odow,2021-08-11T22:18:12.0,2021-10-25T03:06:18.0,false
+2662,LP sensitivity reports,odow,2021-08-11T22:08:35.0,,false
+2661,Add _get_try and fallbacks for some elements of solution summary,AtsushiSakai,2021-08-11T05:29:40.0,2021-08-11T09:31:56.0,true
+2660,Format /docs folder,odow,2021-08-09T05:01:27.0,2021-08-09T06:29:01.0,true
+2659,Run JuliaFormatter on tutorials,joaquimg,2021-08-08T23:04:10.0,2021-08-09T06:29:01.0,false
+2658,Add facility location tutorial,joaquimg,2021-08-08T01:51:49.0,2021-08-09T04:49:55.0,true
+2657,Add vector of scalar variables with `in` syntax,joaquimg,2021-08-07T22:23:28.0,2021-10-02T00:31:19.0,true
+2656,Errors when running JuMP examples from documentation (ERROR: LoadError: UndefVarError: optimize! not defined),Peter-Jolly,2021-08-07T03:24:31.0,2021-08-07T23:16:01.0,false
+2655,Do not set names if the solver does not support it,jd-lara,2021-08-04T02:05:10.0,2021-09-29T00:40:09.0,false
+2654,"Model that builds in v0.21.8 errors in v0.21.9 with ""constraints are not supported""",nickrobinson251,2021-08-02T11:05:10.0,2021-10-10T21:55:06.0,false
+2653,Prep for 0.21.9,odow,2021-07-30T09:49:39.0,2021-08-01T01:15:10.0,true
+2652,Missing parenthesis in docs.,dourouc05,2021-07-28T12:45:30.0,2021-07-28T13:28:52.0,true
+2651,Surprising argument ordering in macros,odow,2021-07-26T19:25:19.0,2021-10-08T01:23:53.0,false
+2650,[docs] add example of how to evaluate objective function at a point,jd-foster,2021-07-26T07:58:30.0,2021-08-04T06:12:11.0,true
+2649,copy conflict fails when model has parameters,jd-lara,2021-07-26T03:50:28.0,2021-09-23T22:34:07.0,false
+2648,Bugs in solution summary when results not available,odow,2021-07-24T01:13:15.0,2021-08-11T09:31:56.0,false
+2647,Names lost from model when read from file,nickrobinson251,2021-07-22T16:17:31.0,2021-09-18T00:29:08.0,false
+2646,[docs] clarify when to use Symbols and Strings,odow,2021-07-13T23:39:29.0,2021-08-03T23:04:55.0,true
+2645,[docs] suggest fix over a new constraint,odow,2021-07-12T20:21:26.0,2021-07-12T23:01:14.0,true
+2644,Constructor of Array with DenseAxisArray,blegat,2021-07-09T20:35:03.0,2021-09-18T01:40:26.0,false
+2643,Add `name` keyword to macros,odow,2021-07-09T05:01:28.0,2021-10-08T01:00:09.0,false
+2642,Document callback gotchas,odow,2021-07-06T21:04:48.0,2021-09-18T00:28:02.0,false
+2640,Dual value computation / convention?,matbesancon,2021-06-30T10:31:50.0,2021-06-30T15:52:14.0,false
+2639,Clarify the documentation on user-defined gradients,odow,2021-06-27T22:46:55.0,2021-06-28T00:03:04.0,true
+2638,User-defined gradients need to accept AbstractVector,odow,2021-06-27T22:38:44.0,2021-06-28T00:03:04.0,false
+2637,objective_value(model) returns the wrong objective function evaluation,anastasianikolako,2021-06-27T00:17:25.0,2021-06-27T03:38:24.0,false
+2636,Rename `.m` field of some structs,odow,2021-06-22T01:48:19.0,2021-09-22T23:31:58.0,false
+2635,Error message improvement for value(Array of NLexpression),anastasianikolako,2021-06-22T00:56:24.0,2021-09-18T01:40:42.0,false
+2633,Revert 6a9621049da7fdc743c619c6a4feeef23715387d for v0.21.8,odow,2021-06-21T03:16:17.0,2021-06-21T03:17:13.0,true
+2632,Update to documenter 0.27,odow,2021-06-19T01:25:45.0,2021-06-20T23:02:27.0,true
+2631,Apply the OutdatedWarning from DocumenterTools,odow,2021-06-19T00:48:05.0,2021-06-20T23:03:18.0,true
+2630,Update printing of SparseAxisArray,odow,2021-06-17T05:38:33.0,2021-06-18T23:38:45.0,true
+2629,DNMY: Tests for performance improvements,odow,2021-06-16T22:06:02.0,2021-06-17T05:08:18.0,true
+2628,Affine expressions are slow,odow,2021-06-16T22:05:04.0,2021-06-19T00:03:41.0,false
+2627,Throw better errors when multiplying,odow,2021-06-16T05:41:24.0,2021-10-10T23:35:55.0,true
+2626,Fix printing on v.17,odow,2021-06-16T05:17:18.0,2021-06-16T22:07:52.0,true
+2625,Fix logo link in README,odow,2021-06-13T21:32:53.0,2021-06-13T22:12:13.0,true
+2624,stable printing for SparseAxisArray.jl,vtjnash,2021-06-09T18:12:53.0,2021-06-18T23:38:45.0,false
+2623,doctest failure on v1.7,vtjnash,2021-06-09T18:08:16.0,2021-06-16T22:07:52.0,false
+2622,Unhelpful error message for affine and quadratic expression combination,erhenderson4,2021-06-08T16:43:44.0,2021-08-05T08:16:45.0,false
+2621,Fix map for DenseAxisArray with OneTo axes,blegat,2021-06-06T13:27:02.0,2021-06-08T01:59:38.0,true
+2620,Unhelpful error message for `@NLparameter`,odow,2021-06-01T00:27:09.0,2021-09-29T22:44:04.0,false
+2619,Add Pluralization of @NLparameters (#2593),Pramodh-G,2021-05-31T05:33:45.0,2021-06-01T03:44:50.0,true
+2618,[breaking] Ignore infinite variable bounds,odow,2021-05-31T05:12:07.0,2021-09-22T23:36:07.0,true
+2617,fix typo,jiweiqi,2021-05-31T01:04:43.0,2021-05-31T01:10:10.0,true
+2616,Rename backend variables to moi_backend,odow,2021-05-27T22:47:57.0,2021-05-27T23:32:44.0,true
+2615,Use unsafe_backend in various places,odow,2021-05-27T22:39:38.0,2021-05-27T23:31:27.0,true
+2614,OptimizerWithAttributes direct model constructor,jd-lara,2021-05-25T23:35:58.0,2021-05-27T22:24:30.0,true
+2613,[docs] Minor edit to index.md,Carl-Ning-Yan,2021-05-25T15:12:05.0,2021-05-25T19:53:43.0,true
+2612,Fix inference in add_constraint,odow,2021-05-25T00:21:43.0,2021-05-25T02:14:37.0,true
+2611,Type-stability of add_constraint,odow,2021-05-25T00:01:05.0,2021-05-25T02:14:37.0,false
+2610,Bridge backend of Model if needed,odow,2021-05-21T04:10:47.0,2021-10-20T00:42:29.0,true
+2609,Auto-register is incorrect when splatting,odow,2021-05-20T21:16:21.0,2021-10-13T20:26:20.0,false
+2608,Fix documentation by adding ndims(::AbstractJuMPScalar),odow,2021-05-19T21:31:14.0,2021-05-19T21:57:07.0,true
+2607,Documentation is broken,odow,2021-05-19T21:24:56.0,2021-05-19T21:57:07.0,false
+2606,Add an `@register` macro,dpsanders,2021-05-19T17:56:15.0,2021-06-01T03:51:42.0,false
+2605,Example: how to list conflicting constraints,jd-foster,2021-05-19T05:02:39.0,2021-05-20T20:21:45.0,true
+2604,Public API for Building Containers in Macros,pulsipher,2021-05-18T15:28:05.0,2021-10-12T23:37:00.0,false
+2603,Mention latency in performance tips,odow,2021-05-17T23:49:46.0,2021-05-18T01:25:02.0,true
+2602,Mention solver-dependent callbacks,odow,2021-05-17T23:30:20.0,2021-05-18T01:25:36.0,true
+2601,Clarify that delete does not call unregister,odow,2021-05-17T23:19:53.0,2021-05-18T03:02:35.0,true
+2600,Simplify documentation for SOS,odow,2021-05-17T22:57:08.0,2021-05-18T00:33:08.0,true
+2599,Improve error for Interval constraints with non-constant set,odow,2021-05-17T01:48:51.0,2021-09-27T20:16:13.0,false
+2598,Fix misplaced backstick in solution doc,blegat,2021-05-16T13:40:19.0,2021-05-16T16:19:36.0,true
+2597,Update status reporting in rocket notebook,blegat,2021-05-16T11:58:15.0,2021-05-16T21:53:59.0,true
+2596,Tweak logo,cormullion,2021-05-15T11:43:25.0,2021-05-16T21:43:03.0,true
+2595,Generalize build_variable for Variable(s)ConstrainedOnCreation,pulsipher,2021-05-14T16:50:19.0,2021-05-17T19:17:13.0,true
+2594,Enhance Usability of Variable(s)ConstrainedOnCreation for Extensions,pulsipher,2021-05-13T15:22:10.0,2021-05-17T19:17:13.0,false
+2593,Pluralisation of @NLparameters,path-doc,2021-05-13T10:01:40.0,2021-06-01T03:52:15.0,false
+2592,added support for is_valid for nonlinear constraints,hdavid16,2021-05-12T20:58:59.0,2021-05-16T21:54:42.0,true
+2591,Better document SOS1 and SOS2,odow,2021-05-12T20:07:35.0,2021-05-18T00:33:08.0,false
+2590,Add support for Containers in VectorConstraints,c-jg,2021-05-12T06:37:47.0,2021-05-16T21:54:14.0,true
+2589,Document that delete does not call unregister,odow,2021-05-10T20:12:56.0,2021-05-18T03:02:35.0,false
+2588,Document solver-dependent callbacks,aaaaluba,2021-05-07T09:16:56.0,2021-05-18T01:25:36.0,false
+2586,Prep for 0.21.8,odow,2021-05-06T21:39:05.0,2021-05-08T22:45:09.0,true
+2585,changed/added logos for darkmode,cormullion,2021-05-03T14:56:02.0,2021-05-03T19:52:25.0,true
+2584,Update the JuMP logo to match modern Julia,odow,2021-05-03T04:33:56.0,2021-06-03T21:35:57.0,true
+2583,Disallow multiple positional arguments in the `@variable` macro,joaquimg,2021-05-03T03:22:57.0,2021-09-29T03:10:52.0,false
+2582,Improve error when singular macro used instead of plural,odow,2021-05-03T01:35:44.0,2021-09-26T22:36:00.0,false
+2581,Logo thoughts,cormullion,2021-05-02T15:19:20.0,2021-06-03T21:35:57.0,false
+2579,[docs] Add NEOSServer.jl to the installation guide,odow,2021-04-29T04:54:23.0,2021-04-29T09:58:43.0,true
+2578,[docs] remove solver-specific notes,odow,2021-04-29T04:52:43.0,2021-04-29T21:07:02.0,true
+2577,Discuss start-up latency in performance tips,odow,2021-04-28T21:56:43.0,2021-05-18T01:25:02.0,false
+2576,Added ∈ for @variable set notation,pulsipher,2021-04-26T21:20:35.0,2021-04-28T21:57:13.0,true
+2575,Fix doctests for MOI 0.9.21,odow,2021-04-24T23:16:36.0,2021-04-25T01:19:01.0,true
+2574,Enhance extendibility of constraint macros,pulsipher,2021-04-22T23:57:35.0,2021-05-03T21:29:08.0,true
+2573,Allow Extra Positional Arguments for @constraint,pulsipher,2021-04-22T15:57:07.0,2021-05-03T21:29:08.0,false
+2572,Add unsafe_backend,odow,2021-04-22T01:43:43.0,2021-05-16T23:28:58.0,true
+2571,Remove link to JuMPTutorials,odow,2021-04-22T01:14:20.0,2021-04-22T02:44:51.0,true
+2570,Allow overloading of container types,odow,2021-04-21T08:29:29.0,2021-05-11T23:32:24.0,true
+2569,Throw better error in lp_sensitivity_report,odow,2021-04-21T01:21:36.0,2021-08-12T20:16:13.0,false
+2568,fix `Base.warn_once`,tmigot,2021-04-21T01:09:20.0,2021-04-21T04:03:22.0,true
+2567,Deprecated `Base.warn_once`,tmigot,2021-04-21T01:08:04.0,2021-04-21T04:03:22.0,false
+2566,Error on modify-then-query,odow,2021-04-20T22:05:22.0,2021-09-30T21:09:00.0,false
+2565,Add a function to get inner-most optimizer,odow,2021-04-20T20:27:39.0,2021-05-16T23:28:57.0,false
+2564,The plan for 1.0,odow,2021-04-20T20:24:17.0,,false
+2563,Support Containers in `VectorConstraints`,odow,2021-04-20T17:20:54.0,2021-05-16T21:54:13.0,false
+2562,Fix handling of nonbasic free variables in lp_sensitivity_report,odow,2021-04-15T23:22:31.0,2021-04-20T20:28:36.0,true
+2561,Add Bonmin and Couenne to list of supported solvers,odow,2021-04-15T22:46:30.0,2021-04-16T04:11:26.0,true
+2560,LP sensitivity summary doesn't handle nonbasic free variables correctly,odow,2021-04-15T21:42:19.0,2021-04-20T20:28:36.0,false
+2559,Allow AffExpr and QuadExpr in NL expressions,odow,2021-04-15T04:39:34.0,2021-04-17T21:16:45.0,true
+2558,Fix bug broadcasting constraints with sparse terms,odow,2021-04-15T03:59:09.0,2021-09-22T23:34:35.0,true
+2557,fix a typo in subexpressions.jl,jz2903,2021-04-11T13:56:15.0,2021-04-11T19:50:18.0,true
+2556,Prep for v0.21.7,odow,2021-04-11T00:13:58.0,2021-04-12T08:08:48.0,true
+2555,Spell check,remi-garcia,2021-04-10T07:35:00.0,2021-04-11T08:55:41.0,true
+2554,[docs] clarify user-defined functions return scalars,odow,2021-04-09T05:20:24.0,2021-04-10T04:08:17.0,true
+2553,Improve types of empty SparseAxisArrays,odow,2021-04-06T23:11:48.0,2021-04-15T21:07:11.0,true
+2552,type unstability with container generation,etienneINSA,2021-04-06T08:37:52.0,2021-04-15T21:07:10.0,false
+2551,"Add set_start_value(x, ::Nothing)",odow,2021-03-31T03:21:59.0,2021-03-31T03:46:25.0,true
+2550,Allow iterators of unknown size in macros,odow,2021-03-31T00:22:27.0,2021-04-07T08:40:44.0,true
+2549,[docs] begin JuMP extensions,odow,2021-03-31T00:01:48.0,2021-03-31T03:13:13.0,true
+2548,Make some moi_xxx functions private,odow,2021-03-30T22:55:21.0,2021-09-27T03:36:26.0,true
+2547,Add more docstrings,odow,2021-03-30T22:49:44.0,2021-03-30T23:29:11.0,true
+2546,Remove un-used code,odow,2021-03-30T22:39:08.0,2021-04-06T19:26:41.0,true
+2545,SCIP.jl installation type change,Wimmerer,2021-03-28T00:50:24.0,2021-03-28T04:21:21.0,true
+2544,Restore multiline LaTeX,odow,2021-03-26T03:21:26.0,2021-03-26T05:04:29.0,true
+2543,Improve error message and add warning when re-registering a function,odow,2021-03-26T03:07:48.0,2021-03-28T01:01:31.0,true
+2542,Add JuliaFormatter to the style guide,odow,2021-03-26T02:50:34.0,2021-03-30T22:26:22.0,true
+2541,Add two tests for copying of expressions.,odow,2021-03-25T19:35:45.0,2021-03-25T20:23:31.0,true
+2540,Pluto Notebook support.,waltsims,2021-03-25T19:20:11.0,2021-03-25T19:39:02.0,false
+2539,Ordering of function arguments,odow,2021-03-25T19:04:08.0,2021-09-25T00:52:02.0,false
+2538,[ci skip] update NEWS,odow,2021-03-24T00:44:45.0,2021-03-25T23:23:08.0,true
+2537,Auto-register nonlinear functions,odow,2021-03-23T18:40:35.0,2021-04-04T22:16:29.0,true
+2536,Improve the error message for unsupported functions,odow,2021-03-23T06:41:45.0,2021-03-23T22:20:04.0,true
+2535,[docs] white background for logo,odow,2021-03-23T06:25:20.0,2021-04-14T23:32:59.0,true
+2534,Expand norm() error message,odow,2021-03-23T06:18:33.0,2021-03-23T18:37:16.0,true
+2533,Support broadcasting over multiple DenseAxisArrays,odow,2021-03-23T04:26:22.0,2021-04-05T20:34:42.0,true
+2532,[docs] refactor conic tips and tricks,odow,2021-03-23T03:41:42.0,2021-03-23T04:22:22.0,true
+2531,Refactor MIP tips and tricks,odow,2021-03-23T02:52:02.0,2021-03-23T03:22:50.0,true
+2530,[docs] Add performance tips,odow,2021-03-23T02:51:19.0,2021-03-23T03:13:42.0,true
+2529,Collect axes in DenseAxisArray on construction,odow,2021-03-23T01:02:20.0,2021-04-14T23:31:24.0,true
+2528,Support copying containers,odow,2021-03-22T23:57:44.0,2021-03-25T22:28:32.0,true
+2527,Support AbstractArray in DenseAxisArray constructor,odow,2021-03-22T23:38:26.0,2021-03-26T01:45:11.0,true
+2526,Feasibility checker with function,blegat,2021-03-22T08:47:27.0,2021-09-27T20:22:06.0,false
+2525,[docs] update roadmap,odow,2021-03-22T03:35:47.0,2021-03-22T07:22:11.0,true
+2524,Allow slicing of DenseAxisArray,odow,2021-03-22T01:01:18.0,2021-03-22T21:32:55.0,true
+2523,Replace Containers with an external package,odow,2021-03-16T19:43:36.0,2021-05-11T23:32:24.0,false
+2522,Embed the stable MathOptInterface docs into JuMP.,odow,2021-03-16T03:15:15.0,2021-09-22T21:47:23.0,true
+2521,Faster deletion of bounds in fix,blegat,2021-03-09T09:38:26.0,2021-03-09T19:21:48.0,true
+2520,Concrete optimizer type in CachingOptimizer,blegat,2021-03-09T08:45:35.0,2021-10-20T00:42:30.0,true
+2519,[docs] Fix typo in callbacks,odow,2021-03-09T05:31:56.0,2021-03-09T06:52:20.0,true
+2634,Do not add infinite bounds,odow,2021-03-08T19:04:07.0,2021-09-22T23:39:40.0,false
+2518,[docs] Clarify warning in Nonlinear Modeling,odow,2021-03-04T02:29:54.0,2021-03-04T03:08:16.0,true
+2517,JuMP appears unable to recognise that a matrix is positive definite,ASaragga,2021-03-03T15:15:51.0,2021-03-03T15:21:48.0,false
+2516,Register NLparameters and pretty print them,davidanthoff,2021-03-03T06:13:56.0,2021-03-07T01:35:17.0,true
+2515,Improve performance of value(NonlinearExpression),odow,2021-03-02T21:48:13.0,2021-03-11T19:25:24.0,true
+2513,WIP: only bridge if needed,odow,2021-03-02T01:53:22.0,2021-05-21T04:10:59.0,true
+2512,Add `solution_summary` function,AtsushiSakai,2021-03-01T14:11:34.0,2021-03-16T03:16:46.0,true
+2511,Formatting: format and add CI action,odow,2021-03-01T05:04:34.0,2021-03-17T20:43:30.0,true
+2510,Support anonymous NL parameters,davidanthoff,2021-02-28T20:50:30.0,2021-10-01T03:32:05.0,false
+2509,Register non linear parameters in the model,davidanthoff,2021-02-28T20:49:35.0,2021-03-07T01:35:17.0,false
+2508,Update roadmap.md,odow,2021-02-25T22:47:41.0,2021-02-28T18:34:42.0,true
+2506,Add add_NL_expression function,davidanthoff,2021-02-25T17:03:53.0,2021-08-24T22:53:08.0,false
+2504,Begin explanation section of docs,odow,2021-02-23T22:32:26.0,2021-02-25T21:48:08.0,true
+2503,DNMY: Switch to building documentation on Julia 1.5,odow,2021-02-23T01:54:36.0,2021-03-17T19:51:37.0,true
+2502,Clarify the difference between variables and parameters,odow,2021-02-22T23:06:15.0,2021-02-23T00:31:23.0,true
+2501,Update power_systems.jl,odow,2021-02-22T22:56:56.0,2021-02-22T23:21:58.0,true
+2499,Add logistic regression tutorial from JuMPTutorials,frapac,2021-02-22T22:02:41.0,2021-03-02T00:07:41.0,true
+2498,Add sandbox for doc includes,odow,2021-02-22T21:14:50.0,2021-02-22T22:10:25.0,true
+2497,Add plotting to tutorials,odow,2021-02-22T19:24:08.0,2021-02-22T21:17:35.0,true
+2496,Adds yet another modelling tutorial from JuMPTutorials,ferrolho,2021-02-22T16:03:28.0,2021-02-23T23:51:38.0,true
+2495,Documentation failing on master with MOI 0.9.20,odow,2021-02-21T04:43:07.0,2021-02-21T20:07:26.0,false
+2494,Fix doctests,odow,2021-02-21T04:42:14.0,2021-02-21T20:07:26.0,true
+2493,Merge example and tutorial directories.,odow,2021-02-20T20:55:04.0,2021-02-21T21:12:36.0,true
+2492,JuMP logo on night/dark theme,joaquimg,2021-02-20T18:26:07.0,2021-05-02T19:48:12.0,false
+2491,diet.jl: add a bit more context to doc comments,waldyrious,2021-02-20T15:02:41.0,2021-02-20T20:08:52.0,true
+2490,Increase the visibility of the community forum,odow,2021-02-20T04:47:14.0,2021-02-20T20:40:32.0,true
+2489,Add modelling tutorials,odow,2021-02-20T04:46:33.0,2021-02-22T01:09:21.0,true
+2487,Documentation suggestions from Discourse,odow,2021-02-19T19:48:21.0,2021-03-23T18:58:47.0,false
+2486,Add better error message when index is same as model,odow,2021-02-19T04:39:29.0,2021-02-21T04:07:46.0,true
+2485,Document extensions,odow,2021-02-19T02:35:38.0,2021-10-14T18:32:19.0,false
+2484,Add precompilation directives,odow,2021-02-19T01:24:41.0,2021-03-22T04:34:08.0,true
+2483,Migrate JuMPTutorials,odow,2021-02-18T21:58:27.0,2021-08-13T02:15:40.0,false
+2482,Rewrite the solution documentation,odow,2021-02-18T21:25:16.0,2021-02-20T20:08:12.0,true
+2481,Tidy various docstrings,odow,2021-02-18T21:08:05.0,2021-02-20T22:46:04.0,true
+2480,Restructure API Reference material,odow,2021-02-18T02:40:46.0,2021-02-18T19:28:34.0,true
+2479,Delete nonlinear_modelling tutorial,odow,2021-02-18T01:24:05.0,2021-02-18T01:43:02.0,true
+2478,Rewrite the Model documentation,odow,2021-02-17T06:25:30.0,2021-02-17T22:59:06.0,true
+2477,Reorganize documentation layout,odow,2021-02-17T03:54:16.0,2021-02-17T06:25:46.0,true
+2476,Rewrite the Containers documentation,odow,2021-02-17T03:29:18.0,2021-02-18T20:08:00.0,true
+2474,Fix missing method in Containers when forcing the container type,odow,2021-02-16T04:07:22.0,2021-02-16T19:19:17.0,true
+2473,Add missing docstrings in sd.jl,odow,2021-02-16T02:06:21.0,2021-02-16T08:14:45.0,true
+2472,Add missing docstrings in print.jl,odow,2021-02-16T02:02:11.0,2021-02-21T20:11:03.0,true
+2471,Add missing docstrings in JuMP.jl,odow,2021-02-16T02:00:48.0,2021-02-18T22:03:02.0,true
+2470,Refactor the NLP documentation,odow,2021-02-15T23:48:19.0,2021-02-17T02:16:39.0,true
+2469,[docs] Refactor the problem modification tutorial into existing docs,odow,2021-02-15T21:32:24.0,2021-02-17T02:15:43.0,true
+2468,Add docstrings to functions in nlp.jl,odow,2021-02-15T06:14:32.0,2021-02-16T00:38:16.0,true
+2467,Revise tutorial Getting started with JuMP,odow,2021-02-15T02:25:24.0,2021-02-15T23:55:12.0,true
+2466,First pass at a feasibility checker.,odow,2021-02-15T00:05:44.0,2021-03-22T02:35:35.0,true
+2465,Support kwargs in variable macro,odow,2021-02-14T22:38:18.0,2021-02-15T22:36:31.0,true
+2464,Allow AbstractVector in VectorConstraints,odow,2021-02-14T22:19:37.0,2021-02-19T19:35:02.0,true
+2463,Throw a helpful error for begin...end in NL macros,odow,2021-02-14T21:35:58.0,2021-02-18T00:24:32.0,true
+2462,Special case deg2rad and rad2deg in 2nd_deriv,odow,2021-02-14T21:19:39.0,2021-02-15T23:52:32.0,true
+2461,sum comparison parses wrongly without error,Wikunia,2021-02-14T10:25:26.0,2021-10-11T02:55:54.0,false
+2460,Restore multiline LaTeX,blegat,2021-02-12T17:20:59.0,2021-03-26T05:04:29.0,false
+2459,Revise tutorial Getting started with Julia,odow,2021-02-12T03:25:15.0,2021-02-15T23:53:08.0,true
+2458,[docs] Add Highs to install guide,odow,2021-02-11T22:02:32.0,2021-02-12T01:30:48.0,true
+2457,Inference failure of SparseAxisArray,odow,2021-02-10T21:50:47.0,,false
+2456,Update installation.md,MatthewStuber,2021-02-10T20:58:03.0,2021-02-10T21:15:26.0,true
+2455,`TypeError` when using `rad2deg` in a `@NLexpression`,ferrolho,2021-02-07T18:36:35.0,2021-02-15T23:52:32.0,false
+2454,[docs] Tweak wording of multiple results documentation,odow,2021-02-07T00:38:41.0,2021-02-07T23:41:32.0,true
+2453,[docs] Update done items on roadmap,odow,2021-02-06T22:53:06.0,2021-02-09T03:25:14.0,true
+2452,Update NEWS.md,davidanthoff,2021-02-05T18:42:16.0,2021-02-05T21:04:02.0,true
+2451,Add nice fallback for build_variable,odow,2021-02-05T00:51:44.0,2021-02-13T00:42:06.0,true
+2450,Fix build_variable docstrings in sd.jl,odow,2021-02-05T00:34:38.0,2021-02-06T08:10:37.0,true
+2449,Refactor printing to reduce content printed in IJulia mode,odow,2021-02-04T21:11:37.0,2021-03-25T21:24:49.0,true
+2448,Inconsistance between @NLobjective and @objective ,sylvaticus,2021-02-03T09:38:46.0,2021-02-18T00:24:31.0,false
+2447,Fix printing in IJuliaMode,odow,2021-02-02T20:39:22.0,2021-02-13T00:41:37.0,true
+2446,Fix TODOs in print.jl,odow,2021-02-02T03:28:33.0,2021-10-13T20:28:40.0,false
+2445,Refactor examples into subdirectories,odow,2021-02-01T20:00:07.0,2021-02-03T17:11:58.0,true
+2444,Migrate non-modeling tutorials from JuMPTutorials.jl,odow,2021-02-01T03:46:25.0,2021-02-05T00:56:15.0,true
+2443,Refactor the examples by categorizing them into broader themes.,odow,2021-01-31T23:29:54.0,2021-02-01T20:11:12.0,true
+2442,Implemented coefficient for expressions,junglegobs,2021-01-30T12:17:17.0,2021-02-11T19:38:07.0,true
+2441,[ci] Fix release branch wildcard for GH actions,odow,2021-01-29T00:25:05.0,2021-01-29T18:24:00.0,true
+2440,TagBot trigger issue,JuliaTagBot,2021-01-28T23:42:41.0,2021-01-28T23:42:42.0,false
+2439,[docs] Update done items on roadmap,odow,2021-01-28T21:37:19.0,2021-01-30T07:30:19.0,true
+2438,JuMP v0.18.6 doesn't compile in Julia v1.6,niclasmattsson,2021-01-27T18:45:03.0,2021-10-01T03:35:35.0,false
+2437,Extend CommonSolve.jl?,ChrisRackauckas,2021-01-27T03:44:36.0,2021-01-27T23:28:31.0,false
+2436,Generalize ConstraintRef Model type,guilhermebodin,2021-01-26T16:52:51.0,2021-01-29T18:43:21.0,true
+2435,Add a better error message when there are duplicate indices in a container,odow,2021-01-26T07:14:12.0,2021-01-26T19:52:15.0,true
+2434,Add PATH to installation guide,odow,2021-01-26T02:09:38.0,2021-01-26T20:04:29.0,true
+2433,Add a CI job for nightly,odow,2021-01-21T03:37:13.0,2021-01-27T14:55:19.0,true
+2432,How to use `constraint_by_name` for vectorized constraints,ShuhuaGao,2021-01-19T11:25:16.0,2021-01-19T15:16:31.0,false
+2430,[docs] improve nonlinear docs,odow,2021-01-18T06:43:24.0,2021-02-17T02:16:39.0,false
+2428,`sum` over a `SparseAxisArray`,hdavid16,2021-01-12T20:24:11.0,2021-01-12T23:17:20.0,false
+2427,update SCIP URL and org,matbesancon,2021-01-12T15:05:06.0,2021-01-12T20:15:12.0,true
+2426,Prep for JuMP 0.21.6,odow,2021-01-11T23:17:14.0,2021-01-28T23:18:47.0,true
+2425,Bug copying models with quadratic expressions,odow,2021-01-07T20:39:51.0,2021-03-25T22:28:32.0,false
+2424,Container with a dictionary as the dimension,odow,2021-01-05T22:37:46.0,2021-09-28T21:19:27.0,false
+2423,Fix printing of variable names in IJuliaMode,odow,2021-01-05T02:01:25.0,2021-01-13T19:18:55.0,true
+2422,Variable names with underscores print incorrectly in IJuliaMode,odow,2021-01-04T22:42:04.0,2021-01-13T19:18:55.0,false
+2421,Split variable macro in macro + function,joaquimg,2021-01-04T02:25:07.0,2021-05-18T03:03:28.0,true
+2420,Fix error for printing in IJuliaMode,guilhermebodin,2021-01-02T06:04:47.0,2021-01-05T01:25:15.0,true
+2419,"Change isapprox(a,b) to a \approx b in tests",mikerouleau,2021-01-01T21:12:55.0,2021-01-04T20:48:33.0,true
+2418,Use setindex! internally,blegat,2020-12-16T09:21:03.0,2020-12-17T20:57:49.0,true
 2417,Add an unregister function,odow,2020-12-16T00:56:00.0,2020-12-16T19:24:51.0,true
-2416,Add support for skew symmetric variables,odow,2020-12-15T23:11:20.0,,true
+2416,Add support for skew symmetric variables,odow,2020-12-15T23:11:20.0,2020-12-23T20:04:42.0,true
 2415,[docs] Fix link in docs,odow,2020-12-15T19:10:52.0,2020-12-15T21:24:52.0,true
 2414,[docs] Add missing docstrings,odow,2020-12-15T03:20:10.0,2020-12-15T23:01:12.0,true
 2413,[docs] Clarify duality warning,odow,2020-12-15T00:10:48.0,2020-12-15T18:25:45.0,true
-2412,[docs] add page on AML concepts,odow,2020-12-14T23:40:30.0,,false
+2412,[docs] add page on AML concepts,odow,2020-12-14T23:40:30.0,2021-02-25T21:48:08.0,false
 2411,Remove incorrect and un-used copy functions,odow,2020-12-14T20:45:18.0,2020-12-15T18:58:41.0,true
 2410,Restructure README,odow,2020-12-14T20:28:22.0,2020-12-14T21:30:37.0,true
 2408,Convert testset to function in test/model.jl,odow,2020-12-14T04:09:49.0,2020-12-14T05:59:11.0,true
@@ -42,7 +402,7 @@ number,title,login,created_at,closed_at,is_pr
 2374,Bump documenter version,odow,2020-11-10T23:42:46.0,2020-11-11T00:04:32.0,true
 2373,Documentation not deployed,mlubin,2020-11-10T14:03:28.0,2020-11-11T00:04:32.0,false
 2372,Update roadmap.md,mlubin,2020-11-10T01:46:57.0,2020-11-10T13:36:42.0,true
-2371,Feature request: implement getindex for expressions,remi-garcia,2020-11-09T18:00:31.0,,false
+2371,Feature request: implement getindex for expressions,remi-garcia,2020-11-09T18:00:31.0,2021-02-11T19:38:07.0,false
 2370,Switch CI to Github actions,odow,2020-11-08T01:31:22.0,2020-11-09T23:49:09.0,true
 2369,Re-enable SpecialFunctions in NLP,odow,2020-11-05T19:33:00.0,2020-12-03T02:14:06.0,true
 2368,Can't register erf as :erf,mewilhel,2020-11-05T18:51:47.0,2020-11-08T01:37:56.0,false
@@ -56,14 +416,14 @@ number,title,login,created_at,closed_at,is_pr
 2358,Source links in solutions.md,remi-garcia,2020-10-22T14:02:57.0,2020-11-08T01:38:40.0,false
 2357,Optimize a quadratic expression with respect to some quadratic Constraints,matthiashimmelmann,2020-10-21T12:11:09.0,2020-10-22T22:24:23.0,false
 2356,Add Alpine to solver list,blegat,2020-10-19T08:03:18.0,2020-10-22T18:23:12.0,true
-2355,Certain base functions on JuMP constraints not implemented for NLconstraints.,1ozturkbe,2020-10-18T11:15:23.0,,false
+2355,Certain base functions on JuMP constraints not implemented for NLconstraints.,1ozturkbe,2020-10-18T11:15:23.0,2021-06-01T03:53:43.0,false
 2354,Clarify what can be done in callbacks,odow,2020-10-16T00:57:43.0,2020-12-03T00:21:54.0,false
 2353,Add BARON to solver list,blegat,2020-10-15T15:20:06.0,2020-10-16T08:13:11.0,true
 2352,Fix naming convention of internal functions,mlubin,2020-10-15T13:47:53.0,2020-10-15T20:54:29.0,true
 2351,Add Pavito to solver list,blegat,2020-10-15T12:12:00.0,2020-10-15T15:15:59.0,true
 2350,Update solver urls with jump-dev migration,blegat,2020-10-14T21:29:33.0,2020-10-15T07:58:22.0,true
 2349,Add NLopt to solver list,blegat,2020-10-14T00:05:00.0,2020-10-14T21:18:52.0,true
-2348,Add documentation on parallel solves of a JuMP model,odow,2020-10-03T06:04:53.0,,false
+2348,Suggestions for documentation improvements,odow,2020-10-03T06:04:53.0,,false
 2347,Using a nonlinear expression in a registered function nested in a nonlinear objective causes a BoundsError,jmaack24,2020-10-01T17:10:55.0,2020-10-01T19:11:41.0,false
 2346,Update http to https and broken websites update,remi-garcia,2020-09-29T11:47:52.0,2020-09-29T13:40:06.0,true
 2345,Relaxation and fixed binary,remi-garcia,2020-09-29T07:31:42.0,2020-10-07T13:02:44.0,true
@@ -72,13 +432,13 @@ number,title,login,created_at,closed_at,is_pr
 2342,Update aff_expr.jl to remove outdated TODO.,vtjeng,2020-09-21T19:54:46.0,2020-09-22T09:33:38.0,true
 2341,Fix linearity check of user-defined function,odow,2020-09-21T04:25:41.0,2020-09-23T14:29:23.0,true
 2340,BoundsError in NLP classify_linearity,odow,2020-09-21T02:06:24.0,2020-09-23T14:29:23.0,false
-2339,Allow copying models with a subset of constraints,dourouc05,2020-09-21T01:33:02.0,,true
+2339,Allow copying models with a subset of constraints,dourouc05,2020-09-21T01:33:02.0,2021-02-22T00:49:32.0,true
 2338,Don't create a testset for each potential test file.,dourouc05,2020-09-21T01:31:11.0,2020-09-26T11:09:32.0,true
 2337,Documentation missing for v0.21.5,mlubin,2020-09-19T16:08:34.0,2020-09-19T19:24:52.0,false
 2336,Fix StackOverflow for NestedIterator,blegat,2020-09-18T13:57:36.0,2020-09-21T21:18:36.0,true
 2335,StackOverflowError for SparseAxisArray of constraints,jd-foster,2020-09-18T05:15:54.0,2020-09-21T21:18:36.0,false
 2334,v0.21.5,odow,2020-09-17T03:44:40.0,2020-09-19T15:18:05.0,true
-2333,[Feature Request] Error Function Keyword Argument for Macros,pulsipher,2020-09-16T17:31:01.0,,false
+2333,[Feature Request] Error Function Keyword Argument for Macros,pulsipher,2020-09-16T17:31:01.0,2021-09-28T23:03:29.0,false
 2332,Update travis badges,mlubin,2020-09-15T01:02:17.0,2020-09-15T01:51:44.0,true
 2330,Update .travis.yml,odow,2020-09-15T00:08:56.0,2020-09-17T03:39:23.0,true
 2329,Fix DataStructues deprecation warnings,mlubin,2020-09-15T00:06:56.0,2020-09-15T00:48:10.0,true
@@ -92,7 +452,7 @@ number,title,login,created_at,closed_at,is_pr
 2321,Check dimensions of functions and sets match,lkapelevich,2020-09-02T12:37:50.0,2020-09-15T19:47:55.0,true
 2320,Bug in SDP parsing?,migarstka,2020-08-31T16:27:02.0,2020-09-04T10:30:48.0,false
 2319,Add MOI.submit dispatch for Real values,andrewrosemberg,2020-08-21T10:14:32.0,2020-08-22T17:26:23.0,true
-2318,Subtle trap with semicolon syntax,mlubin,2020-08-21T02:22:09.0,,false
+2318,Subtle trap with semicolon syntax,mlubin,2020-08-21T02:22:09.0,2021-10-20T00:53:54.0,false
 2317,Add `value` for constraints with a custom `var_value` function,dourouc05,2020-08-20T20:09:53.0,2020-08-31T00:12:50.0,true
 2316,Typo in doc for value(v::VariableRef; result = 1),dourouc05,2020-08-20T16:27:58.0,2020-08-20T20:29:36.0,true
 2315,Bump DataStructures version,jd-lara,2020-08-20T06:50:31.0,2020-08-21T00:09:56.0,true
@@ -101,8 +461,8 @@ number,title,login,created_at,closed_at,is_pr
 2312,Docs: Add info on `start` for multiple variables,dpsanders,2020-08-15T23:52:51.0,2020-08-17T09:03:10.0,false
 2311,README: properly highlight BibTeX code,zlatanvasovic,2020-08-11T22:52:25.0,2020-08-12T09:44:51.0,true
 2310,Missing website,zlatanvasovic,2020-08-11T22:50:50.0,2020-08-12T12:05:17.0,false
-2309,Sparse array addition with diagonal is dense,angeris,2020-08-10T18:09:06.0,,false
-2308,nonlinear complementary constraints,Jovansam,2020-08-08T16:56:17.0,,false
+2309,Sparse array addition with diagonal is dense,angeris,2020-08-10T18:09:06.0,2021-10-10T23:45:41.0,false
+2308,nonlinear complementary constraints,Jovansam,2020-08-08T16:56:17.0,2021-02-18T01:46:08.0,false
 2307,Refactor test/variable.jl into functions as opposed to nested testsets,odow,2020-08-08T16:45:21.0,2020-08-08T18:25:56.0,true
 2306,Refactor test/constraints.jl,odow,2020-08-08T14:44:02.0,2020-08-08T16:38:41.0,true
 2305,Default variable name by the symbol,davide-f,2020-08-03T23:03:21.0,2020-08-04T15:23:01.0,false
@@ -114,14 +474,14 @@ number,title,login,created_at,closed_at,is_pr
 2299,Constraints' start values by using variables' start values,davide-f,2020-07-30T12:26:36.0,2020-08-03T11:11:22.0,false
 2298,Something wrong with running JuMP,duyanran,2020-07-30T07:40:20.0,2020-08-04T15:48:45.0,false
 2297,JuMP.set_silent(model) not working for Ipopt,ferrolho,2020-07-27T10:57:58.0,2020-07-27T13:24:57.0,false
-2296,Docs: explain package incompatibility,joaquimg,2020-07-26T21:52:53.0,,false
+2296,Docs: explain package incompatibility,joaquimg,2020-07-26T21:52:53.0,2021-02-05T00:59:40.0,false
 2295,Recommend using multiple dispatch instead of `isa` to check types,joaquimg,2020-07-26T21:43:15.0,2020-11-27T00:42:20.0,false
 2294,Print nonlinear subexpressions,mlubin,2020-07-25T22:31:25.0,2020-07-30T20:59:59.0,true
-2293,Powers print incorrectly in IJulia mode,mlubin,2020-07-25T22:15:31.0,,false
+2293,Powers print incorrectly in IJulia mode,mlubin,2020-07-25T22:15:31.0,2021-01-05T01:25:15.0,false
 2292,Apply JuliaFormatter to nlp.jl,mlubin,2020-07-25T19:31:33.0,2020-11-27T01:26:44.0,true
-2291,Bool.(::DenseAxisArray) errors,oxinabox,2020-07-20T21:01:23.0,,false
+2291,Bool.(::DenseAxisArray) errors,oxinabox,2020-07-20T21:01:23.0,2021-03-26T01:45:11.0,false
 2290,Heuristic callback with non-Float64,blegat,2020-07-19T13:32:53.0,2020-08-22T17:26:23.0,false
-2289,Assignment allowed in macros where it shouldn't be,mlubin,2020-07-18T20:11:03.0,,false
+2289,Assignment allowed in macros where it shouldn't be,mlubin,2020-07-18T20:11:03.0,2021-03-31T02:25:18.0,false
 2288,Infer bounds on binary variables,hdavid16,2020-07-18T17:49:57.0,2020-07-18T18:47:45.0,false
 2287,Printing NLexpressions,ccoffrin,2020-07-17T15:28:30.0,2020-07-17T15:34:18.0,false
 2286,Refactor test/file_formats.jl into functions as opposed to nested testsets,odow,2020-07-17T14:00:09.0,2020-07-17T20:51:58.0,true
@@ -137,12 +497,12 @@ number,title,login,created_at,closed_at,is_pr
 2276,Fix line numbers in macros,odow,2020-07-11T23:46:41.0,2020-07-15T13:56:52.0,true
 2275,Utility for relaxing integrality,mlubin,2020-07-11T20:27:50.0,2020-07-13T02:19:22.0,true
 2274,WIP - Try to fix keys of DenseAxisArray,egbuck,2020-07-11T20:18:27.0,2020-09-17T09:34:33.0,true
-2273,Address invalidations to speed up compile time,mlubin,2020-07-11T17:36:35.0,,false
+2273,Address invalidations to speed up compile time,mlubin,2020-07-11T17:36:35.0,2021-10-05T03:35:39.0,false
 2272,Add checks and tests for NaN in constraints,odow,2020-07-11T15:35:25.0,2020-07-11T18:09:19.0,true
 2271,remove invalid assertion in nlp.jl,mlubin,2020-07-11T15:24:58.0,2020-07-11T17:55:24.0,true
 2270,Don't export macros whose names start with underscores,mlubin,2020-07-11T14:41:51.0,2020-07-11T17:23:13.0,true
 2269,"Reduce CI load by skipping Julia 1.1, 1.2, and 1.3",odow,2020-07-10T13:52:06.0,2020-07-10T19:30:22.0,true
-2267,Broadcasting over multiple DenseAxisArrays,davide-f,2020-07-08T16:31:07.0,,false
+2267,Broadcasting over multiple DenseAxisArrays,davide-f,2020-07-08T16:31:07.0,2021-04-05T20:34:42.0,false
 2266,Give better instructions for building the docs,odow,2020-07-05T22:01:54.0,2020-12-06T20:58:48.0,true
 2265,Update roadmap items,odow,2020-06-30T23:45:39.0,2020-09-07T01:51:59.0,true
 2264,Fix #2263,dourouc05,2020-06-20T20:52:20.0,2020-06-21T01:48:50.0,true
@@ -152,7 +512,7 @@ number,title,login,created_at,closed_at,is_pr
 2260,Missing method with  value(::MA.Zero),odow,2020-06-17T14:47:32.0,2020-06-19T14:56:36.0,false
 2258,prep for 0.21.3,blegat,2020-06-17T12:22:07.0,2020-06-18T08:52:25.0,true
 2257,Deletion of named constraints and creation of identically named constraints,Marthioo,2020-06-15T16:43:22.0,2020-06-16T09:46:43.0,false
-2256,Generalize modification functions,odow,2020-06-15T16:03:50.0,,false
+2256,Generalize modification functions,odow,2020-06-15T16:03:50.0,2021-01-29T18:43:21.0,false
 2255,added note of GAMS solvers to installation doc,renkekuhlmann,2020-06-14T10:43:48.0,2020-06-27T17:52:21.0,true
 2254,Constraint macro RHS and LHS with length(dict[i]) command returns different values,barguzin,2020-06-13T03:26:52.0,2020-06-15T01:33:48.0,false
 2253,Explicit link to the documentation of MOI.FileFormats,dourouc05,2020-06-11T23:42:06.0,2020-06-15T14:42:03.0,true
@@ -162,17 +522,18 @@ number,title,login,created_at,closed_at,is_pr
 2249,update links following move to jump.dev,mlubin,2020-06-08T13:41:17.0,2020-06-09T13:11:50.0,true
 2248,update links following MOI migration to jump-dev org,mlubin,2020-06-08T00:42:09.0,2020-06-08T13:34:39.0,true
 2247,[Extension] Implement set_objective_function instead of set_objective,blegat,2020-06-07T07:58:38.0,2020-06-17T12:22:26.0,true
-2246,`parse_one_operator_constraint`: clash with `parse_ternary_constraint` when there are four arguments,dourouc05,2020-06-04T00:27:15.0,,false
+2246,`parse_one_operator_constraint`: clash with `parse_ternary_constraint` when there are four arguments,dourouc05,2020-06-04T00:27:15.0,2021-10-04T02:25:31.0,false
 2245,Add model_from,blegat,2020-06-01T21:35:05.0,2020-07-01T07:06:31.0,true
 2244,Improve performance of LP sensitivity summary,odow,2020-06-01T14:12:17.0,2020-12-15T21:31:20.0,false
 2243,Passing bounds before other constraints,matbesancon,2020-05-24T10:21:56.0,2020-06-15T14:38:56.0,false
+2587,Custom attributes not queried correctly with caching optimizer,odow,2020-05-21T17:50:05.0,2021-11-01T20:13:18.0,false
 2242,Update COIN-OR Links,jonas-schulze,2020-05-14T18:06:41.0,2020-05-14T19:52:38.0,true
 2241,Add `rewrite_call_expression` through `_rewrite_expr`.,dourouc05,2020-05-12T17:23:46.0,2020-11-05T00:57:46.0,true
 2240,Throw BoundsError if number of indices is incorrect,blegat,2020-05-11T10:56:36.0,2020-06-17T10:22:10.0,true
 2239,Optimized eval_constraint_jacobian_product,amontoison,2020-05-08T20:10:07.0,,true
 2238,Unexpected order of variable indices ,Wikunia,2020-05-07T16:02:26.0,2020-05-12T07:34:10.0,false
-2237,`set_start_value` only accept numbers,henriquebecker91,2020-05-07T02:06:26.0,,false
-2236,Clean up parse_constraint,blegat,2020-05-05T12:51:15.0,,false
+2237,`set_start_value` only accept numbers,henriquebecker91,2020-05-07T02:06:26.0,2021-03-31T03:46:25.0,false
+2236,Clean up and document parse_constraint,blegat,2020-05-05T12:51:15.0,2021-10-12T22:17:18.0,false
 2235,Fix map for DenseAxisArray,blegat,2020-05-01T07:58:37.0,2020-05-06T08:17:36.0,true
 2234,map for DenseAxisArray,blegat,2020-05-01T07:27:08.0,2020-05-06T08:17:36.0,false
 2233,Add a check that constraint RHSs are finite,odow,2020-04-29T21:33:07.0,2020-07-11T18:09:19.0,false
@@ -183,30 +544,31 @@ number,title,login,created_at,closed_at,is_pr
 2227,Support constraint programming in JuMP,dourouc05,2020-04-21T18:24:22.0,,false
 2226,Defined Base.keys for SparseAxisArrays,pulsipher,2020-04-18T20:32:28.0,2020-12-03T00:40:20.0,true
 2225,GenericAffOrQuadExpr undefined in JuMP v0.21.2,heileman,2020-04-15T17:20:44.0,2020-07-11T15:12:00.0,false
+2500,Explain difference of parameter and variable?,cdeil,2020-04-12T20:37:56.0,2021-02-23T00:31:23.0,false
 2224,Update README.md to mention JuMPTutorials.jl,cdeil,2020-04-12T16:00:10.0,2020-04-12T18:58:07.0,true
 2223,Mention tutorials in the docs,cdeil,2020-04-10T22:22:46.0,2020-04-11T15:31:13.0,true
-2222,Updating error message on ambiguous variable,yashcodes,2020-04-07T06:32:05.0,2020-07-01T14:40:55.0,true
-2221,Adding functions to access MOI attributes in nice way,yashcodes,2020-04-06T01:44:14.0,2020-04-06T13:58:42.0,true
+2222,Updating error message on ambiguous variable,yashvardhan747,2020-04-07T06:32:05.0,2020-07-01T14:40:55.0,true
+2221,Adding functions to access MOI attributes in nice way,yashvardhan747,2020-04-06T01:44:14.0,2020-04-06T13:58:42.0,true
 2220,Jwscook/exampleswith optimizer,jwscook,2020-04-04T16:40:45.0,2020-04-04T21:58:11.0,true
 2219,Support MA.Zero in objective and constraints,odow,2020-04-03T02:10:29.0,2020-04-07T02:53:00.0,true
 2218,prep for 0.21.2,blegat,2020-04-02T09:16:15.0,2020-04-02T17:52:17.0,true
-2216,add docstring for variables macro,AKS1996,2020-03-30T14:23:29.0,2020-04-02T09:01:30.0,true
-2215,Feature Request: Reified constraint,Wikunia,2020-03-30T12:23:58.0,,false
-2214,Add warm start for constraint's dual,AKS1996,2020-03-30T09:44:31.0,2020-10-27T23:02:23.0,true
-2213,Missing promote operation,ohmsweetohm1,2020-03-30T08:10:04.0,2020-04-03T01:39:38.0,false
+2216,add docstring for variables macro,be-apt,2020-03-30T14:23:29.0,2020-04-02T09:01:30.0,true
+2215,Feature Request: Reified constraint,Wikunia,2020-03-30T12:23:58.0,2021-02-18T07:27:37.0,false
+2214,Add warm start for constraint's dual,be-apt,2020-03-30T09:44:31.0,2020-10-27T23:02:23.0,true
+2213,Missing promote operation,ValentinKaisermayer,2020-03-30T08:10:04.0,2020-04-03T01:39:38.0,false
 2212,Added SOS1 and SOS2 struct,tomasfmg,2020-03-27T23:35:45.0,2020-04-06T15:01:36.0,true
 2211,"Intial work for batch versions of fix, unfix, delete_lower/upper_bound and similar",henriquebecker91,2020-03-27T01:29:37.0,2020-04-02T22:21:25.0,true
-2210,Scalar product in objective,ohmsweetohm1,2020-03-26T14:02:05.0,2020-04-03T01:32:04.0,false
+2210,Scalar product in objective,ValentinKaisermayer,2020-03-26T14:02:05.0,2020-04-03T01:32:04.0,false
 2209,added conjugation operator for scalars,ExpandingMan,2020-03-25T21:53:51.0,2020-03-27T10:45:17.0,true
 2208,JuMPScalars should have `conj(x) = x` defined since they are required to be real,ExpandingMan,2020-03-25T20:37:10.0,2020-03-27T10:45:17.0,false
 2207,Fix missing docstring source links,amontoison,2020-03-25T02:53:59.0,2020-03-31T00:03:41.0,true
 2206,write_to_file doesn't work on windows,clintonTE,2020-03-24T20:15:30.0,2020-03-24T20:37:35.0,false
 2205,"Function `reduced_cost` (code, documentation, and tests)",henriquebecker91,2020-03-17T02:33:45.0,2020-04-14T16:22:17.0,true
-2204,Report table to query solution,yashcodes,2020-03-14T08:40:50.0,2020-07-01T00:08:38.0,true
-2203,Debug info for unsupported constraints,yashcodes,2020-03-13T13:56:22.0,2020-07-01T15:04:31.0,true
-2202,Adding print_bridge_graph,yashcodes,2020-03-13T03:51:43.0,2020-12-10T22:57:08.0,true
+2204,Report table to query solution,yashvardhan747,2020-03-14T08:40:50.0,2020-07-01T00:08:38.0,true
+2203,Debug info for unsupported constraints,yashvardhan747,2020-03-13T13:56:22.0,2020-07-01T15:04:31.0,true
+2202,Adding print_bridge_graph,yashvardhan747,2020-03-13T03:51:43.0,2020-12-10T22:57:08.0,true
 2201,"#2158 Added functions simplex_iterations(), barrier_iterations() and node_count()",vrngupta53,2020-03-12T19:12:41.0,2020-04-06T17:32:22.0,true
-2200,Feature request: reuse a variable name in `@variable` on non-overlapping indices,remi-garcia,2020-03-12T07:02:09.0,,false
+2200,Feature request: reuse a variable name in `@variable` on non-overlapping indices,remi-garcia,2020-03-12T07:02:09.0,2021-09-30T21:49:32.0,false
 2199,#2158 Added relative_gap() to access MOI.RelativeGap() attribute,vrngupta53,2020-03-11T12:02:37.0,2020-04-02T09:50:48.0,true
 2198,Added Base.empty! method for JuMP.Model.,henriquebecker91,2020-03-10T21:24:17.0,2020-03-13T17:20:23.0,true
 2197,missing add_to_expression! method,jd-lara,2020-03-10T15:39:12.0,2020-03-12T07:30:48.0,false
@@ -215,7 +577,7 @@ number,title,login,created_at,closed_at,is_pr
 2194,variables (plural) macro has no dosctrings,joaquimg,2020-03-06T14:16:37.0,2020-04-03T01:40:50.0,false
 2193,Mark SOC support as done,mlubin,2020-03-05T14:12:11.0,2020-03-05T14:45:28.0,true
 2192,Model(Optimizer) produces an error,yordiak,2020-03-05T10:16:00.0,2020-03-05T10:37:52.0,false
-2191,Feature Request: Report table for query solutions,yordiak,2020-03-05T09:56:15.0,,false
+2191,Feature Request: Report table for query solutions,yordiak,2020-03-05T09:56:15.0,2021-03-16T03:16:45.0,false
 2190,Non-explicit index placed without warning,jd-foster,2020-03-05T05:25:10.0,2020-06-17T10:22:10.0,false
 2189,Variable x[1] does not belong to this model,dmit4git,2020-03-04T19:12:43.0,2020-03-04T19:25:34.0,false
 2188,Add fallback for `_functionize(::MA.Zero)`,odow,2020-03-03T03:28:35.0,2020-03-03T14:15:23.0,true
@@ -229,20 +591,20 @@ number,title,login,created_at,closed_at,is_pr
 2179,Fix construction of empty SparseAxisArray,blegat,2020-02-25T13:39:38.0,2020-03-05T14:41:41.0,true
 2178,Fix sum of expr with scalar product,blegat,2020-02-24T15:24:36.0,2020-02-25T08:28:52.0,true
 2177,"Add @variable to (model, x) in anon var doc",mlhetland,2020-02-24T13:12:05.0,2020-03-03T14:16:07.0,true
-2176,Should SparseAxisArray be an AbstractDict?,matbesancon,2020-02-24T11:28:25.0,,false
+2176,Should SparseAxisArray be an AbstractDict?,matbesancon,2020-02-24T11:28:25.0,2021-05-11T23:32:24.0,false
 2175,Remove a comment that is no more relevant.,dourouc05,2020-02-22T17:30:57.0,2020-04-22T06:50:17.0,true
-2174,Remove variable_type,blegat,2020-02-21T07:50:20.0,,false
-2173,Update example using variable_type,blegat,2020-02-21T07:48:28.0,,false
+2174,Remove variable_type,blegat,2020-02-21T07:50:20.0,2021-09-23T02:11:29.0,false
+2173,Update example using variable_type,blegat,2020-02-21T07:48:28.0,2021-03-31T03:13:13.0,false
 2172,Initialize JuMP model when optimizer is nothing,odow,2020-02-19T22:43:35.0,2020-02-20T00:13:55.0,false
-2171,Print constraints/variables in set form instead of scalarized,odow,2020-02-19T17:35:01.0,,false
+2171,Print constraints/variables in set form instead of scalarized,odow,2020-02-19T17:35:01.0,2021-10-11T02:52:00.0,false
 2169,Creating empty SparseAxisArray not possible,junglegobs,2020-02-19T14:54:14.0,2020-03-05T14:41:40.0,false
 2168,prep for 0.21.1,mlubin,2020-02-17T23:21:01.0,2020-02-18T08:23:16.0,true
-2167,VectorOfVariable to VectorAffineFunction does not keep variable indices?,matbesancon,2020-02-17T11:50:11.0,,false
+2167,VectorOfVariable to VectorAffineFunction does not keep variable indices?,matbesancon,2020-02-17T11:50:11.0,2021-03-31T23:55:16.0,false
 2166,Fix promote_operation with custom AbstractVariableRef,blegat,2020-02-17T11:30:55.0,2020-02-17T18:38:55.0,true
 2165,improve the deprecation warning for with_optimizer,mlubin,2020-02-17T02:39:16.0,2020-02-17T15:50:43.0,true
 2164,final prep for v0.21,mlubin,2020-02-16T03:06:27.0,2020-02-16T12:51:59.0,true
 2163,Sparse Matrix multiplied by variable vector with Julia v1.0.5 and 1.3 ,kaarthiksundar,2020-02-15T23:32:34.0,2020-12-06T02:56:11.0,false
-2162,Better error message for sparse RHS terms in vector constraints,kaarthiksundar,2020-02-15T22:15:58.0,,false
+2162,Better error message for sparse RHS terms in vector constraints,kaarthiksundar,2020-02-15T22:15:58.0,2021-09-22T23:34:35.0,false
 2161,Improve warning messages for with_optimizer deprecation,blegat,2020-02-13T15:35:32.0,2020-02-13T20:35:33.0,true
 2160,Fill news for JuMP v0.21,blegat,2020-02-13T15:34:26.0,2020-02-15T07:24:41.0,true
 2158,Add a nice way to access MOI attributes,odow,2020-02-09T20:56:10.0,2020-04-06T17:32:22.0,false
@@ -256,7 +618,7 @@ number,title,login,created_at,closed_at,is_pr
 2149,Rename `set_parameter` to `set_attributes`,odow,2020-02-03T21:54:02.0,2020-02-04T19:59:47.0,false
 2148,Broadcasting variables constrained on creation,odow,2020-02-02T04:23:12.0,,false
 2147,Support for skew symmetric variables,frederikgeth,2020-02-01T21:35:20.0,2020-12-15T23:09:09.0,true
-2146,Support for skew-symmetric matrix variables,frederikgeth,2020-01-31T22:04:21.0,,false
+2146,Support for skew-symmetric matrix variables,frederikgeth,2020-01-31T22:04:21.0,2020-12-23T20:04:42.0,false
 2145,Where can I find explanation what does mean the columns in the optimization progress table?,adamryczkowski,2020-01-31T19:34:03.0,2020-02-01T08:35:53.0,false
 2144,Where can I find a list of all currently working optimizers?,adamryczkowski,2020-01-31T18:26:48.0,2020-01-31T19:28:23.0,false
 2143,Debug info for unsupported constraints,blegat,2020-01-30T10:45:28.0,2020-07-01T15:04:30.0,false
@@ -285,7 +647,7 @@ number,title,login,created_at,closed_at,is_pr
 2120,Empty sums,odow,2019-12-18T20:43:05.0,2020-02-21T14:42:34.0,false
 2119,Clearer warning about examples version mismatch,mlubin,2019-12-16T02:30:57.0,2019-12-18T02:58:28.0,true
 2118,Use SemVer (Semantic Versioning),igormcoelho,2019-12-14T22:23:20.0,2019-12-17T15:45:20.0,false
-2117,SparseAxisArray does not implement size,matbesancon,2019-12-14T14:32:00.0,,false
+2117,SparseAxisArray does not implement size,matbesancon,2019-12-14T14:32:00.0,2021-10-28T22:10:28.0,false
 2116,fix knapsack example (with_optimizer),igormcoelho,2019-12-14T03:24:25.0,2019-12-14T05:07:26.0,true
 2115,assertion error with ifelse,mlubin,2019-12-11T16:12:59.0,2020-07-11T17:55:24.0,false
 2114,Add write_to_file and read_from_file,odow,2019-12-03T22:19:04.0,2019-12-09T14:19:11.0,true
@@ -298,13 +660,13 @@ number,title,login,created_at,closed_at,is_pr
 2107,Replace parse_expr and destructive_add by MutableArithmetics,blegat,2019-11-23T18:12:14.0,2020-01-03T15:41:54.0,true
 2106,Broadcast not needed in macro,blegat,2019-11-22T15:24:46.0,2020-01-03T15:41:53.0,false
 2105,Constrained variables,blegat,2019-11-22T15:14:53.0,2020-01-04T09:05:19.0,false
-2104,Style: in vs = for index variables in macros,mlubin,2019-11-17T14:42:33.0,,false
+2104,Style: in vs = for index variables in macros,mlubin,2019-11-17T14:42:33.0,2021-03-30T22:26:22.0,false
 2103,Update FUNDING.yml,Dr-G,2019-11-13T17:43:30.0,2019-11-13T19:12:19.0,true
 2102,Problem when defining constraints involving symmetric variables,spironio,2019-11-13T15:27:03.0,2020-01-03T15:41:54.0,false
 2101,Callbacks Episode II: revenge of the solver-independent implementation,odow,2019-11-12T19:57:08.0,2019-11-20T18:00:10.0,true
 2100,Add support for multiple solutions,odow,2019-11-12T01:56:17.0,2019-11-26T16:39:08.0,true
 2099,Multiobjective support in JuMP,odow,2019-11-08T14:40:20.0,,false
-2097,Constant in sum and prod,blegat,2019-11-05T20:38:44.0,,false
+2097,Constant in sum and prod,blegat,2019-11-05T20:38:44.0,2021-04-17T21:16:45.0,false
 2096,Minor JuMP 1.0 roadmap update,mlubin,2019-11-02T20:21:49.0,2019-11-06T19:57:31.0,true
 2095,Update Documenter to 0.23,mlubin,2019-11-02T17:44:58.0,2019-11-02T20:18:43.0,true
 2094,Expose and document dual warm starts,mlubin,2019-11-02T17:11:07.0,2020-10-27T23:02:23.0,false
@@ -320,7 +682,7 @@ number,title,login,created_at,closed_at,is_pr
 2084,Document set_optimizer and remove optimizer argument from optimize!,mlubin,2019-10-19T14:50:23.0,2019-10-20T15:47:07.0,true
 2083,Backports for 0.20.1,blegat,2019-10-18T12:40:47.0,2019-10-18T14:15:26.0,true
 2082,Fill NEWS entry for v0.20.1,blegat,2019-10-18T10:44:53.0,2019-10-18T14:15:33.0,true
-2081,Binary variable inconsistency,ohmsweetohm1,2019-10-15T13:52:25.0,2019-11-17T02:21:41.0,false
+2081,Binary variable inconsistency,ValentinKaisermayer,2019-10-15T13:52:25.0,2019-11-17T02:21:41.0,false
 2080,Add Tulip.jl to list of supported solvers,mtanneau,2019-10-11T21:49:23.0,2019-10-12T12:20:01.0,true
 2079,Now deepcopy(::AbstractModel) calls error,henriquebecker91,2019-10-11T16:28:06.0,2019-10-19T14:52:18.0,true
 2078,Object function may include some third-party library,kuro26,2019-10-09T12:01:50.0,2019-10-09T13:54:22.0,false
@@ -341,11 +703,11 @@ number,title,login,created_at,closed_at,is_pr
 2063,Fix product of sparse matrices for Julia v1.3,blegat,2019-09-17T17:28:51.0,2019-09-21T19:36:06.0,true
 2062,Add plural macro docs,odow,2019-09-15T01:28:35.0,2019-09-16T16:10:52.0,true
 2061,Remove test which depends on internal Bridge functionality,odow,2019-09-15T00:52:59.0,2019-09-15T14:20:01.0,true
-2060,Document that nonlinear expressions cannot be built outside of a macro,xtalax,2019-09-11T16:00:15.0,,false
+2060,Document that nonlinear expressions cannot be built outside of a macro,xtalax,2019-09-11T16:00:15.0,2021-02-17T02:16:39.0,false
 2059,CI is failing on master,mlubin,2019-09-11T13:29:04.0,2019-09-15T14:20:01.0,false
-2058,"""reregister"" a function?",tamasgal,2019-09-10T16:08:55.0,,false
+2058,"""reregister"" a function?",tamasgal,2019-09-10T16:08:55.0,2021-03-28T01:01:31.0,false
 2057,[docs] document how to get MOI attributes,odow,2019-09-09T14:47:26.0,2020-02-10T00:05:35.0,false
-2056,Better error messages for vector variable bounds,pierre-haessig,2019-09-09T14:33:28.0,,false
+2056,Better error messages for vector variable bounds,pierre-haessig,2019-09-09T14:33:28.0,2021-10-01T03:56:19.0,false
 2055,Update constraints.md,ko56,2019-09-05T23:28:38.0,2020-12-15T18:25:45.0,true
 2054,Heads up about test error in JuMP for upcoming 1.3 RC-2.,KristofferC,2019-09-05T13:44:51.0,2019-09-21T19:36:06.0,false
 2053,[[un]set_]time_limit_sec,Wikunia,2019-09-03T09:02:46.0,2019-09-15T15:42:38.0,true
@@ -382,14 +744,14 @@ number,title,login,created_at,closed_at,is_pr
 2022,Update NumFOCUS language in docs,odow,2019-08-10T15:35:58.0,2019-08-10T18:57:22.0,true
 2021,Update language for NumFOCUS,mlubin,2019-08-09T20:24:41.0,2019-08-10T18:57:22.0,false
 2020,callback with MOI,alirouhani,2019-08-07T07:03:23.0,2019-08-19T23:23:23.0,false
-2019,Make ReferenceMap support indexing with containers? ,dourouc05,2019-08-07T01:50:54.0,,false
+2019,Make ReferenceMap support indexing with containers? ,dourouc05,2019-08-07T01:50:54.0,2021-03-25T22:28:32.0,false
 2018,Clarified modifying variable coefficient example,a-torgovitsky,2019-08-06T20:08:58.0,2019-08-08T15:11:08.0,true
 2017,Improved error message for x.f(y) in NL expressions,mlubin,2019-08-03T22:22:53.0,2019-08-04T14:21:06.0,true
 2016,Functions in NLxxx that are stored in struct give bad error,odow,2019-08-01T06:11:25.0,2019-08-04T14:21:06.0,false
 2015,Constraints: use `cref` for constraint references.,dourouc05,2019-07-29T14:07:01.0,2019-07-29T22:17:04.0,true
 2014,Allow `@constraint` without relational operator?,dourouc05,2019-07-29T00:43:07.0,2020-04-21T18:09:13.0,false
-2013,ERROR:: Expected to be a number.,lionisxn,2019-07-25T01:29:56.0,2019-07-25T08:49:33.0,false
-2012,DenseAxisArray with vector of vector of indices,blegat,2019-07-23T21:22:33.0,,false
+2013,ERROR:: Expected to be a number.,Yue-Wang-qvp,2019-07-25T01:29:56.0,2019-07-25T08:49:33.0,false
+2012,DenseAxisArray with vector of vector of indices,blegat,2019-07-23T21:22:33.0,2021-02-18T02:11:10.0,false
 2011,IpoptOptimizer -> Ipopt.Optimizer,Non-Contradiction,2019-07-19T21:13:23.0,2019-07-19T21:45:54.0,true
 2010,Add an example of column generation,dourouc05,2019-07-18T16:44:41.0,2019-09-07T01:54:29.0,true
 2009,Simplify coverage upload in .travis.yml,blegat,2019-07-18T16:43:00.0,2019-07-18T18:17:22.0,true
@@ -450,21 +812,21 @@ number,title,login,created_at,closed_at,is_pr
 1953,Giving guidance on naming of fields in structs,freemin7,2019-05-06T15:07:39.0,2019-05-06T15:49:21.0,true
 1952,Style Guide makes no recommendation for fields in structs,freemin7,2019-05-06T13:33:59.0,2019-05-06T15:09:42.0,false
 1951,Create CITATION.bib,ViralBShah,2019-05-05T16:06:56.0,2019-05-06T00:08:54.0,true
-1950,Bug when formulating LMI constraint with sparse matrices,migarstka,2019-05-03T10:19:26.0,,false
+1950,Bug when formulating LMI constraint with sparse matrices,migarstka,2019-05-03T10:19:26.0,2021-02-19T19:35:02.0,false
 1949,Add raw_status,rtwalker,2019-04-26T17:55:04.0,2019-08-20T09:50:13.0,true
 1948,add additional example - factory schedule MILP,Crghilardi,2019-04-26T03:17:51.0,2020-10-30T04:14:06.0,true
 1947,Ignore terms with a zero coefficient when adding to an `OrderedDict`,odow,2019-04-18T23:14:17.0,2019-04-19T13:16:05.0,true
 1946,Extreme performance degradation from v0.18.5 -> v0.19,angeris,2019-04-18T18:54:55.0,2019-04-19T13:16:04.0,false
 1945,Bounds on SDP matrix variables ,harshangrjn,2019-04-18T05:38:35.0,2019-06-12T23:03:56.0,false
 1944,all_variables reverts indices on multi-dimensional arrays,matbesancon,2019-04-17T18:21:43.0,2019-06-12T23:02:07.0,false
-1943,AffExpr in ZeroOne does not work,blegat,2019-04-17T13:24:17.0,,false
+1943,[Needs MOI 0.9.21] AffExpr in ZeroOne does not work,blegat,2019-04-17T13:24:17.0,2021-09-24T13:41:57.0,false
 1942,raw_status,blegat,2019-04-17T11:50:41.0,2019-08-23T11:21:15.0,false
 1941,Add COSMO.jl to list of available solvers,migarstka,2019-04-11T11:27:03.0,2019-04-12T02:08:42.0,true
 1940,Large optimization models,harshangrjn,2019-04-10T00:20:24.0,2019-06-12T23:07:12.0,false
-1939,Macros should use add_variables & add_constraints rather than singular methods,ndinsmore,2019-04-09T22:01:13.0,,false
-1938,Error message for anonimous variables,joaquimg,2019-04-09T18:39:27.0,,false
+1939,Macros should use add_variables & add_constraints rather than singular methods,ndinsmore,2019-04-09T22:01:13.0,2021-10-28T18:26:41.0,false
+1938,Error message for anonymous variables,joaquimg,2019-04-09T18:39:27.0,2021-10-01T23:47:17.0,false
 1937,Constants modification,blegat,2019-04-09T17:09:58.0,2019-08-23T08:03:27.0,false
-1936,provide function which composes names,ndinsmore,2019-04-09T16:41:18.0,,false
+1936,provide function which composes names,ndinsmore,2019-04-09T16:41:18.0,2021-10-10T23:38:16.0,false
 1935,Add standard_form modifications,odow,2019-04-08T21:29:31.0,2019-04-09T15:48:38.0,true
 1934,Add drop_zeros function,odow,2019-04-08T21:03:58.0,2019-04-09T15:47:48.0,true
 1933,Fix iszero for expressions,odow,2019-04-08T20:00:09.0,2019-04-09T13:20:24.0,true
@@ -485,7 +847,7 @@ number,title,login,created_at,closed_at,is_pr
 1918,Proxsdpdocs,guilhermebodin,2019-03-27T11:50:57.0,2019-03-28T00:43:43.0,true
 1917,Lp sensitivity summary,EdvinAblad,2019-03-23T17:21:40.0,2019-04-25T00:17:07.0,true
 1916,Define SOS variables without a weight (ordering) vector,JipKim,2019-03-21T21:50:28.0,2020-04-06T15:03:00.0,false
-1915,[Useability] `@constraint` and `@variable`: cannot use an iterator,dourouc05,2019-03-21T18:40:11.0,,false
+1915,[Useability] `@constraint` and `@variable`: cannot use an iterator,dourouc05,2019-03-21T18:40:11.0,2021-04-07T08:40:44.0,false
 1914,Nonlinear Modeling: user-defined functions with vector inputs *and* output,ferrolho,2019-03-20T00:33:09.0,2019-07-05T19:34:41.0,false
 1913,Update numfocus donation links,odow,2019-03-19T20:25:06.0,2019-03-27T23:51:16.0,true
 1912,Promote eltype of SOS sets to Float64,odow,2019-03-19T01:57:46.0,2019-04-02T18:51:55.0,true
@@ -495,7 +857,7 @@ number,title,login,created_at,closed_at,is_pr
 1908,"malformed ""import"" statement on v0.18 with Julia 1.2",iamed2,2019-03-18T17:13:39.0,2019-03-28T00:01:58.0,false
 1907,writeLP and writeMPS lost with JuMP 0.19,dourouc05,2019-03-18T16:44:45.0,2019-03-28T00:01:19.0,false
 1906,more tools for determining if expressions are zero,ExpandingMan,2019-03-15T14:27:33.0,2019-05-18T01:19:51.0,false
-1905,Optimize time to add constraints JuMP 0.19.0,Thuener,2019-03-14T20:30:44.0,,false
+1905,Optimize time to add constraints JuMP 0.19.0,Thuener,2019-03-14T20:30:44.0,2021-10-20T01:54:30.0,false
 1904,Improve error on getting duals from variables,barpit20,2019-03-14T14:43:23.0,2019-03-28T00:44:06.0,true
 1903,Improve error on getting duals from variables,joaquimg,2019-03-14T03:31:18.0,2019-03-28T00:44:05.0,false
 1902,generalized sum for GenericQuadExpr,guilhermebodin,2019-03-13T21:23:24.0,2019-04-09T01:37:08.0,true
@@ -505,20 +867,20 @@ number,title,login,created_at,closed_at,is_pr
 1898,Is OrderedDict required in the expressions types of would Dict be sufficent,ndinsmore,2019-03-12T14:50:53.0,2019-03-14T12:15:11.0,false
 1897,Better error message in variables macro,joaquimg,2019-03-12T05:48:17.0,2019-04-08T13:18:17.0,false
 1896,\in not supported in constraint macro,joaquimg,2019-03-12T05:45:56.0,2020-10-25T20:33:53.0,false
-1895,Cannot retrieve vector created with string name,tomerarnon,2019-03-11T03:24:05.0,,false
+1895,Cannot retrieve vector created with string name,tomerarnon,2019-03-11T03:24:05.0,2021-10-08T01:48:54.0,false
 1894,Improvements to the Solver Table,barpit20,2019-03-10T16:35:29.0,2020-12-15T18:26:57.0,false
 1893,Too many open files?,tamasgal,2019-03-10T14:04:08.0,2019-03-10T21:03:18.0,false
 1892,variable lower/upper bound inconsistency,EdvinAblad,2019-03-09T07:39:41.0,2019-08-19T23:46:38.0,false
 1891,getsolvetime in JuMP 0.19,anelkawang,2019-03-08T21:24:11.0,2019-04-13T23:42:03.0,false
 1890,Modify RHS (and define RHS),joaquimg,2019-03-08T03:01:10.0,2019-04-09T15:48:38.0,false
-1889,Does JuMP support max and min operator in the constraint,zhangxz1123,2019-03-07T17:19:51.0,,false
-1887,Define haskey on model,odow,2019-03-05T18:14:51.0,,false
+1889,Does JuMP support max and min operator in the constraint,zhangxz1123,2019-03-07T17:19:51.0,2021-03-23T22:20:04.0,false
+1887,Define haskey on model,odow,2019-03-05T18:14:51.0,2021-03-31T00:08:48.0,false
 1886,Add point in style guide for naming models,barpit20,2019-03-02T17:46:06.0,2019-03-02T18:01:01.0,true
 1885,Style for naming model,blegat,2019-03-02T16:44:14.0,2019-03-04T11:27:13.0,false
-1884,MethodError: Unexpected keyword argument to at-variable,joehuchette,2019-03-01T16:30:13.0,,false
+1884,MethodError: Unexpected keyword argument to at-variable,joehuchette,2019-03-01T16:30:13.0,2021-02-15T22:36:31.0,false
 1883,Suppressing output for `optimize!`,ahmetumutdurmus,2019-03-01T15:04:05.0,2019-03-04T06:09:39.0,false
 1882,Avoiding creation of scalar variables in semidefinite programs,tkoolen,2019-02-28T06:03:59.0,2019-02-28T16:34:05.0,false
-1881,Generate a PDF version of the docs,mlubin,2019-02-28T03:00:31.0,,false
+1881,Generate a PDF version of the docs,mlubin,2019-02-28T03:00:31.0,2021-10-28T19:16:24.0,false
 1880,@lazyconstraint not defined in Julia 1.1,Jeffguitarhero,2019-02-26T19:47:37.0,2019-11-20T18:00:10.0,false
 1879,Rename MOIMosek to MosekTools,blegat,2019-02-26T14:28:42.0,2019-02-27T09:20:50.0,true
 1878,remove localvar hack,mlubin,2019-02-25T00:34:35.0,2019-02-27T03:05:42.0,true
@@ -573,7 +935,7 @@ number,title,login,created_at,closed_at,is_pr
 1828,rename private functions in parse_nlp.jl and nlp.jl,mlubin,2019-02-06T02:35:21.0,2019-02-06T16:59:33.0,true
 1827,Rename reshape -> reshape_result,blegat,2019-02-05T10:47:07.0,2019-02-06T23:33:07.0,true
 1826,value function very slow ,ndinsmore,2019-02-04T20:58:07.0,2019-02-04T22:10:59.0,false
-1825,Exported functions with no doc,blegat,2019-02-04T08:48:46.0,,false
+1825,Exported functions with no doc,blegat,2019-02-04T08:48:46.0,2021-10-04T02:23:38.0,false
 1824,Type-stability issues,odow,2019-02-03T22:09:53.0,2019-02-12T10:08:22.0,false
 1823,Update steelT3.jl,ketitalabs,2019-02-03T14:56:00.0,2019-02-03T19:10:51.0,true
 1822,Update steelT3.jl,ketitalabs,2019-02-03T14:45:45.0,2019-02-03T14:54:15.0,true
@@ -600,7 +962,7 @@ number,title,login,created_at,closed_at,is_pr
 1801,minor edits to solvers.md and solutions.md,mlubin,2019-01-21T23:46:59.0,2019-01-22T21:00:11.0,true
 1800,minor edits to constraints.md,mlubin,2019-01-21T23:30:15.0,2019-01-25T02:33:44.0,true
 1799,Allow for to few degrees of freedom,TorkelE,2019-01-21T17:56:48.0,2019-01-29T03:50:15.0,false
-1798,inequality syntax for set constraints,chriscoey,2019-01-21T00:46:08.0,,false
+1798,inequality syntax for set constraints,chriscoey,2019-01-21T00:46:08.0,2021-10-04T22:16:57.0,false
 1797,minor edits to expressions.md,mlubin,2019-01-20T15:38:42.0,2019-01-20T22:03:19.0,true
 1796,✨ Add BridgeableConstraint,blegat,2019-01-19T17:37:40.0,2019-01-20T22:57:55.0,true
 1795,Fix @SDconstraint with import,blegat,2019-01-19T16:25:55.0,2019-01-20T17:53:36.0,true
@@ -609,7 +971,7 @@ number,title,login,created_at,closed_at,is_pr
 1792,@SDconstraint error when using `import JuMP` vs `using JuMP` in 0.19-beta2,pseudocubic,2019-01-17T21:31:11.0,2019-01-20T17:53:36.0,false
 1791,✨ Allow constraint with constant vector,blegat,2019-01-17T15:23:23.0,2019-01-18T14:46:35.0,true
 1790,sanity check JuMP's exports,mlubin,2019-01-17T14:44:26.0,2019-02-08T23:30:41.0,false
-1789,Decide whether to export MOI.,mlubin,2019-01-17T12:55:29.0,,false
+1789,Decide whether to export MOI.,mlubin,2019-01-17T12:55:29.0,2021-11-02T22:13:18.0,false
 1788,Capitalize Julia in docs README,Peiffap,2019-01-17T10:00:12.0,2019-01-17T14:29:48.0,true
 1787,[style] Forbid unnecessary empty lines,odow,2019-01-16T14:40:32.0,2019-01-16T22:49:10.0,true
 1786,Add style guide section on line breaks,odow,2019-01-16T14:39:14.0,2019-01-25T03:50:21.0,true
@@ -618,7 +980,7 @@ number,title,login,created_at,closed_at,is_pr
 1783,Add style guide section on private names,odow,2019-01-16T14:21:36.0,2019-01-25T02:41:53.0,true
 1782,Add style guide section on JuMP macros,odow,2019-01-16T14:19:26.0,2019-01-17T22:50:56.0,true
 1781,Updates to the style guide,odow,2019-01-15T16:53:36.0,2019-01-16T14:41:08.0,true
-1780,Missing style guide points,odow,2019-01-15T16:37:39.0,,false
+1780,Missing style guide points,odow,2019-01-15T16:37:39.0,2021-03-30T22:26:22.0,false
 1779,Export all non-internal functions.,mlubin,2019-01-15T03:55:13.0,2019-01-17T12:51:50.0,true
 1778,style point on using vs import,mlubin,2019-01-15T02:20:29.0,2019-01-17T04:34:10.0,true
 1777,Update URL to the stable version of Julia manual,petershintech,2019-01-14T23:52:47.0,2019-01-15T01:17:08.0,true
@@ -735,7 +1097,7 @@ number,title,login,created_at,closed_at,is_pr
 1666,Move module prefix before @,blegat,2018-12-08T10:49:50.0,2018-12-08T11:21:14.0,true
 1665,Drop Julia v0.6,blegat,2018-12-06T15:45:40.0,2018-12-06T22:28:10.0,true
 1664,Move `JuMPArray` into `Containers.DenseAxisArray`,blegat,2018-12-06T15:05:39.0,2018-12-10T13:32:49.0,false
-1663,Summary section for how containers work,mlubin,2018-12-06T13:12:09.0,,false
+1663,Summary section for how containers work,mlubin,2018-12-06T13:12:09.0,2021-02-18T20:08:00.0,false
 1662,Custom printing for some sets,blegat,2018-12-05T13:55:06.0,2018-12-20T02:59:31.0,false
 1661,Add master/examples README,odow,2018-12-04T20:28:34.0,2018-12-04T20:44:19.0,true
 1660,"SDP doesnt solve using MOSEK, throws error ""no method matching : setindex_shape_check(::Int64, ::Int64)""",taranjitsinghb,2018-12-04T17:38:34.0,2018-12-05T08:09:35.0,false
@@ -744,7 +1106,7 @@ number,title,login,created_at,closed_at,is_pr
 1657,Add CustomIndexing.SparseArray,blegat,2018-12-03T11:52:24.0,2018-12-09T21:29:16.0,true
 1656,A proposal for common statuses,mlubin,2018-12-03T11:08:04.0,2018-12-12T02:15:22.0,false
 1655,Document JuMPArray constuctors.,mlubin,2018-12-02T10:30:09.0,2018-12-06T13:12:54.0,true
-1654,Performance of small constraints,blegat,2018-12-01T17:17:33.0,,false
+1654,Performance of small constraints,blegat,2018-12-01T17:17:33.0,2021-10-12T22:04:03.0,false
 1653,Remove unused variable in model printing,mlubin,2018-12-01T16:47:16.0,2018-12-01T17:26:06.0,true
 1652,[release-0.18] prep for 0.18.5,mlubin,2018-11-30T22:46:52.0,2018-12-01T08:15:41.0,true
 1651,prep for 0.18.5,mlubin,2018-11-30T22:44:26.0,2018-12-01T08:15:51.0,true
@@ -771,11 +1133,11 @@ number,title,login,created_at,closed_at,is_pr
 1630,Implement `@build_constraint` macro for unattached constraints,mlubin,2018-11-17T18:39:10.0,2018-12-02T17:39:42.0,true
 1629,remove commented code block,mlubin,2018-11-17T16:57:41.0,2018-11-17T17:53:15.0,true
 1628,minor formatting fixes for macro_return,mlubin,2018-11-17T16:55:46.0,2018-11-17T17:31:12.0,true
-1627,Bridges in Manual mode with solver not supporting default_copy_to,blegat,2018-11-16T16:19:44.0,,false
+1627,Bridges in Manual mode with solver not supporting default_copy_to,blegat,2018-11-16T16:19:44.0,2021-10-20T00:42:30.0,false
 1626,✨ Add support for solver at optimize with bridges,blegat,2018-11-16T16:15:43.0,2018-11-20T07:30:41.0,true
 1625,✏️ tries -> attempts to,blegat,2018-11-16T16:09:01.0,2018-11-16T16:44:56.0,true
 1624,Add doc string for has_values,odow,2018-11-15T01:37:56.0,2018-11-15T02:07:21.0,true
-1623,Fixing `axes(::JuMPArray)`,jrevels,2018-11-14T19:01:14.0,,false
+1623,Fixing `axes(::JuMPArray)`,jrevels,2018-11-14T19:01:14.0,2021-02-18T01:59:08.0,false
 1622,ERROR: LoadError: UndefVarError: with_optimizer not defined,amoghb13,2018-11-14T18:58:48.0,2018-11-15T21:08:46.0,false
 1621,Docs: how to interpret and query a solution after optimize!,odow,2018-11-14T18:13:59.0,2019-01-11T10:22:59.0,false
 1620,"✨ Add support for ∈ and test constant shift with ""in Interval"" constraint",blegat,2018-11-14T15:38:32.0,2018-11-15T01:56:17.0,true
@@ -791,7 +1153,6 @@ number,title,login,created_at,closed_at,is_pr
 1610,Add a default fallback to build_constraint,odow,2018-11-12T03:01:06.0,2018-11-13T15:31:10.0,true
 1609,Better error messages when working with matrices in constraints,odow,2018-11-12T02:17:22.0,2018-11-13T01:00:14.0,true
 1608,Add a nice error message for user-defined functions,odow,2018-11-12T01:38:49.0,2018-11-13T00:59:17.0,true
-1607,Creating binary variables is slow,mlubin,2018-11-12T00:48:29.0,,false
 1606,Add example of a user-defined function in constraint,odow,2018-11-11T23:07:44.0,2018-11-12T02:18:13.0,true
 1605,Don't register anonymous expressions,mlubin,2018-11-11T21:32:02.0,2018-11-13T00:55:58.0,true
 1604,Performance improvements in linear_terms and quad_terms,mlubin,2018-11-11T20:29:00.0,2018-11-13T01:51:18.0,true
@@ -995,7 +1356,7 @@ number,title,login,created_at,closed_at,is_pr
 1406,Clean up operator_warn.,IainNZ,2018-08-05T22:21:39.0,2018-08-05T23:26:33.0,true
 1405,"Clean ups, dead code removal",IainNZ,2018-08-05T21:03:26.0,2018-08-05T22:23:11.0,true
 1404,[release-0.18] more fixes for 0.7,ExpandingMan,2018-08-05T20:28:42.0,2018-08-14T02:44:01.0,true
-1403,Performance regressions from v0.18,IainNZ,2018-08-05T17:57:29.0,,false
+1403,Performance regressions from v0.18,IainNZ,2018-08-05T17:57:29.0,2021-10-20T00:48:59.0,false
 1402,Performance/discussion: generating variables names is expensive,IainNZ,2018-08-05T17:40:15.0,2018-11-10T18:25:23.0,false
 1401,remove LightGraphs testing dependency,mlubin,2018-08-05T16:46:22.0,2018-08-05T17:57:33.0,true
 1400,Add NumFOCUS logo to README,odow,2018-08-05T02:46:41.0,2018-08-05T03:32:45.0,true
@@ -1050,7 +1411,7 @@ number,title,login,created_at,closed_at,is_pr
 1351,RFC: modifications,odow,2018-06-19T08:26:03.0,2018-10-15T20:35:51.0,true
 1350,modeling with SI units (via Unitful.jl),chriscoey,2018-06-19T02:29:50.0,,false
 1349,Fix various Julia v0.7 warnings,blegat,2018-06-18T08:57:58.0,2018-06-18T19:39:35.0,true
-1348,Parametrize JuMP model in optimizer type,blegat,2018-06-17T09:30:59.0,,true
+1348,Parametrize JuMP model in optimizer type,blegat,2018-06-17T09:30:59.0,2021-09-27T03:33:47.0,true
 1347,Add links to constraints macro docstrings,blegat,2018-06-16T21:00:35.0,2018-06-17T07:31:17.0,true
 1346,very minor 0.7 fixes,mlubin,2018-06-16T01:00:22.0,2018-06-16T01:31:28.0,true
 1345,Test extensibility of more tests,blegat,2018-06-14T13:36:56.0,2018-06-17T07:31:03.0,true
@@ -1217,7 +1578,7 @@ number,title,login,created_at,closed_at,is_pr
 1184,Support variable/constraint lookup by name,mlubin,2018-02-05T03:48:49.0,2018-12-22T03:18:42.0,false
 1183,Support MOI modifications,mlubin,2018-02-05T03:45:50.0,,false
 1182,remove old source files,mlubin,2018-02-05T03:23:03.0,2018-02-05T03:46:30.0,true
-1181,Precompile JuMP,mlubin,2018-02-05T03:21:10.0,,false
+1181,Precompile JuMP,mlubin,2018-02-05T03:21:10.0,2021-10-05T03:35:50.0,false
 1180,Printing the JuMP/MOI model,mlubin,2018-02-05T03:11:17.0,2018-12-06T13:58:06.0,false
 1179,fix two-sided constraints,mlubin,2018-02-05T02:50:38.0,2018-02-05T13:44:38.0,true
 1178,test broadcast constraint syntax ,mlubin,2018-02-05T01:54:34.0,2018-02-05T02:13:57.0,true
@@ -1232,7 +1593,7 @@ number,title,login,created_at,closed_at,is_pr
 1169,Reimplement support for two-sided constraints,mlubin,2018-01-28T16:57:20.0,2018-02-05T13:44:38.0,false
 1168,remove dead code -- replace with TODOs as appropriate,mlubin,2018-01-28T16:41:15.0,2018-01-28T16:54:21.0,true
 1167,support SingleVariable and VectorOfVariable constraints ...,mlubin,2018-01-28T04:32:48.0,2018-01-28T15:14:19.0,true
-1166,set constraint names from @constraint macro,mlubin,2018-01-27T16:16:57.0,,false
+1166,set constraint names from @constraint macro,mlubin,2018-01-27T16:16:57.0,2021-10-10T21:54:44.0,false
 1165,test and fix quadratic functions,mlubin,2018-01-27T16:15:25.0,2018-01-27T16:44:56.0,true
 1164,generating VectorOfVariables constraints,mlubin,2018-01-23T02:47:29.0,2018-01-28T15:14:19.0,false
 1163,Add parameter to objective,blegat,2018-01-22T16:20:35.0,2018-01-23T01:13:03.0,true
@@ -1247,7 +1608,7 @@ number,title,login,created_at,closed_at,is_pr
 1154,LoadError: invalid subtyping in definition of JuMPArray - julia-v0.6.2 ,mandarup,2017-12-29T23:30:43.0,2017-12-30T01:51:29.0,false
 1153,Gurobi license error,stumarcus576,2017-12-28T16:01:58.0,2017-12-28T16:20:48.0,false
 1152,Handling custom constraint types,rdeits,2017-12-27T22:47:42.0,2018-07-22T06:15:42.0,false
-1151,Should we define zero(AffExpr) and one(AffExpr)?,mlubin,2017-12-18T15:32:57.0,,false
+1151,Should we define zero(AffExpr) and one(AffExpr)?,mlubin,2017-12-18T15:32:57.0,2021-09-29T03:30:21.0,false
 1150,bump ForwardDiff upper bound,mlubin,2017-12-17T18:27:00.0,2017-12-17T20:05:16.0,true
 1149,MathProgBase.model  -> UndefVarError: model not defined,mandarup,2017-12-16T17:04:55.0,2017-12-17T04:19:05.0,false
 1148,Fix vectorized constraints,blegat,2017-12-10T22:05:56.0,2017-12-12T14:47:51.0,true
@@ -1336,7 +1697,7 @@ number,title,login,created_at,closed_at,is_pr
 1065,removing outdated docs release instructions,ccoffrin,2017-06-15T16:14:26.0,2017-06-16T03:53:59.0,true
 1064,nonlinear example doesn't specify a solver,mlubin,2017-06-15T15:45:42.0,2017-12-01T13:01:04.0,false
 1063,Organization of SD Functions,ccoffrin,2017-06-15T15:25:41.0,2017-06-20T20:24:21.0,false
-1062,Suggestions for Documentation Improvements,ccoffrin,2017-06-15T15:23:25.0,,false
+1062,Suggestions for Documentation Improvements,ccoffrin,2017-06-15T15:23:25.0,2021-02-19T02:38:06.0,false
 1061,Syntax highlighting,blegat,2017-06-15T14:30:38.0,2017-06-15T15:27:26.0,false
 1060,update link to latest documentation,yeesian,2017-06-15T13:40:30.0,2017-06-15T13:56:58.0,true
 1059,Highlight code blocks,odow,2017-06-15T13:14:23.0,2017-06-15T13:56:34.0,true
@@ -1441,7 +1802,7 @@ number,title,login,created_at,closed_at,is_pr
 960,Querying dual information of MIP that has previously been solved,odow,2017-02-08T02:14:06.0,2017-02-21T01:07:09.0,false
 959,initial implementation of new default solvers; passing on Julia 0.6,mlubin,2017-02-06T16:18:52.0,2017-02-15T21:36:27.0,true
 958,parallel model generation,kkmann,2017-02-03T12:25:38.0,2017-02-03T14:55:42.0,false
-957,Base.show(model) calling print on Jupyter,bbrunaud,2017-02-02T22:47:56.0,,false
+957,Base.show(model) calling print on Jupyter,bbrunaud,2017-02-02T22:47:56.0,2021-03-25T21:24:49.0,false
 956,improve wording when internal model is discarded,mlubin,2017-02-02T02:39:29.0,2017-02-03T02:03:20.0,true
 955,@expression doesn't support index of type Array,adowling2,2017-02-01T21:03:50.0,2017-02-01T23:18:16.0,false
 954,fix parsing for keyword arguments to macros on 0.6,mlubin,2017-01-31T19:57:12.0,2017-02-04T23:21:27.0,true
@@ -1540,7 +1901,7 @@ number,title,login,created_at,closed_at,is_pr
 861,[Regression?] Operator .^ in objective functions no more working in Julia 0.5,dourouc05,2016-10-05T15:39:42.0,2016-10-07T23:59:44.0,false
 860,explicit warning when multiple variables and constraints are given the same name,mlubin,2016-10-04T02:02:07.0,2016-10-06T15:35:46.0,true
 859,max of array columns/rows,montyvesselinov,2016-10-03T15:53:13.0,2016-10-04T00:30:34.0,false
-858,Scope of index variables,allbits,2016-10-02T22:02:07.0,,false
+858,Scope of index variables,allbits,2016-10-02T22:02:07.0,2021-02-21T04:07:46.0,false
 857,Creating arrays of variables with UInt bounds,allbits,2016-10-02T21:55:18.0,2016-10-05T20:42:31.0,false
 856,anonymous variables unconstrained inputs,jac0320,2016-10-02T15:01:35.0,2016-10-25T15:33:04.0,false
 855,Trouble differencing  2*log(x-2),vepiteski,2016-09-30T02:05:42.0,2016-09-30T19:27:04.0,false
@@ -1590,7 +1951,7 @@ number,title,login,created_at,closed_at,is_pr
 811,"accept nonlinear expressions in Expr form, no macros needed",mlubin,2016-07-29T14:13:36.0,2016-07-31T01:33:48.0,true
 810,deprecation fixes for julia 0.5,mlubin,2016-07-29T14:10:37.0,2016-07-29T19:29:15.0,true
 809,Fix various v0.5 deprecation warnings + add minimum version requirement for Compat,jrevels,2016-07-26T19:34:01.0,2016-07-27T15:40:39.0,true
-808,Make ``JuMP.register`` optional,joehuchette,2016-07-24T21:36:58.0,,false
+808,Make ``JuMP.register`` optional,joehuchette,2016-07-24T21:36:58.0,2021-04-04T22:16:29.0,false
 807,support for generators instead of curly syntax in Julia 0.5,mlubin,2016-07-18T22:14:16.0,2016-07-23T00:42:36.0,true
 806,"MethodError: `getindex` has no method matching getindex(::Function, ::Int64)",leoplct,2016-07-13T21:56:35.0,2016-07-13T22:07:52.0,false
 805,fixes for julia 0.5,mlubin,2016-07-13T01:22:22.0,2016-07-18T13:25:55.0,true
@@ -1652,7 +2013,7 @@ number,title,login,created_at,closed_at,is_pr
 749,@defConstrRef for @addNLConstraint,chkwon,2016-04-29T13:56:14.0,2016-05-19T16:09:39.0,false
 748,disable unsafe 'end' syntax,mlubin,2016-04-28T21:28:55.0,2016-04-29T03:56:22.0,true
 747,signal (11): Segmentation fault error,novatena2015,2016-04-28T15:19:50.0,2016-04-29T13:48:37.0,false
-746,getvalue slow for nonlinear expressions,matthieugomez,2016-04-28T14:55:02.0,,false
+746,getvalue slow for nonlinear expressions,matthieugomez,2016-04-28T14:55:02.0,2021-03-11T19:25:24.0,false
 745,"Make doc version warning a floating box with magic, for #439",IainNZ,2016-04-28T03:48:50.0,2016-04-28T03:49:37.0,true
 744,Remove redundant print methods,IainNZ,2016-04-27T03:53:55.0,2016-04-27T14:00:17.0,true
 743,get rid of printing shims,mlubin,2016-04-27T01:37:41.0,2016-04-27T02:56:23.0,true
@@ -1705,7 +2066,7 @@ number,title,login,created_at,closed_at,is_pr
 696,update copyright to 2016,mlubin,2016-03-08T18:04:49.0,2016-03-08T20:02:52.0,true
 695,bad NaNs,mlubin,2016-03-08T14:24:23.0,2016-03-13T21:00:32.0,false
 694,Examples according to various solvers,ns-1m,2016-03-08T09:02:04.0,2016-03-08T15:54:47.0,false
-693,An efficient way to verify the feasibility of provided solution,chenzjames,2016-03-07T11:08:07.0,,false
+693,An efficient way to verify the feasibility of provided solution,chenzjames,2016-03-07T11:08:07.0,2021-03-22T02:35:35.0,false
 692,syntax brainstorming,mlubin,2016-03-05T18:26:21.0,2017-06-12T20:51:38.0,false
 691,better error message for vectors in nonlinear expressions,mlubin,2016-03-05T04:10:54.0,2016-03-07T15:50:11.0,true
 690,better error message for vectors in nonlinear expressions,mlubin,2016-03-04T21:59:24.0,2016-03-07T15:50:12.0,false
@@ -1954,9 +2315,9 @@ number,title,login,created_at,closed_at,is_pr
 447,Add AmplNLWriter to nonlinear tests,JackDunnNZ,2015-05-17T14:51:39.0,2015-05-17T16:16:44.0,true
 446,implement dictionary of variable names and getVar,mlubin,2015-05-17T00:59:05.0,2015-05-18T21:21:14.0,true
 445,implement defVars macro,mlubin,2015-05-17T00:07:25.0,2016-03-05T01:34:01.0,true
-444,Expose getnodecount #442,sbebo,2015-05-14T14:01:55.0,2015-05-14T19:02:01.0,true
+444,Expose getnodecount #442,leotac,2015-05-14T14:01:55.0,2015-05-14T19:02:01.0,true
 443,Constraints and extensions don't play nice,joehuchette,2015-05-13T16:20:33.0,2018-08-27T02:30:46.0,false
-442,Accessing solver stats (node count),sbebo,2015-05-13T14:27:57.0,2015-05-21T17:15:11.0,false
+442,Accessing solver stats (node count),leotac,2015-05-13T14:27:57.0,2015-05-21T17:15:11.0,false
 441,backtraces for nonlinear expressions,mlubin,2015-05-12T22:47:03.0,2016-12-11T01:26:08.0,false
 440,@defVars,mlubin,2015-05-05T21:14:27.0,2016-03-05T01:34:01.0,false
 439,Move away from RTD,mlubin,2015-05-05T20:26:21.0,2016-04-27T23:35:00.0,false
@@ -1973,9 +2334,9 @@ number,title,login,created_at,closed_at,is_pr
 428,Require ArrayViews 0.4.12,lindahua,2015-04-19T02:23:16.0,2015-04-19T02:29:50.0,false
 427,Update quickstart.rst,dschein,2015-04-11T02:04:29.0,2015-04-11T14:12:04.0,true
 426,handle duplicates in MPS writer,mlubin,2015-04-11T02:03:43.0,2015-04-11T02:50:06.0,true
-425,Support inf rhs in @addConstraint,sbebo,2015-04-09T09:08:53.0,2018-02-05T04:24:50.0,false
-424,Repeated row in MPS,sbebo,2015-04-08T17:34:17.0,2015-04-11T02:50:07.0,false
-423,fix writeLP issue with negative coeffs,sbebo,2015-04-08T16:19:55.0,2015-04-08T17:35:26.0,true
+425,Support inf rhs in @addConstraint,leotac,2015-04-09T09:08:53.0,2018-02-05T04:24:50.0,false
+424,Repeated row in MPS,leotac,2015-04-08T17:34:17.0,2015-04-11T02:50:07.0,false
+423,fix writeLP issue with negative coeffs,leotac,2015-04-08T16:19:55.0,2015-04-08T17:35:26.0,true
 422,implement getsolvetime. issue #405,odow,2015-03-31T02:54:56.0,2015-04-03T01:20:24.0,true
 421,PDF of docs,mlubin,2015-03-22T04:49:09.0,2015-03-23T19:02:06.0,false
 420,Trouble using maximum in expressions,wcbeard,2015-03-20T00:25:08.0,2015-03-21T03:33:09.0,false
@@ -2111,7 +2472,7 @@ number,title,login,created_at,closed_at,is_pr
 290,Add in method for AffExpr,IainNZ,2014-10-21T14:32:48.0,2014-11-26T20:24:47.0,true
 289,enable travis testing on os x,mlubin,2014-10-20T16:18:51.0,2014-10-21T18:39:11.0,true
 288,bug in AffExpr*AffExpr,mlubin,2014-10-19T16:27:58.0,2014-10-19T16:45:26.0,false
-287,Slicing DenseAxisArrays,IainNZ,2014-10-17T21:09:27.0,,false
+287,Slicing DenseAxisArrays,IainNZ,2014-10-17T21:09:27.0,2021-03-22T21:32:55.0,false
 286,WIP: documentation for extensions,mlubin,2014-10-16T03:57:19.0,2017-06-09T21:24:53.0,true
 285,dependency error,tobiassalz,2014-10-13T16:02:05.0,2014-10-17T19:57:46.0,false
 284,"update documentation for semicontinuous, semi-int, and variable()",mlubin,2014-10-10T20:40:44.0,2014-10-10T20:49:45.0,true
@@ -2146,7 +2507,7 @@ number,title,login,created_at,closed_at,is_pr
 255,oops,philipithomas,2014-09-09T00:30:44.0,2014-09-09T00:30:47.0,false
 254,jg,philipithomas,2014-09-09T00:30:40.0,2014-09-09T00:40:32.0,false
 253,revamp introduction,mlubin,2014-09-08T22:45:31.0,2014-09-09T20:29:01.0,true
-252,Cannot build Gurobi,sbebo,2014-09-08T17:17:36.0,2014-09-08T19:55:19.0,false
+252,Cannot build Gurobi,leotac,2014-09-08T17:17:36.0,2014-09-08T19:55:19.0,false
 251,[RFC] (another) JuMPDict rewrite,joehuchette,2014-09-08T02:13:47.0,2014-09-08T22:29:48.0,true
 250,WIP: Refactoring of printing to re-use more code between IJulia and REPL,IainNZ,2014-09-06T18:09:08.0,2014-09-27T21:01:31.0,true
 249,tests for modifying bounds on binaries,mlubin,2014-09-06T17:02:50.0,2014-09-07T23:55:41.0,true
