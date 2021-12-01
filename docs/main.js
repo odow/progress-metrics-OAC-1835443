@@ -112,7 +112,6 @@ function count_of_users(data, key, is_pr) {
         function plot_chart(key, f) {
             var chart = d3.select(key).node();
             var series = Object.keys(data).sort().map(f);
-            console.log(layout);
             Plotly.plot(chart, series, layout);
             charts.push(chart);
             return
