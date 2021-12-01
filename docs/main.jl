@@ -2,8 +2,6 @@ import Dates
 import GitHub
 import JSON
 
-ENV["GITHUB_AUTH"] = "5f6cb96ec2d3feba8e59b3651ed7d5c55c97a6d8"
-
 function Repository(repo; since, until, my_auth)
     println("Getting : ", repo)
     return GitHub.issues(
