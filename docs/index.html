@@ -11,32 +11,34 @@
 <body>
     <div class="section no-pad-bot" id="index-banner">
         <div class="col s12 m12 l8 flow-text container">
-            <div class="container">
-                <div class="light-blue-text text-darken-4">
-                    <h1>
-                        <b>
-                            Statistics for the JuMP ecosystem</span>
-                        </b>
-                    </h1>
-                </div>
-                <div class="divider"></div>
-                <h4>Count of open issues</h4>
-                <div id="chart_count_open_issues"></div>
-                <h4>Count of open pull requests</h4>
-                <div id="chart_count_open_pull_requests"></div>
-                <h4>Cumulative count of opened issues</h4>
-                <div id="chart_cumulative_count_open_issues"></div>
-                <h4>Cumulative count of opened pull requests</h4>
-                <div id="chart_cumulative_count_open_pull_requests"></div>
-                <h4>Cumulative count of users opening issues</h4>
-                <div id="chart_count_users_open_issues"></div>
-                <h4>Cumulative count of users opening pull requests</h4>
-                <div id="chart_count_users_open_pull_requests"></div>
-                <div class="divider"></div>
-                <p class="subtitle">
-                    Made with <a href="http://materializecss.com">Materialize</a>
-                </p>
+            <div class="light-blue-text text-darken-4">
+                <h1>Health of the JuMP ecosystem</h1>
             </div>
+            <p class="small-text">This page collates some summary statistics for the <a href="https://github.com/jump-dev">JuMP-dev</a> ecosystem.</p>
+            <div class="divider"></div>
+            <h4>Count of open issues</h4>
+            <p class="small-text">Smaller is better. Open issues are a mixture of bugs and feature requests.</p>
+            <div id="chart_count_open_issues"></div>
+            <h4>Count of open pull requests</h4>
+            <p class="small-text">Smaller is better. Open pull requests are a sign of of stalled work or slow reviews.</p>
+            <div id="chart_count_open_pull_requests"></div>
+            <h4>Cumulative count of opened issues</h4>
+            <p class="small-text">To be viewed in conjunction with the Count of open issues. We're more interested in the slope of each line, rather than the absolute numbers.</p>
+            <div id="chart_cumulative_count_open_issues"></div>
+            <h4>Cumulative count of opened pull requests</h4>
+            <p class="small-text">To be viewed in conjunction with the Count of open pull requests. We're more interested in the slope of each line, rather than the absolute numbers.</p>
+            <div id="chart_cumulative_count_open_pull_requests"></div>
+            <h4>Cumulative count of unique users opening issues</h4>
+            <p class="small-text">The number of open GitHub issues in each repository.</p>
+            <p class="small-text">This doesn't account for the number of issues opened by each user, just the date of their first issue.</p>
+            <div id="chart_count_users_open_issues"></div>
+            <h4>Cumulative count of unique users opening pull requests</h4>
+            <p class="small-text">This doesn't account for the number of contributions by each user, just the date of their first contribution.</p>
+            <div id="chart_count_users_open_pull_requests"></div>
+            <div class="divider"></div>
+            <p class="subtitle">
+                Made with <a href="http://materializecss.com">Materialize</a>
+            </p>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
