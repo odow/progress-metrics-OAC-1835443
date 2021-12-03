@@ -32,6 +32,30 @@ function to_date(d) {
     return d.getFullYear() + "-" + two_digit(d.getMonth() + 1) + "-" + two_digit(d.getDate());
 }
 
+function flip_data_to_user(data) {
+    var new_data = {};
+    Object.keys(data).map(function (key) {
+        x = data[key];
+        if (x.length > 0) {
+            x.map(function (item) {
+                tmp = Object.assign({}, item);
+                user = tmp["user"];
+                tmp["user"] = key;
+                if (!(user in new_data)) {
+                    new_data[user] = [];
+                }
+                new_data[user].push(tmp);
+                return
+            });
+        }
+        return
+    });
+    Object.keys(new_data).map(function (key) {
+        new_data[key].sort((a, b) => a["date"] >= b["date"]);
+    })
+    return new_data;
+}
+
 function add_new_dates(x, y, new_date, new_value) {
     if (x.length == 0) {
         x.push(new_date);
@@ -52,7 +76,7 @@ function add_new_dates(x, y, new_date, new_value) {
     return
 }
 
-function count_of_opened_issues(data, key, is_pr, is_cumulative) {
+function count_of_opened_issues(data, key, is_pr, is_cumulative, visible) {
     i = 0;
     x = [];
     y = [];
@@ -69,13 +93,13 @@ function count_of_opened_issues(data, key, is_pr, is_cumulative) {
     });
     add_new_dates(x, y, to_date(new Date()), i);
     object = {name: key, "x": x, "y": y, stackgroup: "one"}
-    if (key != "JuMP.jl" && key != "MathOptInterface.jl") {
+    if (!visible.has(key)) {
         object["visible"] = "legendonly";
     }
     return object
 }
 
-function count_of_users(data, key, is_pr) {
+function count_of_users(data, key, is_pr, visible) {
     names = new Set();
     i = 0;
     x = [];
@@ -92,10 +116,14 @@ function count_of_users(data, key, is_pr) {
     });
     add_new_dates(x, y, to_date(new Date()), i);
     object = {name: key, "x": x, "y": y}
-    if (key != "JuMP.jl" && key != "MathOptInterface.jl") {
+    if (!visible.has(key)) {
         object["visible"] = "legendonly";
     }
     return object
+}
+
+function last(x) {
+    return  x[x.length - 2];
 }
 
 (function() {
@@ -107,38 +135,65 @@ function count_of_users(data, key, is_pr) {
             "range": ["2013-01-01", to_date(new Date())],
             "title": "Count"
         }
-    }
+    }    
     load_json("data.json", function (data) {
-        function plot_chart(key, f) {
+        function plot_chart(data, key, f, compare = (a, b) => a >= b) {
             var chart = d3.select(key).node();
-            var series = Object.keys(data).sort().map(f);
+            var series = Object.keys(data).sort(compare).map(f);
             Plotly.plot(chart, series, layout);
             charts.push(chart);
             return
         }
+        pkgs = new Set(["JuMP.jl", "MathOptInterface.jl"]);
         plot_chart(
+            data,
             "#chart_count_open_issues", 
-            key => count_of_opened_issues(data, key, false, false),
+            key => count_of_opened_issues(data, key, false, false, pkgs),
+            (a, b) => data[a].length > data[b].length,
         );
         plot_chart(
+            data,
             "#chart_count_open_pull_requests", 
-            key => count_of_opened_issues(data, key, true, false),
+            key => count_of_opened_issues(data, key, true, false, pkgs),
+            (a, b) => data[a].length > data[b].length,
         );
         plot_chart(
+            data,
             "#chart_cumulative_count_open_issues", 
-            key => count_of_opened_issues(data, key, false, true),
+            key => count_of_opened_issues(data, key, false, true, pkgs),
+            (a, b) => data[a].length > data[b].length,
         );
         plot_chart(
+            data,
             "#chart_cumulative_count_open_pull_requests", 
-            key => count_of_opened_issues(data, key, true, true),
+            key => count_of_opened_issues(data, key, true, true, pkgs),
+            (a, b) => data[a].length > data[b].length,
         );
         plot_chart(
+            data,
             "#chart_count_users_open_issues", 
-            key => count_of_users(data, key, false),
+            key => count_of_users(data, key, false, pkgs),
+            (a, b) => data[a].length < data[b].length,
         );
         plot_chart(
+            data,
             "#chart_count_users_open_pull_requests", 
-            key => count_of_users(data, key, true),
+            key => count_of_users(data, key, true, pkgs),
+            (a, b) => data[a].length < data[b].length,
+        );
+        user_data = flip_data_to_user(data);
+        users = new Set(["odow", "mlubin", "blegat"]);
+        plot_chart(
+            user_data,
+            "#chart_unique_users_open_issues", 
+            key => count_of_opened_issues(user_data, key, false, true, users),
+            (a, b) => user_data[a].length > user_data[b].length,
+        );
+        plot_chart(
+            user_data,
+            "#chart_unique_users_open_pull_requests", 
+            key => count_of_opened_issues(user_data, key, true, true, users),
+            (a, b) => user_data[a].length > user_data[b].length,
         );
     });
     /* =========================================================================
