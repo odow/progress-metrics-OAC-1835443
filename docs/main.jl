@@ -12,7 +12,7 @@ function Repository(repo; since, until, my_auth)
 end
 
 function get_repos(since, until)
-    my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
+    my_auth = GitHub.authenticate(ENV["PERSONAL_ACCESS_TOKEN"])
     all_repos, _ = GitHub.repos("jump-dev", auth=my_auth);
     return Dict(
         repo => Repository(repo; since = since, until = until, my_auth = my_auth)
