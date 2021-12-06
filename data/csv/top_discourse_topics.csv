@@ -1,11 +1,11 @@
 Title, # Views
-Sum() syntax, 7312
-MathOptInterface and upcoming breaking changes in JuMP 0.19, 5813
-Latest recommendations for global optimization, 5664
-JuMP and Julia 0.7/1.0, 5337
-How to solve two symbolic nonlinear equations in Julia?, 5040
-Is it time for a native Julia LP(Simplex) solver?, 4762
-Problem in Power Flow using Julia, 4382
-Julia vs R vs Python: simple MLE problem, 3954
-Model Predictive Control (MPC) in Julia, 3494
-Conditional constraint if else in JuMP, 3413
+Sum() syntax, 10070
+Latest recommendations for global optimization, 7085
+How to solve two symbolic nonlinear equations in Julia?, 6239
+MathOptInterface and upcoming breaking changes in JuMP 0.19, 6116
+Is it time for a native Julia LP(Simplex) solver?, 6103
+JuMP and Julia 0.7/1.0, 5657
+Problem in Power Flow using Julia, 4724
+Model Predictive Control (MPC) in Julia, 4537
+Conditional constraint if else in JuMP, 4400
+Julia vs R vs Python: simple MLE problem, 4190
