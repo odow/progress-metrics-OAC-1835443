@@ -10,6 +10,7 @@ import Plots
 const ALTERNATE_NAMES = Dict(
     "jump-dev/JuMP.jl" => ["JuliaOpt/JuMP.jl"],
     "jump-dev/MathOptInterface.jl" => ["JuliaOpt/MathOptInterface.jl"],
+    "JuliaLabs/Cassette.jl" => ["jrevels/Cassette.jl"],
 )
 
 
@@ -42,7 +43,7 @@ Return a DataFrame containing a list of all GitHub issues and pull requests.
  * closed_at
  * is_pr
 """
-function build_issue_dataset(repo, my_auth, force = true)
+function build_issue_dataset(repo, my_auth, force = false)
     @show repo
     esc_repo = esc_repo_name(repo)
     if !force && isfile(data_dir(esc_repo * ".csv"))
@@ -110,7 +111,7 @@ Return a list of dates at which the repository `repo` was starred.
 
 ```julia
 
-my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
+my_auth = GitHub.authenticate(ENV["PERSONAL_ACCESS_TOKEN"])
 get_stargazers("jump-dev/JuMP.jl", my_auth)
 """
 function get_stargazers(repo::String, auth::GitHub.OAuth2)
@@ -303,78 +304,6 @@ function checkout_registry(
     end
 end
 
-# function compare_years(set_a, set_b)
-#     println("Packages added:")
-#     for b in set_b
-#         if !(b in set_a)
-#             println("  ", b)
-#         end
-#     end
-#     println("Packages removed:")
-#     for a in set_a
-#         if !(a in set_b)
-#             println("  ", a)
-#         end
-#     end
-# end
-
-# function dependency_graph(registry, repo, year)
-#     uuid_to_name_d = uuid_to_name(registry)
-#     uuid = get_uuid(registry, repo)
-#     dependents = Set{String}()
-#     push!(dependents, uuid)
-#     latest = String[uuid]
-#     while length(latest) > 0
-#         recently_added = copy(latest)
-#         # @show recently_added
-#         empty!(latest)
-#         uuids = _direct_dependents(registry, recently_added, uuid_to_name_d)
-#         for u in uuids
-#             if !(u in dependents)
-#                 push!(dependents, u)
-#                 push!(latest, u)
-#             end
-#         end
-#     end
-#     return [uuid_to_name_d[d] for d in dependents]
-# end
-
-# function _direct_dependents(registry, recently_added, uuid_to_name)
-#     dependents = String[]
-#     for (root, dirs, files) in walkdir(registry)
-#         latest = true
-#         if "Deps.toml" in files
-#             latest = true
-#         elseif "dependencies.toml" in files
-#             latest = false
-#         else
-#             continue
-#         end
-#         deps_file = joinpath(root, latest ? "Deps.toml" : "dependencies.toml")
-#         pkg_file = joinpath(root, latest ? "Package.toml" : "package.toml")
-#         deps = Pkg.TOML.parsefile(deps_file)
-#         latest_key = if latest
-#             "-0"
-#         else
-#             # General changed how they represent these :(
-#             sort([String(split(key, "-")[2]) for key in keys(deps)])[end]
-#         end
-#         for (key, val) in deps
-#             # Only add as a dependent if the most-recent version uses it!
-#             if !(key == "0" || endswith(key, latest_key))
-#                 continue
-#             end
-#             i = findfirst(u -> u in values(val), recently_added)
-#             if i !== nothing
-#                 pkg = Pkg.TOML.parsefile(pkg_file)
-#                 push!(dependents, String(pkg["uuid"]))
-#                 println(uuid_to_name[recently_added[i]], " => ", url_to_name(pkg["repo"]))
-#             end
-#         end
-#     end
-#     return dependents
-# end
-
 """
     dependency_stars(
         registry::String,
@@ -441,7 +370,7 @@ function dependency_stars(
 end
 
 function build_table(repo, years; use_stars::Bool = true)
-    my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
+    my_auth = GitHub.authenticate(ENV["PERSONAL_ACCESS_TOKEN"])
     build_issue_dataset(repo, my_auth)
 
     esc_repo = esc_repo_name(repo)
@@ -516,130 +445,8 @@ function build_table(repo, years; use_stars::Bool = true)
     return
 end
 
-"""
-    plot_number_issues(df::DataFrames.DataFrame)
-
-Given a DataFrame `df` from `build_issue_dataset`, plot the number of opened
-issues and pull requests over time.
-"""
-function plot_number_issues(df::DataFrames.DataFrame)
-    Plots.plot(
-        title = "Count of opened\nGithub Issues and Pull Requests",
-        xlabel = "Date",
-        ylabel = "Count",
-        legend = :topleft,
-        margin = 10Plots.mm,
-    )
-    issues = filter(r -> !r[:is_pr], df)
-    Plots.plot!(
-        reverse(issues[!, :created_at]),
-        1:size(issues, 1);
-        label = "Issues",
-        width = 1,
-        color = "#ba4840"
-    )
-    prs = filter(r -> r[:is_pr], df)
-    Plots.plot!(
-        reverse(prs[!, :created_at]),
-        1:size(prs, 1);
-        label = "Pull Requests",
-        width = 1,
-        linestyle = :dash,
-        color = "slategray"
-    )
-end
-
-function plot_open_issues(df::DataFrames.DataFrame)
-    function _count_open(df)
-        times = sort(union(df[!, :created_at], skipmissing(df[!, :closed_at])))
-        y = map(
-            t -> sum(df[!, :created_at] .<= t) -
-                 sum(skipmissing(df[!, :closed_at]) .<= t),
-            times
-        )
-        return DataFrames.DataFrame(date = times, open = y)
-    end
-    issues = _count_open(df[df[!, :is_pr] .== false, :])
-    prs = _count_open(df[df[!, :is_pr] .== true, :])
-    Plots.plot(
-        title = "Count of open\nGithub Issues and Pull Requests",
-        xlabel = "Date",
-        ylabel = "Count",
-        legend = :topleft,
-    )
-    Plots.plot!(
-        issues[!, :date],
-        issues[!, :open];
-        label = "Issues",
-        width = 1,
-        color = "#ba4840"
-    )
-    Plots.plot!(
-        prs[!, :date],
-        prs[!, :open];
-        label = "Pull Requests",
-        width = 1,
-        linestyle = :dash,
-        color = "slategray"
-    )
-end
-
-"""
-    plot_count_users(df::DataFrames.DataFrame)
-
-Given a DataFrame `df` from `build_issue_dataset`, plot the number of unique
-users who have opened issues and pull requests over time.
-"""
-function plot_count_users(df::DataFrames.DataFrame)
-    Plots.plot(
-        title = "Count of users opening\nGithub Issues and Pull Requests",
-        xlabel = "Date",
-        ylabel = "Unique User IDs",
-        legend = :topleft,
-        margin = 10Plots.mm,#5Plots.mm,
-    )
-    issues = filter(r -> !r[:is_pr], df)
-    users_with_issues = DataFrames.combine(
-        DataFrames.groupby(issues, :created_at),
-    ) do d
-        tmp = filter(r -> r[:created_at] <= d[1, :created_at], issues)
-        return length(unique(tmp[!, :login]))
-    end
-    Plots.plot!(
-        users_with_issues[!, :created_at],
-        users_with_issues[!, :x1];
-        label = "Issues",
-        width = 1,
-        color = "#ba4840"
-    )
-    prs = filter(r -> r[:is_pr], df)
-    users_with_prs = DataFrames.combine(
-        DataFrames.groupby(prs, :created_at),
-     ) do d
-        tmp = filter(r -> r[:created_at] <= d[1, :created_at], prs)
-        return length(unique(tmp[!, :login]))
-    end
-    Plots.plot!(
-        users_with_prs[!, :created_at],
-        users_with_prs[!, :x1];
-        label = "Pull Requests",
-        width = 1,
-        linestyle = :dash,
-        color = "slategray"
-    )
-end
-
 function summarize_repository(repo, stars)
     esc_repo = esc_repo_name(repo)
-    df = CSV.read(data_dir(esc_repo * ".csv"), DataFrames.DataFrame)
-    Plots.plot(
-        plot_number_issues(df),
-        plot_count_users(df),
-        plot_open_issues(df),
-        size = (1_000, 800)
-    )
-    Plots.savefig(data_dir(esc_repo * ".pdf"))
-
     df = DataFrames.DataFrame(
         pkg = collect(keys(stars)),
         stars = length.(values(stars)),
@@ -648,62 +455,21 @@ function summarize_repository(repo, stars)
     CSV.write(data_dir(esc_repo * "_dependencies.csv"), df)
 end
 
-function plot_issue_dashboard(repo)
-    esc_repo = esc_repo_name(repo)
-    df = CSV.read(data_dir(esc_repo * ".csv"), DataFrames.DataFrame)
-    Plots.plot(
-        plot_open_issues(df),
-        plot_number_issues(df),
-        plot_count_users(df),
-        layout = (1, 3),
-        size = (1_500, 400),
-        margin = 10Plots.mm,
-    )
-    Plots.savefig(data_dir(esc_repo * ".pdf"))
-end
-
 # ============================================================================ #
 #                                                                              #
 #                             Main calls below here                            #
 #                                                                              #
 # ============================================================================ #
 
-# if !haskey(ENV, "GITHUB_AUTH")
-#     error(
-#         "You must supply a GitHub authentication token by setting GITHUB_AUTH."
-#     )
-# end
+ENV["PERSONAL_ACCESS_TOKEN"] = "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"
 
-summarize_discourse()
-
-# for (repo, use_stars) in [
-#     # ("julialang/Julia", false),
-#     ("jump-dev/JuMP.jl", false),
-#     ("jump-dev/MathOptInterface.jl", false),
-#     # ("jrevels/Cassette.jl", true),
-#     # ("JuliaDiff/ChainRules.jl", true),
-#     # ("YingboMa/ForwardDiff2.jl", true),
-# ]
-#     build_table(repo, [2017, 2018, 2019, 2020, 2021]; use_stars = use_stars)
-# end
-
-# my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
-# build_issue_dataset("jump-dev/JuMP.jl", my_auth)
-# plot_issue_dashboard("jump-dev/JuMP.jl")
-# build_issue_dataset("jump-dev/MathOptInterface.jl", my_auth)
-# plot_issue_dashboard("jump-dev/MathOptInterface.jl")
-
-# jump = CSV.read(data_dir("jump-dev_JuMP_jl.csv"), DataFrames.DataFrame)
-# moi = CSV.read(data_dir("jump-dev_MathOptInterface_jl.csv"), DataFrames.DataFrame)
-# df = vcat(jump, moi)
-# sort!(df, :created_at, rev=true)
-
-# Plots.plot(
-#     plot_open_issues(df),
-#     plot_number_issues(df),
-#     plot_count_users(df),
-#     layout = (1, 3),
-#     size = (1_500, 400),
-#     margin = 10Plots.mm,
-# )
-# Plots.savefig(data_dir("combined.pdf"))
+for (repo, use_stars) in [
+    ("julialang/Julia", false),
+    ("jump-dev/JuMP.jl", true),
+    ("jump-dev/MathOptInterface.jl", true),
+    ("JuliaLabs/Cassette.jl", true),
+    ("JuliaDiff/ChainRules.jl", true),
+    # ("YingboMa/ForwardDiff2.jl", true),
+]
+    build_table(repo, [2017, 2018, 2019, 2020, 2021]; use_stars = use_stars)
+end

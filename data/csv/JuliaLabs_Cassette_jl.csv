@@ -1,0 +1,195 @@
+number,title,login,created_at,closed_at,is_pr
+194,set `ssaflags`,aviatesk,2021-09-08T16:19:56.0,2021-09-08T17:04:23.0,true
+193,update to https://github.com/JuliaLang/julia/pull/41920,aviatesk,2021-08-18T19:02:21.0,2021-08-18T19:26:07.0,true
+192,reenable inference test again,simeonschaub,2021-06-22T10:28:47.0,2021-06-22T17:07:37.0,true
+191,fix canrecurse with _apply_iterate,simeonschaub,2021-06-22T10:23:56.0,2021-07-24T09:13:49.0,true
+190,fix contextual compiler pass example on 1.6,simeonschaub,2021-06-21T13:49:04.0,2021-06-21T14:54:30.0,true
+189,Use current world_age instead of max,vchuravy,2021-05-10T15:45:27.0,2021-05-10T16:18:01.0,true
+188,Default value to `reflect` should be `Base.current_world`,vchuravy,2021-05-10T14:06:31.0,2021-05-10T16:18:01.0,false
+187,Error compiling Cubature.hcubature in context Traceur.Trace,gustaphe,2021-04-12T08:08:30.0,,false
+186,better stacktraces in overdubs,simeonschaub,2021-03-19T13:07:38.0,2021-03-19T19:21:14.0,true
+185,less helpful stacktraces on 1.6,simeonschaub,2021-02-14T23:01:50.0,2021-03-19T19:21:13.0,false
+184,Errors on Julia v1.6,ranocha,2021-02-08T10:28:00.0,,false
+183,TagBot trigger issue,JuliaTagBot,2021-01-07T17:27:01.0,2021-01-07T17:27:02.0,false
+182,fix on nightly,simeonschaub,2021-01-06T01:45:34.0,2021-01-06T19:34:18.0,true
+181,Switch from Travis/AV to GitHub Actions CI,DilumAluthge,2020-12-19T04:36:18.0,2020-12-21T20:34:56.0,true
+180,Is there a way to bail out of overdubbing? ,marius311,2020-11-18T02:43:35.0,2020-11-24T22:33:11.0,false
+179,"Discriminating overdub calls for ""same"" function/args",robertfeldt,2020-10-27T15:41:58.0,,false
+178,Code using Cassette fails for nightly builds,j-fu,2020-09-11T12:35:07.0,2021-01-06T19:34:18.0,false
+177,test on 1.5,vchuravy,2020-08-19T14:38:09.0,2020-08-20T12:16:39.0,true
+176,Overdubbing not working when function called from within `@threads for` loop,jwscook,2020-07-13T14:10:32.0,,false
+175,Open discussion - support for dynamic pass creation,femtomc,2020-06-27T16:33:42.0,,false
+174,Internal error when overdubbing HTTP.request,christopher-dG,2020-05-24T05:44:36.0,,false
+173,Check for keyword function names differently on 1.4+,christopher-dG,2020-04-20T21:57:32.0,2020-04-21T02:48:20.0,true
+172,"Handle `_apply_iterate` handling, but disable overdubbing of `iterf` in `_apply_iterate`",vchuravy,2020-04-17T14:15:40.0,2020-04-20T03:43:27.0,true
+171,Tag new version,MasonProtter,2020-04-12T23:48:52.0,2020-04-20T13:38:48.0,false
+170,Inference issues with accessing hcat-ed arrays ,freemin7,2020-02-19T00:57:31.0,,false
+169,Don't define overdub and recurse with eval,MasonProtter,2020-02-18T20:26:48.0,2020-04-13T00:32:42.0,true
+168,Make offset an argument of overdub_pass!,MasonProtter,2020-02-18T19:21:08.0,2020-04-13T00:32:53.0,true
+167,start testing on julia 1.4,vchuravy,2020-02-18T16:25:21.0,2020-04-20T13:37:07.0,true
+166,Handle throw as a builtin,vchuravy,2020-02-18T16:22:34.0,2020-02-18T16:28:16.0,true
+165,Something with tagging is broken in 1.4,KristofferC,2020-01-28T13:49:42.0,2020-04-20T13:38:33.0,false
+164,"Revert ""fix bug in Core._apply_iterate overdubbing, args[1] also needs to be overdubbed""",KristofferC,2020-01-27T16:17:49.0,2020-01-27T16:19:22.0,true
+163,"fix bug in Core._apply_iterate overdubbing, args[1] also needs to be overdubbed",KristofferC,2020-01-27T15:33:36.0,2020-01-27T15:54:52.0,true
+162,More problems with `_apply_iterate`?,KristofferC,2020-01-27T14:05:22.0,2020-01-27T15:54:51.0,false
+161,Subtrace test broken on 1.4,KristofferC,2020-01-27T13:48:08.0,2020-04-21T02:48:20.0,false
+160,Codegen inefficiency due to splatting,maleadt,2020-01-20T17:29:16.0,,false
+159,Simple Tagging inference failure,shashi,2020-01-18T03:54:34.0,,false
+158,Deal with _apply_iterate,vchuravy,2020-01-13T11:15:02.0,2020-01-20T20:20:33.0,true
+157,ReflectOn: pick which method's body to rewrite,shashi,2020-01-13T03:28:55.0,,true
+156,Workaround `UndefVarError: A not defined`,YingboMa,2020-01-10T23:17:03.0,,true
+155,Cassette doesn't recurse through into `Core._apply_iterate`,KristofferC,2020-01-03T22:36:41.0,2020-01-20T20:20:33.0,false
+154,Possible to get a patch release tagged?,ali-ramadhan,2019-12-22T15:00:55.0,2020-01-12T15:12:41.0,false
+153,Inference issues with broadcasting,tshort,2019-10-18T19:33:27.0,,false
+152,Using recurse with keywords,christopher-dG,2019-10-11T11:36:31.0,,false
+151,Adds now-passing test of Overdubbing an Overdub (adding edges to function with edges),NHDaly,2019-10-10T18:27:41.0,2019-10-10T20:38:31.0,true
+150,"In nested contexts `method_for_inference_limit_heuristics` is not properly set when there is an `overdub(::Ctx, f::Any,...)` method",shashi,2019-10-10T17:48:20.0,,false
+149,Call pass function in newest world-age.,vchuravy,2019-10-04T04:40:50.0,2019-11-20T17:02:51.0,true
+148,Remove `assert edges == nothing` since now Cassette isn't the only one using CodeInfo.edges! :),NHDaly,2019-10-03T17:15:23.0,2019-10-10T14:46:24.0,true
+147,inference regression against julia 1.4-dev,shashi,2019-10-02T20:28:35.0,,false
+146,Cassette doesn't recurse into `iterate` called from _apply,Keno,2019-09-21T05:15:28.0,,false
+145,Method definition overdub(...) overwritten in module ...,dfdx,2019-09-17T20:31:36.0,2019-09-17T20:39:11.0,false
+144,"Overdubbing `rand` or `randn` lead to error: ""this intrinsic must be compiled to be called""",DilumAluthge,2019-08-29T03:30:40.0,2019-08-29T07:28:29.0,false
+143,PkgEval for 1.3,vchuravy,2019-08-28T09:21:34.0,2020-04-20T13:45:24.0,false
+142,type DataType has no field var,torfjelde,2019-07-30T22:57:09.0,2019-08-04T16:08:47.0,false
+141,fix typo,Roger-luo,2019-07-26T15:23:06.0,2019-07-26T22:16:16.0,true
+140,"Revert ""fix method overwrite warning (replace #115, fix #113) (#119)""",vchuravy,2019-07-21T17:29:03.0,2019-07-22T14:05:48.0,true
+139,Fix llvmcall overdubbing,vchuravy,2019-07-14T00:04:12.0,,true
+138,Overdubbing things using llvmcall fail,oxinabox,2019-07-13T17:59:26.0,,false
+137,"Fix for #89, overdub with invoke and optional arguments",tkoolen,2019-07-10T03:50:30.0,2019-07-13T09:21:53.0,true
+136,"Call to `dot` with tagged input results in misplaced ""replaceglobalref""",shashi,2019-07-07T01:49:57.0,,false
+135,add Project.toml,vchuravy,2019-07-02T18:17:47.0,2019-07-03T21:21:19.0,true
+134,don't splat into _apply calls,vchuravy,2019-06-23T19:13:24.0,,true
+133,Tagging causing inconsistent behavior,jarredbarber,2019-06-20T10:55:30.0,,false
+132,An API to register an overdubbing REPL?,mbauman,2019-06-18T22:34:47.0,,false
+131,Support at-overdub with assignments,mbauman,2019-06-18T22:30:48.0,,true
+130,No-op overdub fails for `Base.typename` with UnionAll,mbauman,2019-06-18T20:37:42.0,,false
+129,Set edges (fix 265!),vchuravy,2019-06-04T02:10:24.0,2019-06-17T16:18:46.0,true
+128,fix overdub of invoked calloverload,vchuravy,2019-06-02T15:51:04.0,2019-06-04T11:23:44.0,true
+127,Possible bug,shashikdm,2019-06-02T06:27:30.0,2019-06-04T11:23:44.0,false
+126,"No method matching metadatatype(..., ::Type{Type})",baggepinnen,2019-06-01T09:57:09.0,,false
+125,implement splatnew,vchuravy,2019-05-16T12:04:19.0,2019-06-29T21:26:45.0,true
+124,Cassette error in PkgEval on 1.2 backport branch,KristofferC,2019-05-15T11:12:53.0,2019-08-04T16:07:12.0,false
+123,Specialise less,oxinabox,2019-05-05T12:30:23.0,2019-08-04T10:20:03.0,true
+122,Correct insert_statements ?,oxinabox,2019-04-21T12:40:01.0,2019-06-04T07:31:30.0,true
+121,Renamed `@overdub` to `@recurse` ?,oxinabox,2019-04-20T18:37:12.0,2020-04-20T13:45:41.0,false
+120,Task handling,vchuravy,2019-04-16T19:56:43.0,,false
+119,"fix method overwrite warning (replace #115, fix #113)",jrevels,2019-04-04T16:37:38.0,2019-06-29T18:47:22.0,true
+118,adapt Cassette for https://github.com/JuliaLang/julia/pull/31191,vchuravy,2019-04-02T20:35:07.0,2019-04-03T12:41:14.0,true
+117,UndefVarError: code_for_method not defined on Julia 1.2,dkarrasch,2019-04-02T18:53:30.0,2019-04-03T12:41:14.0,false
+116,Intercept %new,dfdx,2019-03-31T21:27:31.0,,false
+115,remove extra method definitions of overdub and recurse,vchuravy,2019-03-18T23:19:36.0,2019-04-04T17:43:39.0,true
+114,adapt Cassette to https://github.com/JuliaLang/julia/pull/31015,vchuravy,2019-03-18T21:57:36.0,2019-03-18T22:50:34.0,true
+113,Duplicate method definition.,vchuravy,2019-03-18T14:52:10.0,2019-11-20T17:02:51.0,false
+112,Remove extra slotflag in overdub?,oxinabox,2019-03-14T00:09:56.0,2019-03-17T05:33:33.0,true
+111,adding SSAValues to IRs that include nontrivial literals causes julia to fail,oxinabox,2019-03-13T01:41:34.0,2019-03-13T19:20:32.0,false
+110,fix Core.kwfunc inference,jrevels,2019-02-21T21:55:58.0,2019-02-22T03:57:28.0,true
+109,Transform and recompile function,dfdx,2019-02-16T22:05:59.0,2019-03-02T10:48:03.0,false
+108,`@pure` seems to cause issues!,vchuravy,2019-02-07T23:17:27.0,2019-07-02T16:18:01.0,false
+107,"Revert ""Declaring a pass twice should have no effect (#106)""",jrevels,2019-02-07T18:54:20.0,2019-02-07T23:19:08.0,true
+106,Declaring a pass twice should have no effect,oxinabox,2019-02-02T18:32:07.0,2019-02-06T18:51:41.0,true
+105,Loops,datnamer,2019-02-01T16:48:35.0,2020-04-20T13:45:56.0,false
+104,fix posthook for Core._apply calls,jrevels,2019-01-25T16:36:16.0,2019-01-25T17:47:50.0,true
+103,Show stacktrace for errors in passes,oxinabox,2019-01-25T00:10:30.0,2019-01-25T17:47:37.0,true
+102,Avoid overlong lines in example,oxinabox,2019-01-23T20:23:42.0,,true
+101,`posthook` mixes up `out` and `f` sometimes,pfitzseb,2019-01-22T15:07:54.0,2019-01-25T17:47:50.0,false
+100,"Can we have a Cassette.refresh, like Zygote has?",oxinabox,2019-01-20T21:20:29.0,2020-04-20T13:44:29.0,false
+99,tweak doc comment,jrevels,2019-01-08T16:26:13.0,2019-01-08T17:15:38.0,true
+98,Large slowdown with map,zenna,2018-12-23T19:23:21.0,2018-12-24T00:02:02.0,false
+97,"Refactor to reduce IR bloat for nested overdubbing, plus other stuff for Zygote",jrevels,2018-12-17T21:17:09.0,2018-12-19T15:44:15.0,true
+96,Tracing Julia code execution via Cassette?,robertfeldt,2018-12-15T06:45:46.0,2020-04-20T13:46:09.0,false
+95,fix _apply handling in slicing doc example,jrevels,2018-12-13T14:58:13.0,2018-12-13T15:24:24.0,true
+94,Inference related failure,oxinabox,2018-12-11T01:35:22.0,,false
+93,"Running compiler pass docs example gives a ""MethodError""",jpfairbanks,2018-12-09T23:31:29.0,2018-12-13T15:24:24.0,false
+92,quick patch for better recursion limit spoofing,jrevels,2018-12-09T19:40:17.0,2018-12-10T16:24:37.0,true
+91,no-op context overdubbing overhead,jrevels,2018-12-08T19:41:02.0,,false
+90,add test for #73,jrevels,2018-12-08T14:41:11.0,2018-12-08T19:39:53.0,true
+89,Overdub hates `reverse`...,oxinabox,2018-12-06T18:23:13.0,2019-07-13T09:21:52.0,false
+88,Contexts can be declared twice without error,oxinabox,2018-12-06T15:05:34.0,2018-12-06T16:47:33.0,true
+87,Overdubs that depend on overdubs don't work?,oxinabox,2018-12-05T22:21:09.0,2018-12-06T14:32:36.0,false
+86,fix breakage from internal utility rename (JuliaLang/julia@b3cf15252b94bc490e202ba7bef050de723ca5f2),jrevels,2018-12-01T01:42:54.0,2018-12-01T16:37:56.0,true
+85,Overhead with nested overdub,MikeInnes,2018-11-20T14:50:36.0,,false
+84,Extra Cassette code doesn't compile away like it's supposed to?,NHDaly,2018-11-15T03:02:28.0,2018-11-15T16:59:48.0,false
+83,Overdub functions which call displaysize causes failures on Windows,simonbyrne,2018-11-07T00:25:18.0,,false
+82,Add Simon Byrne's memoization example to docs/tests,jrevels,2018-11-03T17:21:11.0,2018-11-06T04:07:51.0,true
+81,Fix typo in overdub.md,mschauer,2018-11-03T14:01:40.0,2018-11-03T15:18:41.0,true
+80,Cap Documenter.jl to 0.19 on Travis,mortenpi,2018-10-17T06:53:59.0,2018-10-23T15:53:00.0,true
+79,fix overdubbing for invoke,jrevels,2018-09-29T18:09:27.0,2018-10-01T16:46:02.0,true
+78,Package compatibility caps,KZiemian,2018-09-23T11:48:23.0,2018-09-24T16:05:59.0,false
+77,tagging system interaction with concurrent load/stores,jrevels,2018-09-21T13:48:21.0,,false
+76,fix tagging arrayref/arrayset called with more than one index,jrevels,2018-09-20T19:48:10.0,2018-09-20T20:10:30.0,true
+75,tagging system test errors (normally hidden by compiler's try/catch),jrevels,2018-09-11T12:17:20.0,,false
+74,Example suggestion: Hook into compiler to make all math operations `@fastmath`,MasonProtter,2018-09-11T01:45:21.0,,false
+73,Null pass overhead,MikeInnes,2018-08-16T16:40:40.0,2018-11-19T17:18:19.0,false
+72,Weird behavior in the AD POC code,chengchingwen,2018-08-11T03:54:22.0,2018-11-03T13:57:18.0,false
+71,Const-prop through tuple,maleadt,2018-08-09T19:10:57.0,2018-12-18T22:32:11.0,false
+70,Assertion failure on 1.0,maleadt,2018-08-08T08:06:49.0,2018-08-08T08:09:47.0,false
+69,change posthook to return overdubbed invocation output so that it can postprocess immutable outputs,jrevels,2018-08-07T11:58:24.0,2018-09-06T21:35:46.0,true
+68,Tag a release,MikeInnes,2018-08-02T13:42:27.0,2018-08-09T10:27:28.0,false
+67,Typed IR passes,MikeInnes,2018-07-30T08:26:19.0,2020-04-20T13:41:32.0,false
+66,Function splitting,MikeInnes,2018-07-30T08:21:56.0,,false
+65,Passes over IR,MikeInnes,2018-07-30T08:01:28.0,2018-07-30T11:52:29.0,false
+64,Tagged context breaks recursive overdub example,vchuravy,2018-07-28T06:10:05.0,2018-07-28T16:35:59.0,false
+63,get rid of recurse/overdub cycle in favor of only overdub,jrevels,2018-07-27T04:10:26.0,2018-07-27T14:48:03.0,true
+62,untag conditional values in gotoifnot nodes,jrevels,2018-07-25T14:00:00.0,2018-07-27T04:16:29.0,true
+61,invalid pcre ccall error message ,jrevels,2018-07-24T22:31:21.0,2018-07-27T14:48:03.0,false
+60,don't recurse into kwargs-munging code (resolves #48),jrevels,2018-07-24T15:50:37.0,2018-07-24T17:48:13.0,true
+59,Composed broadcast example does not infer,Keno,2018-07-21T20:36:47.0,2018-07-27T14:48:02.0,false
+58,RFC: remove many of the contextual dispatch macros in favor of direct overloading of Cassette methods,jrevels,2018-07-19T20:09:25.0,2018-07-23T15:03:05.0,true
+57,more inferability workarounds,jrevels,2018-07-19T19:15:28.0,2018-07-19T19:30:31.0,true
+56,broadcast noop not inferred,Keno,2018-07-17T17:51:29.0,2018-07-19T19:30:31.0,false
+55,some inferability workarounds,jrevels,2018-07-17T16:08:02.0,2018-07-17T17:53:15.0,true
+54,remove some apply optimizations now that JuliaLang/julia#28074 is merged,jrevels,2018-07-15T23:43:59.0,2018-07-16T01:59:16.0,true
+53,Matmul noop not inferred,Keno,2018-07-15T23:05:03.0,2018-07-17T17:53:16.0,false
+52, don't overdub first argexpr to foreigncall,jrevels,2018-07-15T21:44:01.0,2018-07-15T23:15:28.0,true
+51,Error when handling ccall with tuple as first argument,Keno,2018-07-15T20:45:13.0,2018-07-15T23:15:28.0,false
+50,contextual tagging documentation,jrevels,2018-07-09T18:51:21.0,,false
+49,Refactor for recent IR changes + move context definition out of macro,jrevels,2018-06-21T21:43:22.0,2018-06-22T17:40:25.0,true
+48,Overdubbing kwargs methods,jekbradbury,2018-06-13T02:12:08.0,,false
+47,update Cassette for https://github.com/JuliaLang/julia/pull/27452,jrevels,2018-06-08T16:09:53.0,2018-06-22T17:40:25.0,false
+46,"[WIP] bring back metadata propagation (but instead of `Box`es, we now have `Tagged` objects)",jrevels,2018-06-08T11:23:41.0,2018-06-18T13:44:38.0,true
+45,bad inferrability is back on recent Julia master,jrevels,2018-05-31T18:14:06.0,2018-07-15T13:26:34.0,false
+44,cassette method overloads not respected,jrevels,2018-05-18T00:51:45.0,2018-06-14T13:46:52.0,false
+43,reinstate/redesign argument-local metadata propagation,jrevels,2018-05-10T23:51:21.0,2018-08-02T20:01:22.0,false
+42,UnionAll inference issues,jrevels,2018-05-10T23:38:28.0,2018-07-09T12:23:15.0,false
+41,refactor overdub/context code,jrevels,2018-04-20T17:11:02.0,2018-05-10T23:34:22.0,true
+40,use new impending spoof format,jrevels,2018-04-16T18:57:55.0,2018-04-20T16:44:34.0,true
+39,Fix Overdub printing method,Keno,2018-04-15T00:29:53.0,2018-04-16T14:56:02.0,true
+38,Make Cassette more eloquent,maleadt,2018-04-04T13:12:09.0,2018-04-11T17:33:09.0,true
+37,fix tag generation to respect nested contexts,jrevels,2018-04-02T21:07:29.0,2018-04-02T23:06:15.0,true
+36,Fix tag generation,jrevels,2018-04-02T20:41:00.0,2018-04-02T23:06:15.0,false
+35,Relabel :enter Exprs,maleadt,2018-03-20T10:15:03.0,2018-03-21T15:55:13.0,true
+34,"make API macros accept normal method definitions by using default bindings for trace metadata, context, etc.",jrevels,2018-03-06T17:56:10.0,2018-03-06T19:53:16.0,true
+33,use invoke workaround for Overdub{Execute},jrevels,2018-03-03T21:01:51.0,2018-04-30T22:27:01.0,true
+32,split hook into prehook and posthook,jrevels,2018-03-02T20:27:53.0,2018-03-02T21:00:01.0,true
+31,Better varargs are actually worse,maleadt,2018-02-08T14:04:30.0,2018-05-10T23:39:00.0,false
+30,API changes to make it easier to build nested traces,jrevels,2018-01-31T17:56:09.0,2018-03-06T19:54:58.0,false
+29,Interface Stuff,MikeInnes,2018-01-22T13:05:18.0,2018-02-15T16:41:35.0,true
+28,better varargs-based approach to interception,jrevels,2018-01-17T21:47:28.0,2018-01-18T21:58:48.0,true
+27,Issues with nested trace,MikeInnes,2018-01-16T22:06:35.0,2018-01-18T22:09:22.0,false
+26,add pass type generation,jrevels,2018-01-03T23:48:37.0,2018-01-19T22:06:20.0,false
+25,support for inference heuristic spoofing (ref JuliaLang/julia#24852),jrevels,2018-01-02T19:35:32.0,2018-01-12T01:15:51.0,true
+24,scalar metadata propagation through `Array`,jrevels,2017-12-22T21:29:58.0,2018-05-10T23:51:49.0,false
+23,"Another day, another crash",jrevels,2017-12-22T21:22:00.0,2017-12-22T23:17:05.0,false
+22,fix iteration bugs,jrevels,2017-12-21T21:44:43.0,2017-12-21T21:45:23.0,true
+21,fix #20,jrevels,2017-12-21T18:50:19.0,2017-12-21T18:51:02.0,true
+20,overdubbing calls in non-assignment statements,jrevels,2017-12-21T17:45:42.0,2017-12-21T18:51:03.0,false
+19,Iteration is now broken,jrevels,2017-12-20T23:05:42.0,2017-12-21T21:45:23.0,false
+18,fix overdub calls for linear IR change,jrevels,2017-12-20T22:48:51.0,2017-12-20T22:50:04.0,true
+17,post-JuliaLang/julia#24960 metadata wrapper refactor,jrevels,2017-12-12T19:01:00.0,2017-12-22T21:28:48.0,false
+16,Broken by linear IR change in Base,jrevels,2017-12-12T18:44:49.0,2017-12-20T23:00:25.0,false
+15,fix github issue links in design doc,rdeits,2017-11-28T18:40:19.0,2017-11-30T22:30:29.0,true
+14,attempt to generalize Overdub{Intercept} to accept varargs,jrevels,2017-11-14T21:01:34.0,2018-01-17T22:02:45.0,true
+13,overdubbed method doesn't infer,maleadt,2017-11-14T16:28:39.0,2018-05-10T23:45:10.0,false
+12,clean debug info,maleadt,2017-11-14T15:21:31.0,,false
+11,failure to infer/inline,maleadt,2017-11-13T10:10:30.0,2017-11-14T15:12:26.0,false
+10,Fix debug API.,maleadt,2017-11-07T07:12:02.0,2017-11-07T22:28:53.0,true
+9,overhead of getfield projection approach,jrevels,2017-10-11T18:46:26.0,2017-12-12T18:50:02.0,false
+8,resolve #4,jrevels,2017-09-05T20:53:14.0,2017-09-05T20:56:40.0,true
+7,generated `CodeInfo` inlining should happen in Base rather than in Cassette,jrevels,2017-09-05T16:15:33.0,2018-04-30T22:30:13.0,false
+6,world age validation for certain generated functions,jrevels,2017-09-05T16:02:51.0,,false
+5,"optimization of ""pass-through"" varargs methods",jrevels,2017-09-05T15:03:38.0,2018-05-10T23:45:24.0,false
+4,decouple execution-level metadata from context object ,jrevels,2017-09-04T23:36:47.0,2017-09-05T20:56:41.0,false
+3,Design Decisions,jrevels,2017-07-14T21:53:09.0,2017-08-25T21:37:21.0,false
+2,Optimize scalar locality for static graph representation,jrevels,2017-06-29T21:21:18.0,2017-12-12T18:46:55.0,false
+1,Use Cases,jrevels,2017-06-29T21:16:23.0,2018-05-10T23:46:15.0,false

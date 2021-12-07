@@ -1,4 +1,31 @@
 number,title,login,created_at,closed_at,is_pr
+2816,Update list of CI platforms,odow,2021-12-01T19:58:23.0,2021-12-01T21:12:24.0,true
+2815,WIP: refactor printing to use MOI.Utilities,odow,2021-12-01T04:03:25.0,,true
+2814,Refactor print to using printing implemented for MOI backend,blegat,2021-11-30T13:51:10.0,,false
+2813,Prep for 0.22.1 release,odow,2021-11-28T20:02:58.0,2021-11-29T04:22:22.0,true
+2812,[docs] add design patterns tutorial,odow,2021-11-25T21:04:14.0,2021-11-28T19:54:56.0,true
+2811,adding Base.isempty(::Model),matbesancon,2021-11-22T16:11:37.0,2021-11-23T20:14:53.0,true
+2810,define Base.isempty or is_empty for JuMP models,matbesancon,2021-11-20T12:15:51.0,2021-11-23T20:14:53.0,false
+2809,Problematic dirty flag change,jd-lara,2021-11-19T20:55:51.0,2021-12-01T03:14:43.0,false
+2808,Export OptimizationSense enum from MOI,odow,2021-11-18T22:20:49.0,2021-11-18T23:21:32.0,true
+2807,Export MOI.OptimizationSense,odow,2021-11-18T18:55:49.0,2021-11-18T23:21:32.0,false
+2806,Fix bug in set_time_limit_sec,odow,2021-11-18T03:46:02.0,2021-11-18T22:49:22.0,true
+2805,Optimizer Attributes Not Standardized,pulsipher,2021-11-17T21:54:26.0,2021-11-18T22:49:22.0,false
+2804,[docs] tidy and extend page on AMLs,odow,2021-11-15T06:32:36.0,2021-11-16T20:33:46.0,true
+2803,[docs] update Should I use JuMP,odow,2021-11-15T06:27:08.0,2021-11-15T19:04:49.0,true
+2802,[docs] rewrite manual/constraints.md,odow,2021-11-14T20:00:22.0,2021-11-15T19:21:50.0,true
+2801,Fix egregious typo in error message,odow,2021-11-13T04:36:24.0,2021-11-13T21:00:59.0,true
+2800,Fix bug in containers with tuple indices,odow,2021-11-12T20:02:45.0,2021-11-12T22:25:23.0,true
+2799,LoadError after updating from version 0.21.10 to 0.22.0,mopoona,2021-11-12T11:20:53.0,2021-11-12T22:25:23.0,false
+2798,Rewrite manual/variables.md,odow,2021-11-11T22:53:35.0,2021-11-14T04:46:23.0,true
+2797,Remove dirty flag,blegat,2021-11-11T14:06:19.0,,false
+2796,Remove release notes from PDF,odow,2021-11-11T08:17:26.0,2021-11-11T23:11:20.0,true
+2795,Revert PR2792,odow,2021-11-10T00:46:05.0,2021-11-10T01:35:05.0,true
+2794,Adding the LP sensitivity report print function for `solution_summary`,AtsushiSakai,2021-11-06T13:45:02.0,,true
+2793,Fix DiffRules compat,odow,2021-11-05T09:10:39.0,2021-11-10T01:35:05.0,false
+2792,Temporarily limit DiffRules.jl compat,odow,2021-11-05T05:38:20.0,2021-11-05T09:07:21.0,true
+2791,[docs] General edit for common tics,odow,2021-11-05T05:26:18.0,2021-11-05T23:19:45.0,true
+2790,Prep for v0.22 release,odow,2021-11-04T21:05:43.0,2021-11-10T02:27:18.0,true
 2789,Update release_notes.md,odow,2021-11-02T01:21:14.0,2021-11-02T22:45:16.0,true
 2788,Slow evaluation of nonlinear callbacks,odow,2021-11-02T01:14:51.0,,false
 2787,[docs] Clarify MOI symbol imports,odow,2021-10-31T22:08:18.0,2021-11-02T22:13:18.0,true
@@ -38,7 +65,7 @@ number,title,login,created_at,closed_at,is_pr
 2753,Fix incorrect auto register of splats,odow,2021-10-13T03:01:23.0,2021-10-13T20:26:20.0,true
 2752,Fix TODO items in print.jl,odow,2021-10-12T23:33:58.0,2021-10-13T20:28:41.0,true
 2751,[Containers] document nested and vectorized_product,odow,2021-10-12T21:58:45.0,2021-10-12T22:16:29.0,true
-2750,Improve performance of GenericAffExpr,odow,2021-10-12T03:45:05.0,,true
+2750,Improve performance of GenericAffExpr,odow,2021-10-12T03:45:05.0,2021-11-29T22:36:43.0,true
 2749,Style improvements to aff_expr.jl,odow,2021-10-12T03:01:35.0,2021-10-12T03:34:08.0,true
 2748,WIP: use add_constraints in macros,odow,2021-10-12T02:14:59.0,2021-10-25T02:55:32.0,true
 2747,[docs] better clarify variable bound on LHS error,odow,2021-10-11T23:53:47.0,2021-10-12T00:40:45.0,true

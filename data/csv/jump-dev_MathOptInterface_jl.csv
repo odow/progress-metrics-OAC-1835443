@@ -1,7 +1,60 @@
 number,title,login,created_at,closed_at,is_pr
+1700,JET check of MathOptInterface,goerch,2021-12-06T13:04:00.0,,false
+1699,Fix logic in cost_of_bridging,odow,2021-12-05T23:27:57.0,,true
+1698,Bug in bridges with variables-constrained-on-creation,chriscoey,2021-12-04T18:26:37.0,,false
+1697,Add fallback for compute_conflict!,odow,2021-12-02T18:53:39.0,,false
+1696,[Test] fix missing config,odow,2021-12-02T04:10:20.0,2021-12-02T18:50:21.0,true
+1695,Fix printing of non-real number types,odow,2021-11-30T19:37:15.0,2021-11-30T21:57:33.0,true
+1694,Number type conversion bridge,blegat,2021-11-30T14:13:16.0,,false
+1693,Printing fails with complex numbers,blegat,2021-11-30T13:56:18.0,2021-11-30T21:57:33.0,false
+1692,[Utilities] Fix method invalidation,odow,2021-11-30T03:32:55.0,2021-12-01T02:25:32.0,true
+1691,Prep for v0.10.6,odow,2021-11-29T23:42:19.0,2021-11-30T00:31:23.0,true
+1690,Define supports for is_set_by_optimize,odow,2021-11-29T23:38:19.0,,true
+1689,[Test] fix missing config in _test_det_cone_helper,odow,2021-11-25T23:54:21.0,2021-11-26T01:29:56.0,true
+1688,Fix version_added for infeasibility tests,odow,2021-11-25T03:27:41.0,2021-11-25T04:33:34.0,true
+1687,Update release_notes.md,odow,2021-11-25T03:27:18.0,2021-11-25T18:35:12.0,true
+1686,[Test] fix test_model_copy_to_ tests,odow,2021-11-25T01:02:37.0,2021-11-25T23:36:56.0,true
+1685,"Revert ""[Utilties] don't throw UnsupportedAttribute in pass_attribute…",odow,2021-11-24T20:54:28.0,2021-11-25T01:03:21.0,true
+1684,Check result index in get_fallback of ConstraintPrimal,blegat,2021-11-24T19:42:33.0,,true
+1683,[Test] add generic number types in test_conic,odow,2021-11-24T02:50:27.0,2021-11-25T03:09:03.0,true
+1682,Fix bug in CachingOptimizer ConstraintPrimal,odow,2021-11-23T23:28:41.0,2021-11-24T02:48:24.0,true
+1681,[Test] add more generic number type support,odow,2021-11-23T21:57:33.0,2021-11-23T23:32:31.0,true
+1680,[Test] simplify type check in test_nonlinear,odow,2021-11-23T20:59:20.0,2021-11-23T22:16:36.0,true
+1679,Integrating MOI into an industry-scale project (e.g. constraint management) ,pboes,2021-11-23T09:20:25.0,2021-11-23T19:44:19.0,false
+1678,[Test] add generic number types in test_solve,odow,2021-11-23T01:48:11.0,2021-11-23T05:41:06.0,true
+1677,[Utilities] Support generic number type in MockOptimizer,odow,2021-11-22T22:30:31.0,2021-11-23T00:48:55.0,true
+1676,[Test] add generic number types in test_constraint,odow,2021-11-22T20:55:58.0,2021-11-22T21:50:54.0,true
+1675,Implement read! for LP file format,odow,2021-11-22T01:34:49.0,,false
+1674,[Utilities] use ConstraintPrimal fallback in CachingOptimizer,odow,2021-11-21T23:20:16.0,2021-11-22T21:22:00.0,true
+1673,[Test] add config.infeasible_status,odow,2021-11-21T22:34:52.0,2021-11-22T19:45:24.0,true
+1672,[Utilities] fix fallback of map_indices,odow,2021-11-21T22:20:49.0,2021-11-23T03:23:28.0,true
+1671,Tests should allow LOCALLY_INFEASIBLE,odow,2021-11-21T03:22:17.0,2021-11-22T19:45:24.0,false
+1670,CachingOptimizer shouldn't map Model and Optimizer attributes,odow,2021-11-21T02:17:16.0,2021-11-23T03:23:27.0,false
+1669,Make MockOptimizer generic,odow,2021-11-19T03:01:33.0,2021-11-23T00:48:55.0,false
+1668,[Test] add generic number types in test_linear,odow,2021-11-19T01:48:22.0,2021-11-22T19:45:48.0,true
+1667,[Test] update for generic coefficient types,odow,2021-11-19T00:57:08.0,2021-11-19T01:48:35.0,true
+1666,Add checker for version being tested,joaquimg,2021-11-18T23:33:57.0,,true
+1665,Bridges don't update when other constraints updated,odow,2021-11-18T20:50:15.0,,false
+1664,Remove source of common test failure in LowerBoundAlreadySet,odow,2021-11-18T04:48:50.0,2021-11-18T22:13:02.0,true
+1663,[doc] clarify documentation of solvers,odow,2021-11-18T02:13:36.0,2021-11-18T22:22:51.0,true
+1662,[Test] add version_added to better control MOI.Test.runtests,odow,2021-11-17T23:38:26.0,2021-11-18T23:05:38.0,true
+1661,Add a way to add tests without breaking solvers,odow,2021-11-16T03:41:24.0,2021-11-18T23:05:38.0,false
+1660,Add docs and tests for infeasibility certificates,odow,2021-11-16T01:55:32.0,2021-11-20T20:48:54.0,true
+1659,[FileFormats.NL] Fix printing of large integers,odow,2021-11-11T03:21:31.0,2021-11-11T04:09:01.0,true
+1657,[FileFormats] fix copy_to for FileFormats.NL,odow,2021-11-09T02:46:08.0,2021-11-09T23:28:02.0,true
+1656,[Utilties] don't throw UnsupportedAttribute in pass_attributes,odow,2021-11-09T01:29:55.0,2021-11-15T19:37:02.0,true
+1655,[Bridges] throw better error for nonconvex quadratic constraints,odow,2021-11-09T01:13:39.0,2021-11-11T03:32:48.0,true
+1654,[docs] Remove release_notes.md from pdf build,odow,2021-11-09T01:01:02.0,2021-11-09T01:51:26.0,true
+1653,Fix StackOverflow with copy_to,odow,2021-11-09T00:29:55.0,2021-11-09T01:19:28.0,true
+1652,General edit of the docs,odow,2021-11-08T22:34:08.0,2021-11-09T01:21:12.0,true
+1651,Fix citation in readme,joaquimg,2021-11-08T00:16:01.0,2021-11-08T03:12:32.0,true
+1650,Prep for v0.10.5,joaquimg,2021-11-07T05:12:55.0,2021-11-08T00:12:08.0,true
+1649,Fix tests names,joaquimg,2021-11-07T04:59:09.0,2021-11-09T23:33:46.0,true
+1648,Fix ZeroOne 2 infeasibility test,joaquimg,2021-11-07T04:54:32.0,2021-11-07T16:02:42.0,true
+1647,Fix space issue in BibTeX entry,blegat,2021-11-05T15:48:13.0,2021-11-05T22:24:46.0,true
 1646,Update BibTeX entry,blegat,2021-11-03T13:30:29.0,2021-11-03T19:48:27.0,true
 1645,[Utilities] Fix getter in UniversalFallback,odow,2021-10-29T00:34:27.0,2021-11-01T19:29:48.0,true
-1644,Export num_rows,blegat,2021-10-28T02:31:14.0,,true
+1644,Export num_rows,blegat,2021-10-28T02:31:14.0,2021-11-11T03:38:11.0,true
 1643,For normalize_and_add_constraint for Integer and ZeroOne,blegat,2021-10-28T02:23:22.0,2021-10-28T14:18:25.0,true
 1642,Prep for v0.10.4,odow,2021-10-25T02:26:53.0,2021-10-26T20:45:25.0,true
 1641,[docs] Update documenter version,odow,2021-10-20T21:32:44.0,2021-10-20T22:35:21.0,true
@@ -9,7 +62,7 @@ number,title,login,created_at,closed_at,is_pr
 1639,Add doc_cleanup.yml,odow,2021-10-20T03:22:16.0,2021-10-20T07:57:17.0,true
 1638,Build docs as a PDF,odow,2021-10-19T04:42:29.0,2021-10-20T03:19:36.0,true
 1637,Add solver version attribute,guilhermebodin,2021-10-14T15:16:24.0,2021-10-21T21:51:26.0,true
-1636,StackOverflow with copy_to,blegat,2021-10-14T12:25:19.0,,false
+1636,StackOverflow with copy_to,blegat,2021-10-14T12:25:19.0,2021-11-09T01:19:28.0,false
 1635,Implement ConstraintFunction/ConstraintSet for VariablesContainer,blegat,2021-10-13T20:59:33.0,2021-10-23T11:06:12.0,true
 1634,Add nlp test,blegat,2021-10-12T23:09:59.0,2021-10-20T03:18:11.0,true
 1632,non-const model macro generation,matbesancon,2021-10-09T16:35:14.0,2021-10-12T17:09:15.0,true
@@ -22,14 +75,14 @@ number,title,login,created_at,closed_at,is_pr
 1625,Allow skipping NLPBlockDual,blegat,2021-09-22T20:56:41.0,2021-09-25T21:33:21.0,true
 1624,Tuple function for epigraph formulations,matbesancon,2021-09-21T12:52:48.0,,false
 1623,Add SolverVersion <: AbstractOptimizerAttribute,jd-lara,2021-09-21T01:09:06.0,2021-10-26T21:48:08.0,false
-1621,Exclude nonconvex quadratic test,blegat,2021-09-19T05:10:02.0,,false
+1621,Exclude nonconvex quadratic test,blegat,2021-09-19T05:10:02.0,2021-11-11T03:32:48.0,false
 1620,Update release notes for v0.10.3,odow,2021-09-18T02:42:03.0,2021-09-18T23:55:28.0,true
 1619,[Test] fix ListOfConstraintAttributesSet for BadModel,odow,2021-09-17T03:50:31.0,2021-09-18T23:55:12.0,true
 1618,[Utilities] allow callbacks through CachingOptimizer,odow,2021-09-17T03:28:55.0,2021-09-18T01:42:12.0,true
 1617,.rew model file support in FileFormats,oleg-barbin-fonterra,2021-09-16T01:54:08.0,,false
 1616,Update release notes for v0.10.2,odow,2021-09-16T00:26:47.0,2021-09-16T22:45:48.0,true
 1615,[Utilities] fix emptying of CachingOptimizer,odow,2021-09-15T23:40:46.0,2021-09-16T22:45:10.0,true
-1614,Unsupported attributes,blegat,2021-09-15T11:22:55.0,,false
+1614,Unsupported attributes,blegat,2021-09-15T11:22:55.0,2021-11-15T19:37:02.0,false
 1613,[Utilities] throw UnsupportedAttribute in pass_attributes,odow,2021-09-15T05:01:36.0,2021-09-15T06:18:52.0,true
 1612,[Bridges] Fix ListOfConstraintAttributesSet,odow,2021-09-15T04:56:23.0,2021-09-15T18:42:37.0,true
 1611,[Test] more misc fixes from SCS,odow,2021-09-15T04:42:12.0,2021-09-15T06:16:57.0,true
@@ -72,7 +125,7 @@ number,title,login,created_at,closed_at,is_pr
 1574,[Bridges] maintenance of zero_one.jl,odow,2021-09-03T01:18:18.0,2021-09-06T01:30:13.0,true
 1573,Change version to 0.10.0,odow,2021-09-02T21:40:36.0,2021-09-05T21:16:24.0,true
 1572,supports AbstractConstraintAttribute broken for bridges,odow,2021-09-02T04:21:29.0,2021-09-06T21:06:34.0,false
-1571,Common test failures to investigate,odow,2021-09-02T03:32:57.0,,false
+1571,Common test failures to investigate,odow,2021-09-02T03:32:57.0,2021-11-09T02:00:57.0,false
 1570,[docs] update docs to build on Julia 1.6,odow,2021-09-02T02:23:08.0,2021-09-02T03:11:27.0,true
 1569,Update release notes with latest changes,odow,2021-09-01T23:46:53.0,2021-09-02T21:38:22.0,true
 1568,[Test] add indicator tests from Gurobi.jl,odow,2021-09-01T23:33:18.0,2021-09-02T02:09:22.0,true
@@ -129,7 +182,7 @@ number,title,login,created_at,closed_at,is_pr
 1517,[Test] fix bug in skipping ConstraintDual,odow,2021-08-10T02:04:42.0,2021-08-10T03:35:40.0,true
 1516,[Test] Add test for NLPBlockDual,odow,2021-08-10T01:37:43.0,2021-08-10T02:34:55.0,true
 1515,[Test] Fix requires in ObjectiveBound tests,odow,2021-08-10T01:17:22.0,2021-08-10T02:05:04.0,true
-1514,NL.copy_to does not check for attributes,odow,2021-08-10T00:47:51.0,,false
+1514,NL.copy_to does not check for attributes,odow,2021-08-10T00:47:51.0,2021-11-09T23:28:02.0,false
 1513,Update NEWS.md with the latest changes,odow,2021-08-09T02:15:11.0,2021-08-09T04:32:33.0,true
 1512,[breaking] remove automatic_copy_to,odow,2021-08-08T23:44:26.0,2021-08-10T23:23:15.0,true
 1511,Stylistic changes and typo fixes in intro docs,jd-foster,2021-08-06T04:05:29.0,2021-08-06T16:58:16.0,true
@@ -195,6 +248,7 @@ number,title,login,created_at,closed_at,is_pr
 1451,Migrate tests of lazy_iterators.jl,odow,2021-07-13T03:35:36.0,2021-07-13T22:02:29.0,true
 1450,Migrate functions.jl to modular test,odow,2021-07-13T01:47:03.0,2021-07-13T02:51:04.0,true
 1449,Migrate constraints.jl to modular test,odow,2021-07-13T01:45:56.0,2021-07-13T04:07:57.0,true
+1658,"InexactError: trunc(Int64, x) where x is large",odow,2021-07-13T00:06:43.0,2021-11-11T04:09:01.0,false
 1448,Migrate tests of Utilities/CleverDicts,odow,2021-07-06T23:15:29.0,2021-07-07T03:05:18.0,true
 1447,[FileFormats] Add row() and column() to MPS writer,odow,2021-07-05T20:35:02.0,2021-07-23T22:28:27.0,false
 1446,Refactor DoubleDicts.jl,odow,2021-07-05T07:10:26.0,2021-07-23T22:21:55.0,true
@@ -212,7 +266,7 @@ number,title,login,created_at,closed_at,is_pr
 1434,[Test] change MOI.OPTIMAL to config.optimal_status,odow,2021-07-02T04:55:48.0,2021-07-02T05:53:19.0,true
 1433,Bridges fail test_constraint_ConstraintPrimalStart,odow,2021-07-02T03:15:08.0,2021-07-05T12:46:43.0,false
 1432,Fix missing line in test_objective.jl,odow,2021-07-02T01:43:12.0,2021-07-02T02:38:02.0,true
-1431,Bridges fail test_model_LowerBoundAlreadySet test,odow,2021-07-02T01:31:05.0,,false
+1431,Bridges fail test_model_LowerBoundAlreadySet test,odow,2021-07-02T01:31:05.0,2021-11-18T22:13:02.0,false
 1430,[Utilities] Fix bug in ListOfConstraintAttributesSet,odow,2021-07-02T01:19:18.0,2021-07-02T02:38:44.0,true
 1429,ListOfConstraintAttributesSet is incorrect in Utilities.Model,odow,2021-07-02T01:03:16.0,2021-07-02T02:38:43.0,false
 1428,[Test] various fixes to MOI.Test,odow,2021-07-01T23:20:32.0,2021-07-02T00:32:05.0,true
@@ -332,13 +386,13 @@ number,title,login,created_at,closed_at,is_pr
 1313,Tracking the time-to-first-solve issue,odow,2021-05-04T00:16:01.0,,false
 1312,[breaking] error on SingleVariable ConstraintNames,odow,2021-05-02T23:05:56.0,2021-05-18T01:46:39.0,true
 1311,Update NEWS.md,odow,2021-05-02T21:51:57.0,2021-05-03T02:03:37.0,true
-1310,Automatic fallback,blegat,2021-04-30T12:23:59.0,,false
+1310,Automatic fallback in CachingOptimizer,blegat,2021-04-30T12:23:59.0,2021-11-22T21:21:59.0,false
 1309,Add NL file writer.,odow,2021-04-30T04:54:46.0,2021-05-10T04:29:01.0,true
 1308,[breaking] Rename RSOCBridge and SOCRBridge,odow,2021-04-30T04:13:11.0,2021-04-30T23:50:16.0,true
 1307,[breaking] Rename MOIU.supports_default_copy_to to MOI.supports_incremental_interface,odow,2021-04-30T04:02:37.0,2021-05-06T20:20:33.0,true
 1306,[breaking] Rename .variable_index fields to .variable,odow,2021-04-30T00:44:05.0,2021-05-02T19:59:40.0,true
 1305,[breaking] Rename ListOfConstraints -> ListOfConstraintTypesPresent,odow,2021-04-30T00:26:07.0,2021-05-02T08:20:09.0,true
-1633,Add solver READMEs to documentation,odow,2021-04-29T10:17:56.0,,false
+1633,Add solver READMEs to documentation,odow,2021-04-29T10:17:56.0,2021-11-18T22:22:51.0,false
 1304,[breaking] Replace N field with result_index,odow,2021-04-23T03:01:07.0,2021-04-30T23:48:55.0,true
 1303,[breaking] Rename SolveTime to SolveTimeSec,odow,2021-04-23T02:31:50.0,2021-04-30T23:48:13.0,true
 1302,Reminder to exclude tests for unsupported features,rschwarz,2021-04-22T18:47:48.0,2021-04-22T20:31:48.0,true
@@ -406,7 +460,7 @@ number,title,login,created_at,closed_at,is_pr
 1236,Add support for SOS constraints in MPS,blegat,2021-02-14T14:21:00.0,2021-06-18T01:17:05.0,false
 1235,Add test with zero in off-diagonal entry,blegat,2021-02-10T11:11:36.0,2021-02-19T10:34:05.0,true
 1234,Refactor UniversalFallback and Model with VectorOfConstraints,blegat,2021-02-07T11:49:11.0,2021-03-11T08:20:31.0,false
-1233,Add support for box constraint,blegat,2021-02-04T09:29:36.0,,false
+1233,Set request: Box or HyperRectangle,blegat,2021-02-04T09:29:36.0,,false
 1232,Fix double deletion of nested bridged SingleVariable constraint,blegat,2021-02-02T12:37:56.0,2021-02-19T10:28:55.0,true
 1231,Double deletion of bridged SingleVariable constraint,blegat,2021-02-02T11:38:02.0,2021-02-19T10:28:55.0,false
 1230,Missing docstring for lazy_get,blegat,2021-02-02T08:54:00.0,2021-07-23T22:21:55.0,false
@@ -416,7 +470,7 @@ number,title,login,created_at,closed_at,is_pr
 1226,Use T <: Number for GreaterThan and LessThan,dourouc05,2021-01-12T09:58:22.0,2021-01-12T10:48:02.0,true
 1225,set VariableName doesn't get called,Wikunia,2021-01-08T12:06:19.0,2021-08-23T02:35:57.0,false
 1224,change findall into for comprehension,matbesancon,2021-01-03T12:08:28.0,2021-01-13T07:49:17.0,true
-1223,Use bridges for inner constraint in indicator,Wikunia,2020-12-21T18:06:48.0,,false
+1223,Bridge request: inner constraint of Indicator,Wikunia,2020-12-21T18:06:48.0,,false
 1222,Fix a typo in the docstring of VectorQuadraticFunction,amontoison,2020-12-20T17:32:06.0,2020-12-20T22:28:58.0,true
 1221,Improve bridge error that users may encounter,odow,2020-12-18T03:31:19.0,2021-06-21T22:08:35.0,false
 1220,reset_optimizer attempts to pass RawParameters between models,odow,2020-12-15T20:49:45.0,2021-04-05T20:35:10.0,false
@@ -438,7 +492,7 @@ number,title,login,created_at,closed_at,is_pr
 1204,NEWS for v0.9.19,blegat,2020-12-01T11:52:12.0,2020-12-01T22:01:38.0,true
 1203,`compute_conflict!` resulting in MethodError,raphaelsaavedra,2020-11-29T09:30:47.0,2020-12-18T03:32:25.0,false
 1202,Add support for conflicts in MockOptimizer,dourouc05,2020-11-29T06:39:10.0,2020-12-14T07:59:08.0,true
-1201,Add tests for DualObjectiveValue when infeasible,odow,2020-11-27T03:15:25.0,,false
+1201,Add tests for DualObjectiveValue when infeasible,odow,2020-11-27T03:15:25.0,2021-11-20T20:48:53.0,false
 1200,Begin re-organization of MOI docs,odow,2020-11-26T03:27:24.0,2020-11-26T20:58:48.0,true
 1199,Add CallbackNodeStatus attribute,odow,2020-11-26T02:06:02.0,2020-12-01T11:43:03.0,true
 1198,Update README badge to Github Action,blegat,2020-11-20T08:35:39.0,2020-11-20T18:48:16.0,true
@@ -659,7 +713,7 @@ number,title,login,created_at,closed_at,is_pr
 980,Crash on Julia v1.1,blegat,2019-12-27T13:58:07.0,2019-12-29T00:28:25.0,false
 979,Changed attribute from SolveTime to SolveTimeSec,guilhermebodin,2019-12-26T19:21:20.0,2021-04-23T02:43:04.0,true
 978,How to code SOS2 constraints in Julia with Gurobi solver ,mahsap58,2019-12-24T19:02:20.0,2019-12-26T19:28:35.0,false
-977,add a WeightedPowerMeanCone (like geomean but with any vector of positive exponents),chriscoey,2019-12-24T13:09:03.0,,false
+977,Set request: WeightedPowerMeanCone,chriscoey,2019-12-24T13:09:03.0,,false
 976,add nuclear norm and spectral norm cone sets (for general/nonsymmetric matrices),chriscoey,2019-12-24T12:43:37.0,2020-01-06T08:26:40.0,true
 975,Add promote_operation allocation tests,blegat,2019-12-22T09:41:17.0,2019-12-28T14:26:50.0,true
 974,NEWS for v0.9.8-rc2,blegat,2019-12-19T10:57:36.0,2019-12-19T12:23:43.0,true
@@ -694,7 +748,7 @@ number,title,login,created_at,closed_at,is_pr
 945,Fix segfault of #877,blegat,2019-11-07T16:35:08.0,2019-11-07T18:48:31.0,true
 944,Implement variable start for Variable.VectorizeBridge,blegat,2019-11-04T10:46:49.0,2019-11-05T10:07:10.0,true
 943,Missing method,nrontsis,2019-11-03T21:16:18.0,2019-11-05T10:07:09.0,false
-942,Matrix bounds,blegat,2019-11-02T10:38:15.0,,false
+942,Matrix bounds,blegat,2019-11-02T10:38:15.0,2021-11-22T21:15:39.0,false
 941,Fix copy of model with starting values for vector constraint,blegat,2019-10-30T17:52:38.0,2019-10-30T19:49:40.0,true
 940,NEWS for v0.9.7,blegat,2019-10-30T13:28:35.0,2019-10-30T21:07:04.0,true
 939,Add support for starting values for interval bridge,blegat,2019-10-30T11:29:42.0,2019-10-30T14:58:42.0,true
@@ -793,7 +847,7 @@ number,title,login,created_at,closed_at,is_pr
 844,Define map_indices and substitute_variables for NLPBlockData,blegat,2019-08-18T08:12:48.0,2019-08-22T20:29:00.0,false
 843,Fix show for IndexMap,blegat,2019-08-18T07:57:03.0,2019-08-22T20:28:07.0,false
 842,zero_with_dimension,blegat,2019-08-16T18:10:47.0,2021-05-28T23:09:15.0,false
-841,Update MOI.Test to support any coefficient that is a subtype of Real,chriscoey,2019-08-16T18:03:53.0,,false
+841,Update MOI.Test to support any coefficient that is a subtype of Real,chriscoey,2019-08-16T18:03:53.0,2021-11-25T03:13:40.0,false
 840,Fix SOC to PSD bridge,blegat,2019-08-16T16:02:46.0,2019-08-16T18:09:08.0,true
 839,Fix SOC3,guilhermebodin,2019-08-15T19:09:37.0,2019-08-19T23:54:47.0,true
 838,Bug in SOCtoPSDBridge,JiazhengZhu,2019-08-15T16:27:00.0,2019-08-16T18:09:08.0,false
@@ -1092,7 +1146,7 @@ number,title,login,created_at,closed_at,is_pr
 544,♻️ Avoid escaping everything in @model macro,blegat,2018-10-25T13:45:28.0,2018-10-25T22:27:41.0,true
 543,🐛 Fix error with UnknownSet,blegat,2018-10-25T12:51:10.0,2018-10-26T08:32:04.0,true
 542,Prepare NEWS for MOI v0.6.2,blegat,2018-10-24T09:58:25.0,2018-10-25T00:48:45.0,true
-541,add bridges for logdet/rootdet square -> triangle,chriscoey,2018-10-24T00:37:08.0,,false
+541,"Bridge request: {Log,Root}DetConeSquare to ConeTriangle",chriscoey,2018-10-24T00:37:08.0,,false
 540,Fix universall fallback w/ ObjectiveFunctionType,blegat,2018-10-23T13:56:19.0,2018-10-24T09:42:03.0,true
 539,Documenter update,mlubin,2018-10-17T17:49:18.0,2018-10-29T10:02:21.0,false
 538,Add QuadtoSOC test with permutation,blegat,2018-10-14T13:01:01.0,2021-08-21T03:07:56.0,false
@@ -1102,7 +1156,7 @@ number,title,login,created_at,closed_at,is_pr
 534,Add errors for Allocate-Load and bad constraint,blegat,2018-10-09T17:08:16.0,2018-10-11T15:08:26.0,true
 533,implement hash() for VariableIndex,mlubin,2018-10-07T01:19:30.0,2018-10-07T13:18:58.0,true
 532,Decision: Interval sets with lower > upper,odow,2018-10-03T14:26:33.0,2020-04-02T18:29:10.0,false
-531,Add scaled psd cone,blegat,2018-10-01T16:08:03.0,,false
+531,Set request: ScaledPSDCone,blegat,2018-10-01T16:08:03.0,,false
 530,allocate_constraint and load_constraint should throw UnsupportedConstraint error,blegat,2018-09-29T08:50:17.0,2018-10-11T15:08:26.0,false
 529,Objective function bridge,blegat,2018-09-27T20:23:22.0,2019-09-05T10:05:59.0,false
 528,Slack and Unslack bridge,blegat,2018-09-23T09:09:48.0,2019-03-15T02:48:17.0,false
@@ -1200,7 +1254,7 @@ number,title,login,created_at,closed_at,is_pr
 436,Replace can... functions by errors,blegat,2018-07-29T17:24:08.0,2018-08-01T09:39:33.0,true
 435,Implements SolverName for MockOptimizer,blegat,2018-07-29T14:40:26.0,2018-11-17T17:10:43.0,true
 434,Fix tests adding multiple variable bounds,odow,2018-07-28T07:31:35.0,2018-07-29T21:23:42.0,true
-433,What to do with constants for results of InfeasibilityCertificate,blegat,2018-07-27T16:06:38.0,,false
+433,What to do with constants for results of InfeasibilityCertificate,blegat,2018-07-27T16:06:38.0,2021-11-20T20:48:53.0,false
 432,Add unit tests for duplicate terms in linear portion of objective,odow,2018-07-25T03:34:27.0,2018-07-26T01:00:14.0,true
 431,dimension -> side_dimension where it makes sense,mohamed82008,2018-07-22T10:28:47.0,2018-07-25T01:30:38.0,true
 430,Add in-place version of canonical() and more tests,rdeits,2018-07-19T06:34:57.0,2018-07-21T18:16:12.0,true
@@ -1227,7 +1281,7 @@ number,title,login,created_at,closed_at,is_pr
 409,Fix names for CachingOptimizer,blegat,2018-06-29T00:39:02.0,2018-07-09T14:48:46.0,true
 408,Add helper function for 32bit MultirowChange,odow,2018-06-28T08:33:21.0,2018-06-28T10:24:57.0,true
 407,Add missing increment in belman-ford,blegat,2018-06-27T22:38:26.0,2018-06-28T07:21:22.0,true
-406,Add GeometricMeanCone to PowerCone bridge,blegat,2018-06-27T16:20:01.0,,false
+406,Bridge request: GeometricMeanCone to PowerCone,blegat,2018-06-27T16:20:01.0,,false
 405,Remove blank,blegat,2018-06-26T22:02:21.0,2018-06-26T22:33:34.0,true
 404,Fix constraints units tests for SingleVariable in Set,joaquimg,2018-06-26T17:10:22.0,2018-07-29T21:23:41.0,false
 403,Fix orderedindicestest,joaquimg,2018-06-26T17:09:38.0,2018-07-29T21:23:41.0,false

@@ -1,22 +1,242 @@
 number,title,login,created_at,closed_at,is_pr
+550,fix for julia 1.7,oxinabox,2021-12-03T22:27:51.0,,true
+549,CI is failing for julia 1,mzgubic,2021-12-02T12:53:08.0,,false
+548,"Rule for `mean(f, xs)`",mzgubic,2021-12-01T17:17:41.0,2021-12-01T17:18:29.0,false
+547,`rrule` for many-arg `*`,mcabbott,2021-11-29T21:06:56.0,2021-12-02T21:31:37.0,true
+546,"Rules for `sortslices`, `unique`",mcabbott,2021-11-24T16:45:13.0,2021-11-30T22:05:13.0,true
+545,Unnecessary shuffling by the identity matrix in the pullback of LU for tall matrices,Lezcano,2021-11-17T10:35:49.0,2021-11-17T10:50:57.0,false
+544,Slow gradient for product of more than 3 terms,mchitre,2021-11-16T13:51:56.0,2021-12-02T21:31:37.0,false
+543,Fix VersionVigilante action,devmotion,2021-10-24T08:51:02.0,2021-10-24T10:12:25.0,true
+542,Use `RealDot.realdot`,devmotion,2021-10-24T08:44:08.0,2021-10-24T10:13:04.0,true
+541,"mark CartesianIndices, floatmax, etc non-diff",mcabbott,2021-10-23T22:21:11.0,2021-10-24T13:02:36.0,true
+540,Assume commutative multiplication exactly when necessary,sethaxen,2021-10-13T20:34:22.0,,true
+539,No method matching for `mapreduce`? ,Red-Portal,2021-10-11T01:25:30.0,2021-11-24T03:53:02.0,false
+538,`norm` at zero,mcabbott,2021-10-08T17:17:27.0,,false
+537,`fill` assumes numerical arrays,DhairyaLGandhi,2021-10-05T14:07:25.0,2021-11-24T04:00:14.0,false
+536,"Backport: handle sum(f, xs) where f returns a Vector",oxinabox,2021-09-24T21:19:08.0,2021-09-24T22:14:37.0,true
+535,"NFC: test sum(iszero, xs)",oxinabox,2021-09-24T14:27:45.0,,true
+534,"Handle sum(f,xs) where f returns a Vector",oxinabox,2021-09-24T13:39:15.0,2021-09-24T22:04:18.0,true
+533,Gradients for polynomials in `Polynomials.jl`,manuelbb-upb,2021-09-23T07:15:49.0,,false
+532,add Diffractor to integration tests,simeonschaub,2021-09-20T17:06:32.0,2021-09-20T17:50:25.0,true
+531,"The right way to implement `rrule(broadcasted, f, args...)`",dfdx,2021-09-14T23:09:25.0,2021-09-16T21:45:09.0,false
+530,"`sum(f, ::Adjoint; dims)` gives wrong answers",mcabbott,2021-09-12T19:06:14.0,,false
+529,"Sometimes faster `sum(f,x)` rule",mcabbott,2021-09-12T04:00:53.0,,true
+528,Error when using `mod` or `mod2pi`,ronisbr,2021-09-11T15:51:30.0,2021-11-24T04:01:49.0,false
+527,Use `Returns`,mcabbott,2021-09-09T15:58:28.0,2021-09-09T16:59:48.0,true
+526,Rules for `foldl` and `accumulate`,mcabbott,2021-09-09T04:45:36.0,2021-11-14T03:25:35.0,true
+525,Interaction of `Complex{Dual}` with `rrule` for `^` on Julia ≤ 1.5,mcabbott,2021-09-07T18:56:10.0,,false
+524,"`@opt_out of sum(array, array)`",mzgubic,2021-09-03T20:01:54.0,2021-09-06T11:20:02.0,true
+523,Port rules for `permutedims`,mzgubic,2021-09-03T15:23:24.0,,false
+522,"`sum(f, xs)` dispatches on non functions",mzgubic,2021-09-02T13:22:10.0,2021-09-06T11:20:02.0,false
+521,rrule for fill!,CarloLucibello,2021-09-01T04:02:19.0,,true
+520,Don't ProjectTo in reverse or circshift,oxinabox,2021-08-31T08:58:39.0,2021-08-31T11:48:35.0,true
+519,unthunk in diagm,mzgubic,2021-08-31T08:48:25.0,2021-08-31T12:21:27.0,true
+518,"regression: ""no method matching ChainRulesCore.ProjectTo"" when calling reverse on a vector of functors",fedario,2021-08-30T19:23:12.0,2021-08-31T11:48:35.0,false
+517,Rule for `diagm` doesn't `unthunk`,mcabbott,2021-08-30T18:04:49.0,2021-08-31T12:21:27.0,false
+516,rrule for casting LinearAlgebra.QRCompactWYQ into a Matrix,rkube,2021-08-28T01:16:01.0,,false
+515,Don't mark `fill!` non-differentiable,mcabbott,2021-08-27T16:51:42.0,2021-08-27T17:39:49.0,true
+514,Rule for `fill!` is wrong,mcabbott,2021-08-27T14:24:55.0,2021-08-27T17:39:49.0,false
+513,Fix rules for `^`,mcabbott,2021-08-27T02:46:23.0,2021-09-05T00:02:32.0,true
+512,Rule for `exp` mutates its input,mcabbott,2021-08-25T21:29:39.0,,false
+511,Accept `test_args` to specify which files to test,mcabbott,2021-08-25T19:04:33.0,2021-08-27T02:42:54.0,true
+510,Generic rrule for constructors,oxinabox,2021-08-24T22:45:37.0,,false
+509,Add rules for sqrt(::Diagonal),thomasgudjonwright,2021-08-23T12:32:46.0,2021-08-24T12:48:17.0,true
+508,use splatting in BitArray,frankschae,2021-08-20T10:57:17.0,2021-08-20T17:23:04.0,true
+507,Rules for zip missing ,AlexRobson,2021-08-20T10:25:29.0,,false
+506,do not differentiate through the construction of BitArray,frankschae,2021-08-19T21:18:41.0,2021-08-19T22:04:10.0,true
+505,reenable coverage,simeonschaub,2021-08-18T21:18:31.0,2021-08-19T16:00:34.0,true
+504,Use CommutativeMulNumber everywhere it is needed (and no where it isn't),sethaxen,2021-08-18T08:58:31.0,,false
+503,copysign and sincospi are not fastmath-able,oxinabox,2021-08-17T13:23:29.0,2021-08-17T21:36:37.0,true
+502,new rule: copysign,RainerHeintzmann,2021-08-16T08:26:36.0,2021-08-16T09:17:46.0,true
+501,[WIP] Add rrule for Core._apply_iterate,dfdx,2021-08-15T22:29:38.0,2021-09-11T20:39:52.0,true
+500,use JuliaInterpreter for even faster tests ,simeonschaub,2021-08-14T10:58:46.0,2021-08-16T16:54:56.0,true
+499,shave another 7 mins off tests,simeonschaub,2021-08-13T02:33:08.0,2021-08-13T12:33:58.0,true
+498,Rules for `copysign` are missing?,RainerHeintzmann,2021-08-12T10:06:50.0,2021-08-16T11:21:19.0,false
+497,Add rule for `sincospi`,RainerHeintzmann,2021-08-11T15:24:31.0,2021-08-12T23:04:18.0,true
+496,More vect,willtebbutt,2021-08-10T10:46:47.0,2021-08-13T13:54:49.0,true
+495,fix test,mzgubic,2021-08-05T20:04:24.0,2021-08-05T21:15:37.0,true
+494,Rule for `sum` allowing 2nd derivatives,mcabbott,2021-08-03T21:06:06.0,2021-08-04T01:34:37.0,true
+493,Less clever sum rrule for the default case,Keno,2021-08-02T22:04:23.0,2021-08-03T21:10:31.0,true
+492,How to implement `vect`,willtebbutt,2021-08-01T20:51:02.0,2021-11-24T04:03:16.0,false
+491,Some Array rules,willtebbutt,2021-08-01T13:49:55.0,2021-08-02T15:58:36.0,true
+490,"Configured rule for `maximum(f, xs)`",mcabbott,2021-08-01T03:30:43.0,,true
+489,"Add rules for `reverse`, `circshift`",mcabbott,2021-07-31T20:23:08.0,2021-08-02T15:58:14.0,true
+488,Backport nondifferentiable Rng,oxinabox,2021-07-31T11:51:48.0,2021-07-31T13:18:36.0,true
+487,Add a few rules needed for higher-order AD of ProjectTo,Keno,2021-07-30T17:20:03.0,2021-08-02T15:34:23.0,true
+486,Provide rrules for collect,Keno,2021-07-30T14:56:02.0,,false
+485,fix some issues with rules for `^`,simeonschaub,2021-07-30T10:44:25.0,2021-09-05T01:47:28.0,true
+484,Make construtors of all AbstractRNGs as nondifferentiable,oxinabox,2021-07-29T13:06:20.0,2021-07-30T18:35:16.0,true
+483,Add more non-differentiable builtins,Keno,2021-07-29T02:02:22.0,2021-07-29T09:36:48.0,true
+482,"Mark `isdefined`, `hasproperty` non-differentiable",mcabbott,2021-07-28T12:48:35.0,2021-07-28T16:50:20.0,true
+481,improve test for `Diagonal` constructor,mzgubic,2021-07-28T10:03:55.0,,true
+480,"Add rrules for `extrema`, `findmax`, `maximum`",mcabbott,2021-07-27T10:51:11.0,2021-11-24T16:35:30.0,true
+479,Use oneunit where it makes sense,sethaxen,2021-07-27T08:49:47.0,,false
+478,don't try an Inplace unknown matrixes in *,oxinabox,2021-07-26T11:18:54.0,2021-07-26T15:07:10.0,true
+477,upcoming changes to `cholesky` in base,simeonschaub,2021-07-24T12:16:35.0,,false
+476,"CompatHelper: bump compat for ""ChainRulesCore"" to ""1""",github-actions[bot],2021-07-24T00:31:19.0,2021-07-26T10:17:32.0,true
+475,"tests for rrule(prod, ::Symmetric) are disabled because they fail",oxinabox,2021-07-23T16:54:24.0,,false
+474,"Some examples of failing test_rrule for *(::AbstractMatrix, ::AbstractMatrix)",AlexRobson,2021-07-22T09:02:13.0,2021-07-28T13:32:21.0,false
+473,Stop using rand_tangent from CRTU,oxinabox,2021-07-21T16:52:22.0,2021-07-23T13:34:16.0,true
+472,add rule for copy,CarloLucibello,2021-07-21T07:19:40.0,,true
+471,Change argument order in InplaceableThunk,mzgubic,2021-07-19T15:23:54.0,2021-07-19T21:33:22.0,true
+470,Mark `count` non-differentiable,mcabbott,2021-07-13T01:15:38.0,2021-07-13T14:09:33.0,true
+469,Support for qr decomposition pullback,rkube,2021-07-12T19:29:02.0,,true
+468,Rules for det are not general and likely unstable,cortner,2021-07-06T17:15:55.0,,false
+467,Iron out `ProjectTo`,mzgubic,2021-07-05T17:09:04.0,2021-11-24T04:05:35.0,false
+466,Add missing generic repeat method,AlexRobson,2021-07-04T09:10:09.0,2021-08-18T14:58:02.0,true
+465,Add nondiff rules for one ones zero zeros,niklasschmitz,2021-07-02T08:22:06.0,2021-07-02T11:29:22.0,true
+464,Add rules for Base.literal_pow,dfdx,2021-07-01T23:16:19.0,2021-07-02T22:54:17.0,true
+463,Port a few rules from Diffractor,Keno,2021-07-01T20:59:32.0,2021-07-30T12:58:04.0,true
+462,Add rrule for multiarg array addition,dfdx,2021-07-01T19:53:20.0,2021-07-05T11:03:35.0,true
+461,Add rules for Base.literal_pow,dfdx,2021-07-01T09:47:20.0,2021-07-02T20:03:32.0,true
+460,Add repeat rules from Zygote,AlexRobson,2021-06-29T18:17:26.0,2021-07-01T11:05:16.0,true
+459,"use ProjectTo functor everywhere, and update to v1 of CRC and CRTU",oxinabox,2021-06-29T17:06:59.0,2021-07-26T11:00:29.0,true
+458,No Differentiable Factorial,AlexRobson,2021-06-28T14:12:43.0,2021-06-28T16:37:02.0,true
+457,WIP: use `preproject` implementation,mzgubic,2021-06-28T13:08:10.0,2021-07-26T09:51:45.0,true
+456,Determinant could be faster if use LU,cortner,2021-06-26T00:15:08.0,2021-07-06T15:34:39.0,false
+455,Precompilation Error in starting at v0.8.12. `HasReverseMode not defined` in `mapreduce.jl`,manuelbb-upb,2021-06-25T13:27:53.0,2021-06-25T14:18:12.0,false
+454,handle 1 arg matrix cholesky,oxinabox,2021-06-24T19:51:22.0,2021-06-25T13:51:09.0,true
+453,WIP: use `project` tangents,mzgubic,2021-06-22T17:45:19.0,2021-07-26T09:51:54.0,true
+451,Improved rules for `cat`s,mcabbott,2021-06-19T15:38:21.0,2021-06-24T11:17:25.0,true
+450,Allow Colon in reshape rrule,Keno,2021-06-18T03:33:49.0,2021-06-18T14:09:48.0,true
+449,Test accepting thunks,mzgubic,2021-06-17T13:18:21.0,2021-06-28T13:02:11.0,true
+448,add nondiff rule for `similar`,simeonschaub,2021-06-16T09:50:48.0,2021-06-16T10:49:25.0,true
+447,(Fix #446) Widen _mulsubtrans!! type signature,niklasschmitz,2021-06-15T18:48:34.0,2021-06-16T13:34:37.0,true
+446,Widen signature for _mulsubtrans!! to accept matrices of different element types,rkube,2021-06-15T16:58:43.0,2021-06-16T13:34:37.0,false
+445,fix #379: numeric instabilities in eigen tests,simeonschaub,2021-06-15T13:27:25.0,2021-06-16T21:08:15.0,true
+444,"Don't assume that shapes match in `dot(A,B)`",mcabbott,2021-06-12T18:38:19.0,2021-06-14T14:23:05.0,true
+443,Allow division by complex numbers,mcabbott,2021-06-12T18:06:12.0,2021-06-15T09:00:49.0,true
+442,`f/rrules` should support receiving `ZeroTangent()`,mzgubic,2021-06-11T16:33:57.0,,false
+441,"Rule for sum(f, xs)",oxinabox,2021-06-08T20:11:02.0,2021-06-18T14:06:44.0,true
+440,fix `prod` tests on nightly,simeonschaub,2021-06-08T17:04:36.0,2021-06-08T18:02:37.0,true
+439,fix some numerical instabilities in Base tests,simeonschaub,2021-06-08T15:34:06.0,2021-06-08T18:49:02.0,true
+438,use `@maybe_inferred` instead of `@inferred`,simeonschaub,2021-06-08T14:41:36.0,2021-06-08T21:58:43.0,true
+437,Remove the use of `extern`,mzgubic,2021-06-04T17:20:02.0,2021-06-07T09:14:59.0,true
+436,Return the correct number of cotangents for functions with optional arguments,mzgubic,2021-06-04T14:17:39.0,2021-06-04T17:38:43.0,true
+435,remove redundant tangents,mzgubic,2021-06-02T20:41:45.0,2021-06-04T10:20:25.0,true
+434,fix lu deprecation warnings on Julia nightly,simeonschaub,2021-06-02T16:44:01.0,2021-06-08T15:58:38.0,true
+433,remove `Requires` dependency and some `NaNMath`/`SpecialFunctions` artifacts,mzgubic,2021-06-02T15:37:01.0,2021-06-02T16:49:11.0,true
+432,RFC: use multiple threads for tests,simeonschaub,2021-06-02T15:23:26.0,2021-06-02T16:30:16.0,true
+431,fix #422: nightly failures due to instabilities,simeonschaub,2021-06-02T13:05:55.0,2021-06-08T16:06:57.0,true
+430,`isapprox` error in SpecialFunctions.polygamma test on Julia 1.0,bencottier,2021-06-02T12:40:05.0,2021-06-02T12:52:16.0,false
+429,stop CI testing every  OS,oxinabox,2021-06-02T12:22:14.0,2021-06-02T16:26:29.0,true
+428,"CompatHelper: bump compat for ""ChainRulesCore"" to ""0.10""",github-actions[bot],2021-06-02T01:52:16.0,2021-06-02T09:02:30.0,true
+427,Cancel previous running workflows,mzgubic,2021-06-01T15:26:51.0,2021-06-02T13:20:24.0,true
+426,Cancel running Actions on a new pushed commit,mzgubic,2021-06-01T15:05:55.0,2021-06-02T13:25:51.0,false
+425,remove NanMath and SpecialFunctions.jl,mzgubic,2021-06-01T13:06:14.0,2021-06-02T12:17:39.0,true
+424,do not reexport ChainRulesCore,mzgubic,2021-06-01T13:02:10.0,2021-06-02T12:18:31.0,true
+423,Delete rules and tests for `NaNMath` and `SpecialFunctions`,mzgubic,2021-06-01T12:53:42.0,2021-06-01T13:06:23.0,true
+422,eigen tests fail on nightly,simeonschaub,2021-05-28T21:08:43.0,2021-06-14T16:05:07.0,false
+421,fix `redirect_stdio` rules on nightly again,simeonschaub,2021-05-28T20:30:34.0,2021-05-28T21:23:02.0,true
+420,Add rule for `cumprod`,mcabbott,2021-05-28T03:05:18.0,2021-08-27T13:03:22.0,true
+419,Ox/muladd,oxinabox,2021-05-27T22:28:05.0,2021-05-28T17:27:46.0,true
+418,modify tests,mzgubic,2021-05-27T14:12:19.0,2021-05-27T14:49:27.0,true
+417,Replace `NO_FIELDS` by `NoTangent()`,mzgubic,2021-05-27T13:33:42.0,2021-06-02T12:16:47.0,true
+416,Use true instead of One(),mzgubic,2021-05-27T12:52:22.0,2021-05-27T20:36:56.0,true
+415,Should we be reexporting ChainRulesCore.jl?,oxinabox,2021-05-25T11:37:14.0,2021-06-02T12:18:31.0,false
+414,cholesky decomposition,alfredjmduncan,2021-05-24T14:06:22.0,,false
+413,rename differentials,mzgubic,2021-05-18T09:20:51.0,2021-05-27T18:32:34.0,true
+412,RFC: rules related to 3-arg `*`,mcabbott,2021-05-16T00:05:10.0,,true
+411,update TagBot,simeonschaub,2021-05-13T07:28:14.0,2021-05-13T09:12:51.0,true
+410,add Zenodo badge,simeonschaub,2021-05-13T07:17:38.0,2021-05-13T09:12:39.0,true
+409,tag new release to make available on Zenodo,simeonschaub,2021-05-12T21:07:07.0,2021-05-12T21:19:29.0,true
+408,`frule`s/`rrule`s should support receiving `Thunk`s,mzgubic,2021-05-11T10:33:24.0,2021-06-28T13:02:10.0,false
+407,Update rules for SpecialFunctions,devmotion,2021-05-07T12:38:02.0,2021-05-07T14:11:36.0,true
+406,Add  repeat frules and tests,Wimmerer,2021-04-30T16:55:35.0,,true
+405,[WIP] Add Zygote repeat rrules,Wimmerer,2021-04-30T15:14:20.0,2021-07-03T15:54:15.0,true
+404,remove show X line,mzgubic,2021-04-28T13:27:04.0,2021-04-28T14:06:31.0,true
+403,remove helper `@show X` line,mzgubic,2021-04-28T13:01:11.0,2021-04-28T13:27:46.0,true
+402,Numerical precision of primal not respected for SpecialFunctions.jl,torfjelde,2021-04-25T17:48:01.0,2021-06-02T12:17:39.0,false
+401,Add Symbol constructor to nodiff,ChrisRackauckas,2021-04-22T08:20:15.0,2021-04-22T12:21:50.0,true
+400,Rules for `repeat`,mzgubic,2021-04-20T16:18:57.0,2021-04-27T11:12:42.0,false
+399,Where to find basic aritmetic operators derivatives and broadcasted versions,Cvikli,2021-04-18T07:30:26.0,,false
+398,non_diff `typejoin` and `Base.depwarn`,DhairyaLGandhi,2021-04-17T17:07:10.0,2021-04-17T21:01:51.0,true
+397,add rrule for insorted,mzgubic,2021-04-06T18:21:31.0,2021-04-07T17:49:13.0,true
+396,Update to using `DoesNotExist()` instead of `nothing` in tests,mzgubic,2021-04-06T15:02:04.0,2021-04-21T12:32:42.0,true
+395,rrule for sort and partialsort,mzgubic,2021-04-01T10:03:11.0,2021-04-06T13:57:07.0,true
+394,Add Rules for sortperm and partialsortperm,andrewrosemberg,2021-03-31T10:06:45.0,2021-03-31T16:05:34.0,true
+393,force sym/herm back to return Matrix (1.6 inference fix),oxinabox,2021-03-29T18:17:23.0,2021-03-30T10:50:45.0,true
+392,Rules for `sort` and friends,mzgubic,2021-03-29T13:14:10.0,2021-11-30T22:05:13.0,false
+391,[WIP] Complex valued SVD,GiggleLiu,2021-03-24T01:54:08.0,,true
+390,Fix Composite of SVD,mzgubic,2021-03-23T21:05:11.0,2021-03-25T09:32:43.0,true
+389,Canonicalize Composite{SVD},mzgubic,2021-03-23T21:01:55.0,2021-03-25T09:32:43.0,false
+388,Canonicalize Composite{SVD},mzgubic,2021-03-23T19:54:57.0,2021-03-23T21:01:59.0,true
+387,Issue with AD and SVD,AlexRobson,2021-03-22T11:03:15.0,2021-03-25T16:36:39.0,false
+386,[WIP] Fix eigen rules for matrices with exactly repeating eigenvalues ,sethaxen,2021-03-17T06:14:11.0,,true
+385,add prod,oxinabox,2021-03-09T18:30:29.0,2021-03-09T23:45:18.0,true
+384,Add rules for solutions to Sylvester and Lyapunov equations,sethaxen,2021-02-28T10:27:56.0,2021-03-02T20:26:56.0,true
+383,rules for `repeat` are missing,CarloLucibello,2021-02-21T18:28:13.0,2021-10-01T06:23:16.0,false
+382,Handling rules that construct pullbacks via mutations of copies of their inputs,Roger-luo,2021-02-20T00:41:29.0,,false
+381,Ensure pullback of exp works for immutable arrays,sethaxen,2021-02-18T23:07:13.0,2021-03-01T00:28:41.0,true
+380,combining exp and tr cause setindex error from Zygote,Roger-luo,2021-02-18T18:05:00.0,2021-03-01T00:28:41.0,false
+379,stability of primal when testing eigen,oxinabox,2021-02-18T12:17:03.0,2021-06-16T21:08:16.0,false
+378,symmetric.jl autotangent,oxinabox,2021-02-16T17:51:20.0,2021-02-17T22:26:33.0,true
+377,norm.jl autotangent,oxinabox,2021-02-16T17:25:54.0,2021-02-17T22:26:13.0,true
+376,statistics.jl autotangent,oxinabox,2021-02-16T17:10:46.0,2021-02-17T22:25:47.0,true
+375,factorizations.jl autotangent,oxinabox,2021-02-16T17:05:02.0,2021-02-22T12:35:22.0,true
+374,structured.jl autotangent,mzgubic,2021-02-16T16:51:11.0,2021-02-18T11:31:05.0,true
+373,blas.jl autotangent,oxinabox,2021-02-16T15:25:30.0,2021-02-16T17:33:04.0,true
+372,matfun.jl autotangent,oxinabox,2021-02-16T14:50:31.0,2021-02-16T16:31:14.0,true
+371,improve inference in LinearAlgebra/symmetric,simeonschaub,2021-02-13T13:25:58.0,2021-02-13T15:46:09.0,true
+370,fix tests for JuliaDiff/ChainRulesCore.jl#298,simeonschaub,2021-02-12T22:48:02.0,2021-02-13T10:46:39.0,true
+369,dense.jl autotangent,oxinabox,2021-02-12T19:33:52.0,2021-02-18T12:11:21.0,true
+368,fastmath_able.jl autotangent,mzgubic,2021-02-12T19:15:05.0,2021-02-16T16:22:56.0,true
+367,evalpoly.jl autotangent,mzgubic,2021-02-12T19:06:00.0,2021-02-16T16:27:01.0,true
+366,base.jl autotangent,mzgubic,2021-02-12T18:59:49.0,2021-02-16T16:27:48.0,true
+365,SpecialFunctions.jl autotangent,oxinabox,2021-02-12T13:48:22.0,2021-02-12T16:59:07.0,true
+364,arraymath.jl autotangent ,mzgubic,2021-02-11T19:26:01.0,2021-02-12T09:02:02.0,true
+363,mapreduce.jl autotangent,mzgubic,2021-02-11T18:19:51.0,2021-02-11T19:28:52.0,true
+362,indexing.jl autotangent,mzgubic,2021-02-11T17:56:22.0,2021-02-12T09:05:07.0,true
+361,array.jl autotangent,oxinabox,2021-02-11T15:56:20.0,2021-02-11T16:54:09.0,true
+360,Update tests to use new easier testing mechanism,oxinabox,2021-02-11T15:11:47.0,2021-02-22T12:35:33.0,false
+359,[DO NOT MERGE] test Julia nightly on every PR,simeonschaub,2021-02-10T11:35:12.0,2021-02-10T11:38:21.0,true
+358,stop redefining rules for `redirect_stdio` on 1.6,simeonschaub,2021-02-10T11:04:25.0,2021-02-13T11:43:19.0,true
+357,small printing fix when running test suite,simeonschaub,2021-02-10T10:59:29.0,2021-02-10T11:49:25.0,true
+356,at-infererred failures in LinAlg/symmetric tests on Julia nightly,simeonschaub,2021-02-10T10:52:30.0,2021-02-13T15:46:09.0,false
+355,Update README.md,ViralBShah,2021-02-07T15:10:23.0,2021-02-07T16:04:29.0,true
+354,Rules for LU decomposition of StridedMatrixes,sethaxen,2021-02-04T05:53:35.0,2021-02-08T18:21:07.0,true
+353,Correctly test real matrix exponential,sethaxen,2021-01-22T04:45:36.0,2021-01-22T16:19:39.0,true
+352,Fix CI cache bug,fchorney,2021-01-20T22:50:01.0,2021-01-22T18:06:15.0,true
+351,Add rules for dense matrix exponential,sethaxen,2021-01-18T11:33:09.0,2021-01-20T18:33:58.0,true
+350,Install VersionVigilante,willtebbutt,2021-01-16T14:03:07.0,2021-01-16T14:34:47.0,true
+349,use new Revere Dependency Test code and test ReversePropagation.jl,oxinabox,2021-01-15T19:19:59.0,2021-01-22T18:07:09.0,true
+348,Stop doing CI on Windows and Mac,oxinabox,2021-01-15T15:18:39.0,2021-05-28T17:19:34.0,true
+347,Drop ChainRulesTestUtils 0.5,oxinabox,2021-01-14T16:53:10.0,2021-01-15T17:04:16.0,true
+346,Add Emoji to GHA names,oxinabox,2021-01-13T22:05:21.0,,true
+345,@non_differentiable with Varargs for string concatenation,mzgubic,2021-01-13T11:11:47.0,2021-01-13T11:40:42.0,false
+344,Missing rule for factorial,mzgubic,2021-01-13T10:55:51.0,2021-06-28T16:37:01.0,false
+343,Type instability of BLAS rules,oxinabox,2021-01-12T19:46:15.0,2021-01-12T20:18:48.0,false
+342,Update to new version of ChainRulesTestUtils and FiniteDifferences,oxinabox,2021-01-12T18:35:08.0,2021-01-13T22:00:47.0,true
+341,Increase FiniteDifferences to v0.12,wesselb,2021-01-11T08:28:16.0,2021-03-09T23:43:04.0,true
+340,Change eigen and svd pullbacks to accept Composite{Any},sethaxen,2021-01-07T22:55:28.0,2021-01-07T23:43:46.0,true
+339,add varargs nondiff rules,niklasschmitz,2021-01-06T00:01:26.0,2021-01-06T13:51:48.0,true
+338,An additional approach to implementing rules,willtebbutt,2021-01-05T11:41:24.0,,false
+337,Improvements to rules for `norm`,mcabbott,2020-12-26T17:47:23.0,2021-05-10T17:43:37.0,true
+336,Improve rules for `sum`,mcabbott,2020-12-26T15:32:09.0,2021-05-07T17:16:26.0,true
+335,Add rule for `prod`,mcabbott,2020-12-26T15:22:54.0,2021-05-27T19:20:08.0,true
+334,"CompatHelper: bump compat for ""Reexport"" to ""1.0""",github-actions[bot],2020-12-26T00:29:59.0,2021-01-01T13:55:02.0,true
+333,remove FD and CRTestUtils from deps,matbesancon,2020-12-23T16:33:31.0,2020-12-23T21:55:49.0,true
+332,Remove ChainRulesTestUtils and FiniteDifferences from direct dependencies,matbesancon,2020-12-23T14:57:02.0,2020-12-23T21:55:49.0,false
+331,Add rules for the matrix exponential,sethaxen,2020-12-23T01:37:35.0,2021-01-20T18:33:58.0,false
+330,Notificiations to Invenia slack on build fail,oxinabox,2020-12-18T12:47:43.0,2021-01-08T18:47:03.0,true
 329,Fix various type-instabilities,sethaxen,2020-12-15T22:29:36.0,2020-12-16T06:18:12.0,true
 328,BLAS.gemm and BLAS.gemv pullbacks are type-unstable,sethaxen,2020-12-15T21:24:14.0,,false
 327,Fixing and testing rules for functions with real and complex inputs,sethaxen,2020-12-14T22:58:28.0,,false
-326, Zygote Integration testing,willtebbutt,2020-12-09T23:41:18.0,,false
+326, Zygote Integration testing,willtebbutt,2020-12-09T23:41:18.0,2021-01-22T20:24:35.0,false
 325,WIP matmul on arrays of arrays,oxinabox,2020-12-08T20:11:20.0,,true
 324,Some Adjoint and Transpose stuff,willtebbutt,2020-12-06T15:18:55.0,2020-12-10T22:32:43.0,true
-323,Add rules for Symmetric/Hermitian eigen and svd,sethaxen,2020-12-06T12:49:25.0,,true
+323,Add rules for Symmetric/Hermitian eigen and svd,sethaxen,2020-12-06T12:49:25.0,2021-01-07T12:39:52.0,true
 322,Move Symmetric/Hermitian rules and tests to own file,sethaxen,2020-12-06T00:35:20.0,2020-12-06T12:18:07.0,true
 321,Add eigen and eigvals rules for StridedMatrix,sethaxen,2020-12-04T23:11:53.0,2020-12-09T22:29:17.0,true
 320,Only define rules for SpecialFunctions if needed,devmotion,2020-12-04T18:50:31.0,2020-12-07T12:30:00.0,true
-319,Drop SpecialFunctions dependency,stevengj,2020-12-04T15:59:21.0,,false
+319,Drop SpecialFunctions dependency,stevengj,2020-12-04T15:59:21.0,2021-06-02T12:17:38.0,false
 318,Add Integration Test for ReversePropagation.jl,oxinabox,2020-12-03T14:27:00.0,,false
 317,"Unrevert ""Tighten up a bunch of test accurasy requirements now that have FiniteDifferences v0.11.4 )",oxinabox,2020-12-02T16:12:17.0,2020-12-03T22:15:00.0,true
 316,"Revert ""Tighten up a bunch of test accurasy requirements now that have FiniteDifferences v0.11.4 (#315)""",oxinabox,2020-12-02T16:09:01.0,2020-12-02T16:11:10.0,true
 315,Tighten up a bunch of test accurasy requirements now that have FiniteDifferences v0.11.4,oxinabox,2020-12-01T18:54:42.0,2020-12-02T15:59:40.0,true
 314,rrule for map,CarloLucibello,2020-12-01T10:21:34.0,,false
 313,invalid non-differentiability rule for joinpath,gxyd,2020-11-27T05:18:08.0,2020-11-27T05:20:39.0,false
-312,Gradient for matrix `muladd`,mcabbott,2020-11-20T08:59:52.0,,true
+312,Gradient for matrix `muladd`,mcabbott,2020-11-20T08:59:52.0,2021-05-28T17:28:24.0,true
 311,Revamp Cholesky implementation,willtebbutt,2020-11-19T23:03:26.0,2020-12-09T21:45:59.0,true
 310,non-differentiability of ops on AbstractArray{Bool},gxyd,2020-11-19T07:56:28.0,2020-12-03T09:00:14.0,true
 309,Add GitHub Actions CI workflow,sethaxen,2020-11-18T20:44:18.0,2020-12-03T20:18:36.0,true
@@ -33,7 +253,7 @@ number,title,login,created_at,closed_at,is_pr
 295,Make sure to only fastmath the right things,oxinabox,2020-10-23T11:54:22.0,2020-10-23T14:01:36.0,true
 294,Method overwritten for frule/rrule on Base.round,alisiahkoohi,2020-10-22T17:59:14.0,2020-10-23T14:01:36.0,false
 293,Make operations on BitArray's non-differentiable,oxinabox,2020-10-22T16:09:38.0,2020-12-03T09:00:14.0,false
-292,add derivatives for exponential integrals,stevengj,2020-10-19T21:13:08.0,,false
+292,add derivatives for exponential integrals,stevengj,2020-10-19T21:13:08.0,2021-06-01T12:58:32.0,false
 291,use `sincos` in rules for sin and cos,oxinabox,2020-10-16T21:42:24.0,2020-11-02T16:33:24.0,false
 290,WIP: Make getindex work for arrays with any eltype,oxinabox,2020-10-16T20:46:54.0,,true
 288,stop manually unthunking composite,oxinabox,2020-10-15T16:53:12.0,2020-10-15T17:37:22.0,true
@@ -55,7 +275,7 @@ number,title,login,created_at,closed_at,is_pr
 272,fix typo in 4 arg gemm rrule,oxinabox,2020-09-30T17:32:04.0,2020-10-01T12:34:01.0,true
 271,More Base's Array math into the Base ruleset folder,oxinabox,2020-09-29T11:37:12.0,2020-10-01T11:49:06.0,true
 270,Add scalar-array / and \,oxinabox,2020-09-28T17:56:29.0,2020-09-29T10:52:02.0,true
-269,add `ignore` from Zygote to support Zygote-like AD's,gxyd,2020-09-23T11:33:17.0,,true
+269,add `ignore` from Zygote to support Zygote-like AD's,gxyd,2020-09-23T11:33:17.0,2021-09-23T10:39:14.0,true
 268,Add Array * Scalar,oxinabox,2020-09-17T11:45:09.0,2020-09-17T14:19:30.0,true
 267,Make sum of bool arrays nondiffernetiable,oxinabox,2020-09-16T12:57:51.0,,true
 266,Correct rrule for reshape,oxinabox,2020-09-15T18:12:32.0,2020-09-16T14:11:16.0,true
@@ -68,8 +288,8 @@ number,title,login,created_at,closed_at,is_pr
 258,Don't use non-differentiation  on any constructors,ChrisRackauckas,2020-09-03T20:34:19.0,2020-09-03T21:18:58.0,true
 257,New Non-Diff Rules can cause Zygote to change keyword arguments,ChrisRackauckas,2020-09-03T20:12:08.0,2020-09-03T21:18:58.0,false
 255,add Base.sinc rule,stevengj,2020-08-29T14:08:44.0,2020-08-29T16:01:16.0,true
-254,Missing rule from cumprod,longemen3000,2020-08-29T07:20:08.0,,false
-253,Add missing non-differentiable rules with varargs,oxinabox,2020-08-28T15:34:40.0,,false
+254,Missing rule from cumprod,longemen3000,2020-08-29T07:20:08.0,2021-08-27T13:03:22.0,false
+253,Add missing non-differentiable rules with varargs,oxinabox,2020-08-28T15:34:40.0,2021-01-06T22:47:31.0,false
 252,add nondiff rules,oxinabox,2020-08-28T15:31:31.0,2020-09-03T12:52:39.0,true
 251,Rules for 3-argument dot,longemen3000,2020-08-25T05:28:34.0,2020-11-21T13:06:22.0,false
 250,(Re)use factorizations in primal for \ etc in pullback ,DhairyaLGandhi,2020-08-24T20:27:13.0,,false
@@ -80,7 +300,7 @@ number,title,login,created_at,closed_at,is_pr
 245,Restrict types in logdet,willtebbutt,2020-08-17T12:50:25.0,2020-08-17T13:21:29.0,true
 244,logdet too general,willtebbutt,2020-08-17T11:01:31.0,2020-08-17T13:21:29.0,false
 243,Documentation hasn't added tags since v0.3.2,ChrisRackauckas,2020-08-17T01:58:56.0,2020-08-17T07:50:20.0,false
-256,ChainRules.ignore,willtebbutt,2020-07-24T14:14:42.0,,false
+256,ChainRules.ignore,willtebbutt,2020-07-24T14:14:42.0,2021-09-23T10:38:44.0,false
 241,Move evalpoly to its own file,oxinabox,2020-07-22T20:22:04.0,2020-07-22T21:34:17.0,true
 240,Inplace getindex rrule,oxinabox,2020-07-17T15:00:05.0,2020-10-19T14:13:06.0,true
 239,simplify sum rrule,piever,2020-07-16T14:08:50.0,2020-07-16T15:47:17.0,true
@@ -90,7 +310,7 @@ number,title,login,created_at,closed_at,is_pr
 235,Don't thunk if only one adjoint exists,sethaxen,2020-07-13T17:25:05.0,2020-07-13T17:57:20.0,true
 234,Add logabsdet and test det and logdet on numbers,sethaxen,2020-07-12T19:33:47.0,2020-07-17T19:41:47.0,true
 233,fix division return type ,CarloLucibello,2020-07-08T08:34:22.0,2020-07-10T19:16:59.0,true
-232,Type Constraints,willtebbutt,2020-07-07T12:24:23.0,,false
+232,Type Constraints,willtebbutt,2020-07-07T12:24:23.0,2021-07-06T10:38:56.0,false
 231,Add github action for Zygote CI,sethaxen,2020-07-06T20:42:05.0,2020-07-06T21:56:17.0,true
 230,Fixup naming convention `*_rrule` -> `*_pullback`,nickrobinson251,2020-07-06T11:14:30.0,2020-07-06T12:20:34.0,true
 229,Should we run Zygote tests as part of CI?,nickrobinson251,2020-07-06T10:57:23.0,2020-07-06T21:57:40.0,false
@@ -100,7 +320,7 @@ number,title,login,created_at,closed_at,is_pr
 225,Add rules for pinv,sethaxen,2020-07-03T10:09:07.0,2020-07-05T08:41:10.0,true
 224,Improvements to numeric exponent rules,sethaxen,2020-07-02T01:35:31.0,2020-07-08T01:02:28.0,true
 223,MersenneTwister,willtebbutt,2020-07-01T17:51:09.0,2020-07-05T23:04:12.0,true
-222,Higher-Order functions: Low-hanging fruit,willtebbutt,2020-07-01T10:01:23.0,,false
+222,Higher-Order functions: Low-hanging fruit,willtebbutt,2020-07-01T10:01:23.0,2021-06-22T12:19:52.0,false
 221,Bump version number for release,sethaxen,2020-06-30T16:17:29.0,2020-06-30T16:51:28.0,true
 220,Add complex tests and fix rules for BLAS functions,sethaxen,2020-06-30T07:59:03.0,2020-06-30T15:50:31.0,true
 219,requires: remove unnecessary package loads,KristofferC,2020-06-29T16:24:38.0,2020-06-29T17:47:34.0,true
@@ -113,7 +333,7 @@ number,title,login,created_at,closed_at,is_pr
 211,Fix rules for sign with complex input,sethaxen,2020-06-24T07:22:38.0,2020-06-28T16:45:01.0,true
 210,Change convention for complex differentiation,sethaxen,2020-06-22T19:01:19.0,2020-06-30T22:49:39.0,false
 209,Link to ColPrac,oxinabox,2020-06-22T10:28:49.0,2020-06-22T12:58:05.0,true
-208,Derivatives of Bessel functions with respect to the order,devmotion,2020-06-16T12:29:52.0,,false
+208,Derivatives of Bessel functions with respect to the order,devmotion,2020-06-16T12:29:52.0,2021-01-05T23:28:57.0,false
 207,Remove constraints on primal from Composites for SVD and Cholesky,oxinabox,2020-06-10T17:22:41.0,2020-06-11T13:01:48.0,true
 206,Support for svdvals,MikeInnes,2020-06-10T14:22:31.0,,false
 205,SVD is broken in Zygote,MikeInnes,2020-06-10T14:19:48.0,2020-06-11T13:01:48.0,false
@@ -128,7 +348,7 @@ number,title,login,created_at,closed_at,is_pr
 196,"Correct chainrules for abs2, abs, conj and angle",MasonProtter,2020-05-20T19:17:23.0,2020-06-28T00:39:02.0,true
 195,Incorrect chain rule for `abs2`,MasonProtter,2020-05-20T18:00:27.0,2020-06-28T00:39:02.0,false
 194,"CompatHelper: bump compat for ""ChainRulesCore"" to ""0.8""",github-actions[bot],2020-05-20T00:07:30.0,2020-05-20T10:50:57.0,true
-193,[WIP] Symmetric/Hermitian power series rules,sethaxen,2020-05-17T10:11:27.0,,true
+193,Symmetric/Hermitian matrix function rules,sethaxen,2020-05-17T10:11:27.0,2021-01-14T23:10:18.0,true
 192,Caching computations in forward mode,sethaxen,2020-05-17T02:45:23.0,,false
 191,Representing (co)tangents of structured matrices,sethaxen,2020-05-17T01:19:56.0,,false
 190,Add rules for evalpoly,sethaxen,2020-05-08T09:15:10.0,2020-06-30T23:56:04.0,true
@@ -177,7 +397,7 @@ number,title,login,created_at,closed_at,is_pr
 145,WIP: Update for ChainRulesCore v0.5,oxinabox,2020-01-10T20:00:37.0,2020-01-15T11:23:51.0,true
 144,Backpropagation-Friendly Eigendecomposition,ChrisRackauckas,2020-01-07T13:34:14.0,,false
 143,Fix warnings,YingboMa,2019-12-24T21:00:15.0,2019-12-25T17:34:46.0,true
-142,Add tests for new special functions and nan math,YingboMa,2019-12-24T16:49:32.0,,false
+142,Add tests for new special functions and nan math,YingboMa,2019-12-24T16:49:32.0,2021-06-02T12:17:39.0,false
 141,Change to BlueStyle,oxinabox,2019-12-24T11:20:51.0,2020-01-28T13:04:08.0,false
 140,remove old atan2 tests,oxinabox,2019-12-23T17:29:51.0,2019-12-25T17:28:45.0,true
 139,Fix a few spelling mistakes and formatting issues,YingboMa,2019-12-21T15:40:24.0,2019-12-21T17:12:11.0,true
@@ -190,7 +410,7 @@ number,title,login,created_at,closed_at,is_pr
 129,Add bounds,oxinabox,2019-10-29T10:47:25.0,2019-10-29T11:39:50.0,true
 127,Rules for FFT,jessebett,2019-10-22T17:44:08.0,,false
 126,remove comma in `test_scalar`,simeonschaub,2019-10-20T10:41:00.0,2019-10-20T12:41:58.0,true
-125,Add frule and rrule for cat,AzamatB,2019-10-19T14:06:01.0,,false
+125,Add frule and rrule for cat,AzamatB,2019-10-19T14:06:01.0,2021-11-06T15:49:13.0,false
 124,Don't allow sum of anything in rrule,oxinabox,2019-10-18T19:22:50.0,2019-10-28T17:21:25.0,true
 122,Stop throwing errors in higher order functions,oxinabox,2019-10-17T18:03:03.0,2020-04-20T10:42:06.0,false
 121,Support SpecialFunction 0.8 + other improvements,oxinabox,2019-10-17T14:59:29.0,2019-10-28T17:20:56.0,true
@@ -206,7 +426,7 @@ number,title,login,created_at,closed_at,is_pr
 109,Logo?,oxinabox,2019-09-21T15:22:22.0,2019-09-27T14:07:07.0,false
 108,Add rrule for Diagonal * AbstractVector,tkf,2019-09-20T05:38:18.0,2019-09-21T08:38:36.0,true
 107,Add `frule` for `\`,nickrobinson251,2019-09-17T17:03:15.0,,false
-106,Define `rrule` for SVD.Vt,nickrobinson251,2019-09-17T16:58:27.0,,false
+106,Define `rrule` for SVD.Vt,nickrobinson251,2019-09-17T16:58:27.0,2021-03-25T09:32:43.0,false
 105,PR preview docs,oxinabox,2019-09-16T09:54:41.0,2019-09-20T11:47:23.0,true
 104,Rules for turning lazy broadcasted to eager one?,tkf,2019-09-13T08:36:51.0,2019-09-26T11:17:32.0,false
 103,introdocs + demo + instructions on writing good rules,oxinabox,2019-09-12T18:35:47.0,2019-09-25T18:12:48.0,true
@@ -230,7 +450,7 @@ number,title,login,created_at,closed_at,is_pr
 84,Move `mean` rule to a Statistics ruleset folder,nickrobinson251,2019-08-16T18:29:16.0,2019-08-16T21:42:17.0,true
 83,Update FDM to FiniteDifferences,nickrobinson251,2019-08-12T11:34:53.0,2019-08-12T13:28:30.0,true
 82,Fix documentation to use ChainRulesCore,nickrobinson251,2019-08-11T11:40:57.0,2019-08-12T16:49:29.0,true
-81,Add tests that check for things not being incredibly generally defined?,oxinabox,2019-08-10T12:33:28.0,,false
+81,Add tests that check for things not being incredibly generally defined?,oxinabox,2019-08-10T12:33:28.0,2021-08-05T07:34:03.0,false
 80,WIP: adding more rules and fixing old ones,shashi,2019-08-09T22:06:13.0,2019-12-24T18:31:13.0,true
 79,Fix atan2 rules,YingboMa,2019-08-09T19:49:11.0,2019-08-09T21:25:30.0,true
 78,add rules for constant returning zero and one function,oxinabox,2019-08-09T15:02:52.0,2019-08-21T17:22:15.0,true
@@ -241,7 +461,7 @@ number,title,login,created_at,closed_at,is_pr
 73,Bump travis tests,willtebbutt,2019-08-03T20:23:42.0,2019-08-09T22:53:47.0,true
 72,Writie initial Getting Started documentation,nickrobinson251,2019-08-02T22:00:45.0,2019-09-26T11:28:27.0,false
 71,Add tests for SpecialFunctions rules,nickrobinson251,2019-08-02T21:49:59.0,2019-08-29T16:51:51.0,false
-70,Add tests for NaNMaths rules,nickrobinson251,2019-08-02T21:48:42.0,,false
+70,Add tests for NaNMaths rules,nickrobinson251,2019-08-02T21:48:42.0,2021-06-22T12:21:11.0,false
 69,Make `test_utils` available as a stand alone package,nickrobinson251,2019-08-02T20:24:14.0,2020-02-08T01:47:39.0,false
 68,use ChainRulesCore,nickrobinson251,2019-08-02T19:59:45.0,2019-08-02T21:32:58.0,true
 67,Big re-organization,oxinabox,2019-08-01T22:04:56.0,2019-08-07T11:41:21.0,true
