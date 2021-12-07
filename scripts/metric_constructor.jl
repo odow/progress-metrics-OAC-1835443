@@ -461,8 +461,6 @@ end
 #                                                                              #
 # ============================================================================ #
 
-ENV["PERSONAL_ACCESS_TOKEN"] = "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"
-
 for (repo, use_stars) in [
     ("julialang/Julia", false),
     ("jump-dev/JuMP.jl", true),

@@ -141,7 +141,7 @@ function summarize_prs(repos, exclude)
 end
 
 function get_repos(since, until)
-    my_auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
+    my_auth = GitHub.authenticate(ENV["PERSONAL_ACCESS_TOKEN"])
     all_repos, _ = GitHub.repos("jump-dev", auth=my_auth);
     repos = Dict(
         repo => Repository(repo; since = since, until = until, my_auth = my_auth)
@@ -149,6 +149,12 @@ function get_repos(since, until)
     )
     repos["JuliaDocs/Documenter.jl"] = Repository(
         "JuliaDocs/Documenter.jl";
+        since = since,
+        until = until,
+        my_auth = my_auth,
+    )
+    repos["JuliaPackaging/Yggdrasil"] = Repository(
+        "JuliaPackaging/Yggdrasil";
         since = since,
         until = until,
         my_auth = my_auth,
