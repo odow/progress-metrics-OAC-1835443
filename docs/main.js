@@ -136,6 +136,39 @@ function last(x) {
             "title": "Count"
         }
     }    
+    load_json("download_stats.json", function (data) {
+        var chart = d3.select('#chart_download_statistics').node();
+        visible = new Set(["JuMP.jl", "MathOptInterface.jl", "MutableArithmetics.jl"]);
+        total_downloads = {}
+        Object.keys(data).map(function (key) {
+            total_downloads[key] = data[key]["requests"].reduce((a, b) => a+b);
+        })
+        sorted_keys = Object.keys(data).sort(
+            (a, b) => total_downloads[a] < total_downloads[b]
+        )
+        var series = sorted_keys.map(function (key) {
+            object = {
+                x: data[key]["dates"],
+                y: data[key]["requests"],
+                name: key,
+            }
+            if (!visible.has(key)) {
+                object["visible"] = "legendonly"
+            }
+            return object
+        });
+        layout = {
+            margin: {b: 40, t: 20},
+            hovermode: 'closest',
+            "yaxis": {
+                "range": ["2021-09-01", to_date(new Date())],
+                "title": "Download count"
+            }
+        }
+        Plotly.plot(chart, series, layout);
+        charts.push(chart);
+        return
+    });
     load_json("data.json", function (data) {
         function plot_chart(data, key, f, compare = (a, b) => a >= b) {
             var chart = d3.select(key).node();
