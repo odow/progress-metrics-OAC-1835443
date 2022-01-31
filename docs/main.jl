@@ -1,9 +1,11 @@
 import CSV
-import DataFrames
+using DataFrames
 import Dates
 import Downloads
 import GitHub
 import JSON
+import Pkg
+import TOML
 
 function Repository(repo; since, until, my_auth)
     println("Getting : ", repo)
@@ -18,7 +20,12 @@ function get_repos(since, until)
     my_auth = GitHub.authenticate(ENV["PERSONAL_ACCESS_TOKEN"])
     all_repos, _ = GitHub.repos("jump-dev", auth=my_auth);
     return Dict(
-        repo => Repository(repo; since = since, until = until, my_auth = my_auth)
+        repo => Repository(
+            "jump-dev/" * repo;
+            since = since,
+            until = until,
+            my_auth = my_auth,
+        )
         for repo in map(r -> "$(r.name)", all_repos)
     )
 end
@@ -37,7 +44,7 @@ function load_stats(file, uuids)
         package_uuid = collect(keys(uuids)),
         name = collect(values(uuids))
     )
-    df = leftjoin(df, uuid_to_name; on = :package_uuid)
+    df = DataFrames.leftjoin(df, uuid_to_name; on = :package_uuid)
     filter!(df) do row
         return !ismissing(row.client_type) &&
                row.client_type == "user" &&
@@ -45,7 +52,7 @@ function load_stats(file, uuids)
                occursin("jump-dev/", row.name) &&
                row.status == 200
     end
-    return select(df, [:name, :date, :request_count])
+    return DataFrames.select(df, [:name, :date, :request_count])
 end
 
 function update_download_statistics()
