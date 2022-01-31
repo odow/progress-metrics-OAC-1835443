@@ -157,15 +157,18 @@ function last(x) {
             }
             return object
         });
-        layout = {
-            margin: {b: 40, t: 20},
-            hovermode: 'closest',
-            "yaxis": {
-                "range": ["2021-09-01", to_date(new Date())],
-                "title": "Download count"
-            }
-        }
-        Plotly.plot(chart, series, layout);
+        Plotly.plot(
+            chart,
+            series,
+            {
+                margin: {b: 40, t: 20},
+                hovermode: 'closest',
+                "yaxis": {
+                    "range": ["2021-09-01", to_date(new Date())],
+                    "title": "Download count"
+                }
+            },
+        );
         charts.push(chart);
         return
     });
