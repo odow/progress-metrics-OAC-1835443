@@ -162,14 +162,15 @@ function get_repos(since, until)
     return repos
 end
 
-since = "2021-08-01T00:00:00"
-until = "2021-11-01T00:00:00"
+since = "2021-11-01T00:00:00"
+until = "2022-02-01T00:00:00"
 
 repos = get_repos(since, until)
 summarize(
     repos;
     since = since,
     until = until,
+    exclude = ["JuliaPackaging/Yggdrasil", "JuliaDocs/Documenter.jl"]
 )
 
 summarize_prs(repos, ["CPLEX", "Gurobi"])
