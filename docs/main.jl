@@ -7,6 +7,9 @@ import JSON
 import Pkg
 import TOML
 
+# Holds GitHub secrets. Not committed to the repository.
+include("dev.env");
+
 function Repository(repo; since, until, my_auth)
     println("Getting : ", repo)
     return GitHub.issues(
@@ -32,7 +35,7 @@ end
 
 function download_stats(file)
     url = "https://julialang-logs.s3.amazonaws.com/public_outputs/current/$(file).csv.gz"
-    output = "data/$(file).csv.gz"
+    output = joinpath(@__DIR__, "..", "data", "$(file).csv.gz")
     Downloads.download(url, output)
     return output
 end
@@ -81,7 +84,7 @@ function update_download_statistics()
             "requests" => collect(g.request_count_sum),
         )
     end
-    open("download_stats.json", "w") do io
+    open(joinpath(@__DIR__, "download_stats.json"), "w") do io
         write(io, JSON.json(data))
     end
     return
@@ -114,11 +117,45 @@ function update_package_statistics()
         end
         data[k] = sort!(events, by = x -> x["date"])
     end
-    open("data.json", "w") do io
+    open(joinpath(@__DIR__, "data.json"), "w") do io
         write(io, JSON.json(data))
+    end
+    return
+end
+
+
+# This script was used to generate the list of contirbutors for the JuMP 1.0
+# release. It may be helpful in future.
+function print_all_contributors()
+    data = JSON.parsefile(joinpath(@__DIR__, "data.json"))
+    prs_by_user = Dict{String,Int}()
+    for (_, pkg_data) in data
+        for item in pkg_data
+            if item["is_pr"] && item["type"] == "opened"
+                user = item["user"]
+                if user in (
+                    "github-actions[bot]",
+                    "JuliaTagBot",
+                    "femtocleaner[bot]",
+                )
+                    continue
+                end
+                if haskey(prs_by_user, user)
+                    prs_by_user[user] += 1
+                else
+                    prs_by_user[user] = 0
+                end
+            end
+        end
+    end
+    names = collect(keys(prs_by_user))
+    sort!(names; by = name -> (-prs_by_user[name], name))
+    for name in names
+        println(" * [@$(name)](https://github.com/$(name))")
     end
     return
 end
 
 update_download_statistics()
 update_package_statistics()
+
