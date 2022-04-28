@@ -124,9 +124,9 @@ function update_package_statistics()
 end
 
 
-# This script was used to generate the list of contirbutors for the JuMP 1.0
+# This script was used to generate the list of contributors for the JuMP 1.0
 # release. It may be helpful in future.
-function print_all_contributors()
+function print_all_contributors(; minimum_prs::Int = 1)
     data = JSON.parsefile(joinpath(@__DIR__, "data.json"))
     prs_by_user = Dict{String,Int}()
     for (_, pkg_data) in data
@@ -143,7 +143,7 @@ function print_all_contributors()
                 if haskey(prs_by_user, user)
                     prs_by_user[user] += 1
                 else
-                    prs_by_user[user] = 0
+                    prs_by_user[user] = 1
                 end
             end
         end
@@ -151,11 +151,32 @@ function print_all_contributors()
     names = collect(keys(prs_by_user))
     sort!(names; by = name -> (-prs_by_user[name], name))
     for name in names
-        println(" * [@$(name)](https://github.com/$(name))")
+        if prs_by_user[name] >= minimum_prs
+            println(" * [@$(name)](https://github.com/$(name))")
+        end
     end
-    return
+    return prs_by_user
+end
+
+function prs_by_user(user)
+    data = JSON.parsefile(joinpath(@__DIR__, "data.json"))
+    prs_by_user = Any[]
+    for (pkg, pkg_data) in data
+        for item in pkg_data
+            if item["user"] == user && item["is_pr"] && item["type"] == "opened"
+                push!(prs_by_user, (pkg, item))
+            end
+        end
+    end
+    return prs_by_user
 end
 
 update_download_statistics()
 update_package_statistics()
 
+# sums = zeros(Int, 10)
+# for k in values(data)
+#     for i in 1:min(10, k)
+#         sums[i] += 1
+#     end
+# end
